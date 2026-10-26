@@ -1,0 +1,11 @@
+.advertisement-open{display:block;margin-top:12px;color:var(--accent);font-size:13px;font-weight:600;text-align:center;white-space:normal}
+.advertisement-panel{position:fixed;inset:0 0 0 auto;margin:0;width:min(740px,100vw);max-width:100vw;height:100dvh;max-height:100dvh;padding:0;border:0;border-left:1px solid var(--line);background:var(--paper);color:var(--ink);box-shadow:-12px 0 40px #0003;overflow:hidden}
+.advertisement-panel[open]{display:flex;flex-direction:column}
+.advertisement-panel::backdrop{background:rgb(15 35 30 / .38)}
+.advertisement-header{flex:none;padding:22px 28px;border-bottom:1px solid var(--line);background:#e8ede6}
+.advertisement-header h2{font-size:24px;line-height:1.25;margin:8px 0 16px;overflow-wrap:anywhere}
+.advertisement-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:24px 28px 40px;line-height:1.65;font-size:15px;overflow-wrap:anywhere}
+.advertisement-body h3{font-size:19px;margin:26px 0 10px}.advertisement-body p{margin:12px 0}.advertisement-body li{margin:8px 0}.advertisement-body ul{padding-left:24px}.advertisement-note{font-size:13px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:18px}
+@media(max-width:600px){.advertisement-header{padding:16px 20px}.advertisement-header h2{font-size:21px}.advertisement-body{padding:18px 20px 32px}}
+
+.advertisement-body{white-space:pre-line}.advertisement-open{margin-top:0;min-width:130px}

@@ -1,0 +1,13 @@
+{
+  "name": "job-applier-listings",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public Business Listings and Job Listings static website",
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "test:browser": "node tests/listings-preview.cjs && node --test --test-concurrency=1 tests/business-table-ui.cjs tests/ats-filters.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
