@@ -1,0 +1,2 @@
+site/Business-Listings/*.csv -text whitespace=-blank-at-eol
+site/Job-Listings/*.csv -text whitespace=-blank-at-eol
