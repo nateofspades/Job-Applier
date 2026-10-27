@@ -1,0 +1,125 @@
+{
+  "business_count": 133,
+  "job_count": 1277,
+  "business_fields": [
+    "business_id",
+    "company_name",
+    "company_description",
+    "industries",
+    "country",
+    "city",
+    "career_page_url",
+    "ats_provider",
+    "date_added_to_dataset"
+  ],
+  "job_fields": [
+    "company_name",
+    "job_title",
+    "job_experience_level",
+    "job_category",
+    "city",
+    "country",
+    "remote_policy",
+    "is_fulltime",
+    "salary",
+    "date_posted",
+    "job_summary",
+    "job_responsibilities",
+    "experience_required",
+    "full_job_post",
+    "job_url",
+    "job_id",
+    "ats_provider",
+    "date_added_to_dataset"
+  ],
+  "business_sha256": "4650424f598a7bb749637a1f3b1e9eeede107cf0b44b41a6d4fe851b908bc9f6",
+  "job_sha256": "a81a1f9cfe3678239b0a041712b1754bb936a9bd2a30ee48ca0e800efb5ab167",
+  "new_businesses": [
+    {
+      "company_name": "Adviso",
+      "career_page_url": "https://emplois.adviso.ca/"
+    },
+    {
+      "company_name": "Data Sciences",
+      "career_page_url": "https://datasciences.ca/careers/open-positions/"
+    },
+    {
+      "company_name": "Potloc",
+      "career_page_url": "https://www.potloc.com/en/careers"
+    },
+    {
+      "company_name": "StatsDrone",
+      "career_page_url": "https://statsdrone.com/careers/"
+    },
+    {
+      "company_name": "Compass Data and AI",
+      "career_page_url": "https://www.compassdata.ca/resources/careers"
+    },
+    {
+      "company_name": "Mizo",
+      "career_page_url": "https://mizo.tech/careers/"
+    },
+    {
+      "company_name": "Unito",
+      "career_page_url": "https://unito.io/careers/"
+    },
+    {
+      "company_name": "Stay22",
+      "career_page_url": "https://job-boards.greenhouse.io/stay22"
+    },
+    {
+      "company_name": "Osedea",
+      "career_page_url": "https://www.osedea.com/careers"
+    },
+    {
+      "company_name": "Spiria",
+      "career_page_url": "https://www.spiria.com/en/careers"
+    },
+    {
+      "company_name": "Flare",
+      "career_page_url": "https://flare.io/company/careers"
+    },
+    {
+      "company_name": "Moov AI",
+      "career_page_url": "https://moov.ai/en/careers"
+    },
+    {
+      "company_name": "Keatext",
+      "career_page_url": "https://www.keatext.ai/fr/carrieres/"
+    },
+    {
+      "company_name": "Local Logic",
+      "career_page_url": "https://locallogic.applytojob.com/"
+    },
+    {
+      "company_name": "Panorama",
+      "career_page_url": "https://www.usepanorama.com/en-us/careers"
+    },
+    {
+      "company_name": "Dialekta",
+      "career_page_url": "https://dialekta.com/en/careers/"
+    },
+    {
+      "company_name": "Rablab",
+      "career_page_url": "https://rablab.ca/en/careers/"
+    },
+    {
+      "company_name": "My Little Big Web",
+      "career_page_url": "https://mylittlebigweb.com/en/about-us/jobs/"
+    },
+    {
+      "company_name": "Aviseo Conseil",
+      "career_page_url": "https://aviseo.ca/carrieres/"
+    },
+    {
+      "company_name": "Wavo",
+      "career_page_url": "https://wavo.bamboohr.com/careers"
+    }
+  ],
+  "insertion_date": "2026-10-26",
+  "collection_date": "2026-10-27",
+  "business_csv_prefix_bytes": 38827,
+  "business_csv_prefix_sha256": "0a9e41b6b3d8eb968e6b2716bc27f78afee481b4ea1e9a6935971ec5e3abb738",
+  "job_csv_prefix_bytes": 12291510,
+  "job_csv_prefix_sha256": "926bd6efdb9e053a838289ff96151a836261f7864779a16558a3fa5528198bb2"
+}

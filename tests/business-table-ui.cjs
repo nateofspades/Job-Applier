@@ -89,7 +89,7 @@ test('dragging columns preserves all row values, semantic widths, saved order an
     await page.setViewportSize({ width: 390, height: 844 });
     await geometry(page);
     assert.equal(await page.locator('td[data-column="career_page_url"]').first().evaluate(cell => getComputedStyle(cell).minWidth), '250px');
-    assert.equal(await page.locator('td[data-column="company_name"]').first().evaluate(cell => getComputedStyle(cell).fontWeight), '700');
+    assert.equal(await page.locator('td[data-column="company_name"]').first().evaluate(cell => getComputedStyle(cell).fontWeight), '400');
     await page.click('#column-order-reset');
     assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn));
     assert.equal(await page.evaluate(key => localStorage.getItem(key), storageKey), null);

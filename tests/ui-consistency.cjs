@@ -87,7 +87,7 @@ async function assertRows(page, route, expected) {
     assert.equal(await page.locator('#status').textContent(), `${expected.length.toLocaleString()} of ${jobs.length.toLocaleString()} jobs`);
   } else {
     assert.deepEqual(await page.locator('tbody tr:not([hidden])').evaluateAll(rows => rows.map(row => row.id)), expected.map(row => row.business_id));
-    assert.equal(await page.locator('#count').textContent(), expected.length === businesses.length ? `${businesses.length.toLocaleString()} businesses` : `${expected.length.toLocaleString()} of ${businesses.length.toLocaleString()} businesses`);
+    assert.equal(await page.locator('#count').textContent(), `${expected.length.toLocaleString()} of ${businesses.length.toLocaleString()} businesses`);
   }
 }
 async function assertDefault(page, ids) {
@@ -97,6 +97,54 @@ async function assertDefault(page, ids) {
     assert.equal(await inputs.evaluateAll(options => options.every(option => option.checked)), true, `${id}: all options selected`);
   }
 }
+test('Business Listings always includes the total in its result count', async () => {
+  const page = await openPage('Business-Listings');
+  try {
+    await assertRows(page, 'Business-Listings', businesses);
+    await page.fill('#search', businesses[0].business_id);
+    await assertRows(page, 'Business-Listings', [businesses[0]]);
+    await page.fill('#search', 'no-matching-business-count-regression');
+    await assertRows(page, 'Business-Listings', []);
+    await page.click('#reset');
+    await assertRows(page, 'Business-Listings', businesses);
+    await choose(page, 'company', []);
+    await assertRows(page, 'Business-Listings', []);
+    const details = await toggle(page, 'company', true);
+    await details.getByRole('button', { name: 'Select all', exact: true }).click();
+    await toggle(page, 'company', false);
+    await assertRows(page, 'Business-Listings', businesses);
+    assert.deepEqual(page.errors, []);
+  } finally { await page.close(); }
+});
+for (const route of ['Business-Listings', 'Job-Listings']) {
+  test(`${route} company values use normal weight without weakening counts or headers`, async () => {
+    const page = await openPage(route);
+    try {
+      const cells = page.locator('#table-wrap tbody td[data-column="company_name"]');
+      assert(await cells.count() > 0);
+      assert.deepEqual(await cells.evaluateAll(elements => [...new Set(elements.map(cell => getComputedStyle(cell).fontWeight))]), ['400']);
+      const count = page.locator(route === 'Job-Listings' ? '#status' : '#count');
+      assert.equal(await count.evaluate(element => getComputedStyle(element).fontWeight), '700');
+      for (const selector of ['#sticky-head [data-column="company_name"]', '#table-wrap thead [data-column="company_name"]']) {
+        assert.equal(await page.locator(selector).evaluate(element => getComputedStyle(element).fontWeight), '600');
+      }
+      assert.deepEqual(page.errors, []);
+    } finally { await page.close(); }
+  });
+}
+test('Job Listings job_title values use normal weight while title headers stay bold', async () => {
+  const page = await openPage('Job-Listings');
+  try {
+    const cells = page.locator('#results td[data-column="job_title"]');
+    assert.equal(await cells.count(), jobs.length);
+    assert.deepEqual(await cells.evaluateAll(elements => [...new Set(elements.map(cell => getComputedStyle(cell).fontWeight))]), ['400']);
+    for (const selector of ['#sticky-head [data-column="job_title"]', '#head [data-column="job_title"]']) {
+      assert.equal(await page.locator(selector).evaluate(element => getComputedStyle(element).fontWeight), '600');
+    }
+    assert.equal(await page.locator('#status').evaluate(element => getComputedStyle(element).fontWeight), '700');
+    assert.deepEqual(page.errors, []);
+  } finally { await page.close(); }
+});
 test('both listing pages load the shared stylesheet and native checkbox filters', async () => {
   for (const route of ['Business-Listings', 'Job-Listings']) {
     const page = await openPage(route);

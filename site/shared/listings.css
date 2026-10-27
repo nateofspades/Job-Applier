@@ -36,9 +36,9 @@ tr:hover td{background:#f8faf7}
 td.empty{color:#7e8a83}
 .date-added-to-dataset{min-width:210px;width:210px;white-space:nowrap;overflow-wrap:normal}
 .experience-level{min-width:170px;white-space:nowrap;overflow-wrap:normal}
-td.title{min-width:290px;font-weight:600}
+td.title{min-width:290px;font-weight:400}
 td.summary{min-width:370px;max-width:480px}
-td.company{min-width:180px;font-weight:700}
+td.company{min-width:180px;font-weight:400}
 td.salary{min-width:210px}
 td.details-list{min-width:430px;max-width:620px}
 td.details-list ul{margin:0;padding:0 8px 0 18px;max-height:260px;overflow:auto;overscroll-behavior:contain}

@@ -19,7 +19,7 @@
    row.element.hidden=!companies.has(row.company)||!providers.has(row.provider)||!row.searchText.includes(query);
    if(!row.element.hidden)count++;
   }
-  document.getElementById('count').textContent=count===rows.length?`${count.toLocaleString()} businesses`:`${count.toLocaleString()} of ${rows.length.toLocaleString()} businesses`;
+  document.getElementById('count').textContent=`${count.toLocaleString()} of ${rows.length.toLocaleString()} businesses`;
   document.getElementById('empty').hidden=count!==0;
  }
  const options=key=>[...new Set(rows.map(row=>row[key]))].sort().map(value=>({value,label:value||'Not specified'}));

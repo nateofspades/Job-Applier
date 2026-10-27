@@ -2,7 +2,7 @@
 .business-page #sticky-head>[data-column]{flex:none;padding:14px 16px}
 .business-page #sticky-head>.drop-target{box-shadow:inset 3px 0 var(--accent)}
 #table-wrap td[data-column="business_id"]{min-width:350px}
-#table-wrap td[data-column="company_name"]{font-weight:700;min-width:180px}
+#table-wrap td[data-column="company_name"]{font-weight:400;min-width:180px}
 #table-wrap td[data-column="company_description"]{min-width:340px}
 #table-wrap td[data-column="industries"]{min-width:260px}
 #table-wrap td[data-column="country"]{min-width:110px}
