@@ -82,12 +82,13 @@ class PublicationTests(unittest.TestCase):
         self.assertNotIn('https://nateofspades.github.io/Job-Applier/)', (ROOT / 'README.md').read_text())
 
     def test_dataset_dates_are_populated(self):
-        for name, filename, count in [('business', 'Business-Listings/Business_Listings.csv', 153), ('job', 'Job-Listings/Job_Listings.csv', 1318)]:
+        for name, filename, count, migrated in [('business', 'Business-Listings/Business_Listings.csv', 153, 109), ('job', 'Job-Listings/Job_Listings.csv', 1318, 1093)]:
             with self.subTest(dataset=name):
-                records = csv_rows(SITE / filename)[:count]
+                records = csv_rows(SITE / filename)
                 self.assertEqual(len(records), count)
                 self.assertTrue(all(row['date_added_to_dataset'] for row in records))
-                self.assertTrue(any(row['date_added_to_dataset'] == '2026-09-04' for row in records))
+                self.assertFalse(any(row['date_added_to_dataset'] == '2026-09-04' for row in records))
+                self.assertEqual(sum(row['date_added_to_dataset'] == '2026-09-30' for row in records), migrated)
 
     def test_download_aliases_match(self):
         for name, canonical, alias in [
