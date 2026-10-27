@@ -108,6 +108,8 @@ class PublicationTests(unittest.TestCase):
     def test_public_site_has_only_expected_assets(self):
         expected = {
             'index.html', '.nojekyll',
+            'shared/listings.css', 'shared/checkbox-filter.js',
+            'Business-Listings/business.js',
             'Business-Listings/Business_Listings.csv', 'Business-Listings/Business_Spreadsheet.csv',
             'Business-Listings/index.html', 'Business-Listings/table-controls.css', 'Business-Listings/table-controls.js',
             'Job-Listings/Job_Filters.csv', 'Job-Listings/Job_Listings.csv',

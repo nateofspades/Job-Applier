@@ -1,27 +1,11 @@
-.dataset-sticky{position:sticky;top:0;z-index:5;background:#f5f6f3}
-.table-top-scroll{overflow-x:scroll;overflow-y:hidden;height:20px;max-width:100%;background:#e9eee9;scrollbar-color:#71877c #e9eee9}
-.table-top-scroll>div{height:1px}
-.table-top-scroll::-webkit-scrollbar{height:14px}
-.table-top-scroll::-webkit-scrollbar-thumb{background:#71877c;border-radius:7px}
-.table-top-scroll::-webkit-scrollbar-track{background:#e9eee9}
-.table-top-scroll:focus-visible,.table-wrap:focus-visible{outline:3px solid #b4691d;outline-offset:2px}
-.table-sticky-head{overflow:hidden;background:#e9eee9;border:1px solid #d5ddd7;border-bottom:0}
-#sticky-head{display:flex;width:max-content}
-#sticky-head>[data-column]{flex:none;padding:18px 16px;font:600 13px monospace;white-space:nowrap;border-bottom:1px solid #e0e6e1}
-.table-wrap{border-radius:0 0 6px 6px}
-#table-wrap table{border-collapse:separate;border-spacing:0}
-.visually-hidden-header{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.business-page #sticky-head{display:flex;width:max-content}
+.business-page #sticky-head>[data-column]{flex:none;padding:14px 16px}
+.business-page #sticky-head>.drop-target{box-shadow:inset 3px 0 var(--accent)}
 #table-wrap td[data-column="business_id"]{min-width:350px}
-#table-wrap td[data-column="company_name"]{font-weight:bold;min-width:180px}
-#table-wrap td[data-column="company_description"]{min-width:340px;line-height:1.5}
+#table-wrap td[data-column="company_name"]{font-weight:700;min-width:180px}
+#table-wrap td[data-column="company_description"]{min-width:340px}
 #table-wrap td[data-column="industries"]{min-width:260px}
-#table-wrap td[data-column="country"]{min-width:100px}
+#table-wrap td[data-column="country"]{min-width:110px}
 #table-wrap td[data-column="city"]{min-width:130px}
-#table-wrap td[data-column="career_page_url"]{font-size:14px;min-width:250px;overflow-wrap:anywhere}
+#table-wrap td[data-column="career_page_url"]{min-width:250px;overflow-wrap:anywhere}
 #table-wrap td[data-column="ats_provider"]{min-width:180px;overflow-wrap:anywhere}
-.table-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:16px 0}
-.table-toolbar p{margin:0;font-size:14px}
-.table-toolbar button{width:auto;cursor:pointer}
-#sticky-head>[draggable="true"]{cursor:grab;user-select:none}
-#sticky-head>.dragging{opacity:.5}
-#sticky-head>.drop-target{box-shadow:inset 3px 0 #145b46}

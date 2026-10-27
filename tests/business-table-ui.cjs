@@ -9,6 +9,7 @@ const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..', 'site');
 const businessCount = JSON.parse(execFileSync('python3', ['-c', 'import csv,json,sys; print(json.dumps(list(csv.DictReader(sys.stdin))))'], { input: fs.readFileSync(path.join(root, 'Business-Listings/Business_Listings.csv')) })).length;
 const columns = ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset'];
+const displayColumn = key => ({ company_name: 'company', ats_provider: 'ats' })[key] || key;
 const storageKey = 'business-listings-column-order-v1';
 let server, browser, origin;
 before(async () => {
@@ -64,15 +65,16 @@ test('dragging columns preserves all row values, semantic widths, saved order an
     const original = await page.locator('#table-wrap tbody tr').evaluateAll(rows => rows.map(row => ({ id: row.id, cells: Object.fromEntries([...row.cells].map(cell => [cell.dataset.column, cell.textContent])) })));
     await drag(page, 'company_name', 'business_id');
     const order = ['company_name', 'business_id', ...columns.slice(2)];
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order);
-    assert.deepEqual(await page.locator('#table-wrap thead th').allTextContents(), order);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order.map(displayColumn));
+    assert.deepEqual(await page.locator('#table-wrap thead th').allTextContents(), order.map(displayColumn));
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').evaluateAll(headers => headers.map(header => header.dataset.column)), order);
     assert.deepEqual(await page.locator('#table-wrap tbody tr').evaluateAll(rows => rows.map(row => ({ id: row.id, cells: Object.fromEntries([...row.cells].map(cell => [cell.dataset.column, cell.textContent])) }))), original);
     await geometry(page);
     await page.reload();
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order.map(displayColumn));
     await page.evaluate(() => { document.querySelector('#table-top-scroll').scrollLeft = 0; window.scrollTo(0, 1400); });
     await drag(page, 'business_id', 'company_name');
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns, 'dragging works while headers are frozen');
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn), 'dragging works while headers are frozen');
     await page.evaluate(() => document.querySelector('#table-top-scroll').scrollLeft = 10000);
     await settled(page);
     await page.evaluate(() => {
@@ -82,14 +84,14 @@ test('dragging columns preserves all row values, semantic widths, saved order an
       from.dispatchEvent(new DragEvent('dragstart', { bubbles: true, dataTransfer }));
       to.dispatchEvent(new DragEvent('drop', { bubbles: true, cancelable: true, dataTransfer }));
     });
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), [columns[8], ...columns.slice(0, 8)]);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), [columns[8], ...columns.slice(0, 8)].map(displayColumn));
     await geometry(page);
     await page.setViewportSize({ width: 390, height: 844 });
     await geometry(page);
     assert.equal(await page.locator('td[data-column="career_page_url"]').first().evaluate(cell => getComputedStyle(cell).minWidth), '250px');
     assert.equal(await page.locator('td[data-column="company_name"]').first().evaluate(cell => getComputedStyle(cell).fontWeight), '700');
     await page.click('#column-order-reset');
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn));
     assert.equal(await page.evaluate(key => localStorage.getItem(key), storageKey), null);
     await geometry(page);
     assert.deepEqual(page.errors, []);
@@ -99,7 +101,12 @@ test('filters, empty results, mobile resizing and byte-identical CSV downloads s
   const page = await openPage();
   try {
     await drag(page, 'company_name', 'business_id');
-    await page.getByLabel('ATS system', { exact: true }).selectOption('Greenhouse');
+    const ats = page.locator('#ats details');
+    assert.equal(await ats.locator('summary[aria-label="ATS"]').count(), 1);
+    await ats.locator('summary').click();
+    await ats.getByRole('button', { name: 'Clear all', exact: true }).click();
+    await ats.getByRole('checkbox', { name: 'Greenhouse', exact: true }).check();
+    await ats.locator('summary').click();
     await page.fill('#search', 'Coveo');
     assert.equal(await page.locator('#table-wrap tbody tr:visible').count(), 1);
     assert.equal(await page.locator('#count').textContent(), `1 of ${businessCount} businesses`);
@@ -109,7 +116,8 @@ test('filters, empty results, mobile resizing and byte-identical CSV downloads s
     assert(await page.locator('#empty').isVisible());
     await page.click('#reset');
     assert.equal(await page.locator('#table-wrap tbody tr:visible').count(), businessCount);
-    assert.equal(await page.locator('#sticky-head [data-column]').first().textContent(), 'company_name', 'filter reset does not discard column preferences');
+    assert.equal(await page.locator('#sticky-head [data-column]').first().textContent(), 'company', 'filter reset does not discard column preferences');
+    assert.equal(await page.locator('#sticky-head [data-column]').first().getAttribute('data-column'), 'company_name');
     await geometry(page);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 844 });
@@ -133,16 +141,16 @@ test('invalid saved orders fall back to defaults and unavailable storage does no
     for (const saved of ['bad-json', '{}', JSON.stringify(columns.slice(1)), JSON.stringify([...columns.slice(1), columns[1]]), JSON.stringify([...columns.slice(1), 'unknown_column'])]) {
       await page.evaluate(({ key, value }) => localStorage.setItem(key, value), { key: storageKey, value: saved });
       await page.reload();
-      assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns);
+      assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn));
     }
     assert.deepEqual(page.errors, []);
   } finally { await page.close(); }
   const blocked = await openPage({ blockStorage: true });
   try {
     await drag(blocked, 'company_name', 'business_id');
-    assert.equal(await blocked.locator('#sticky-head [data-column]').first().textContent(), 'company_name');
+    assert.equal(await blocked.locator('#sticky-head [data-column]').first().textContent(), 'company');
     await blocked.click('#column-order-reset');
-    assert.deepEqual(await blocked.locator('#sticky-head [data-column]').allTextContents(), columns);
+    assert.deepEqual(await blocked.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn));
     assert.deepEqual(blocked.errors, []);
   } finally { await blocked.close(); }
 });

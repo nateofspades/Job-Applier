@@ -11,6 +11,15 @@ const businessCSV = fs.readFileSync(path.join(root, 'site/Business-Listings/Busi
 const businessRows = JSON.parse(execFileSync('python3', ['-c', 'import csv,json,sys; print(json.dumps(list(csv.DictReader(sys.stdin))))'], { input: businessCSV }));
 const jobs = JSON.parse(fs.readFileSync(path.join(root, 'site/Job-Listings/jobs.json'))).jobs;
 const report = { origin, prefix, businesses: businessRows.length, jobs: jobs.length, checks: [] };
+const displayColumn = key => ({ company_name: 'company', ats_provider: 'ats' })[key] || key;
+async function choose(page, id, values) {
+  const details = page.locator(`#${id} details`);
+  assert.equal(await details.count(), 1, `${id} is a native checkbox dropdown`);
+  if (!(await details.evaluate(element => element.open))) await details.locator('summary').click();
+  await details.getByRole('button', { name: 'Clear all', exact: true }).click();
+  for (const value of values) await details.locator(`input[type="checkbox"][value=${JSON.stringify(value)}]`).check();
+  await details.locator('summary').click();
+}
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
@@ -25,7 +34,9 @@ const report = { origin, prefix, businesses: businessRows.length, jobs: jobs.len
     const response = await page.goto(origin + prefix + '/Business-Listings/');
     assert.equal(response.status(), 200);
     assert.equal(await page.locator('tbody tr').count(), businessRows.length);
-    assert.deepEqual(await page.locator('thead th').allTextContents(), ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset']);
+    const businessColumns = ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset'];
+    assert.deepEqual(await page.locator('thead th').allTextContents(), businessColumns.map(displayColumn));
+    assert.deepEqual(await page.locator('thead th').evaluateAll(headers => headers.map(header => header.dataset.column)), businessColumns);
     assert.deepEqual(await page.locator('tbody tr').evaluateAll(rows => rows.map(row => [...row.cells].map(cell => cell.textContent))), businessRows.map(row => Object.entries(row).map(([key, value]) => key === 'ats_provider' && !value ? 'Not verified' : value)));
     // Exercise the real input handler for every ID without a cross-process
     // actionability/layout round trip per row on the shared small host.
@@ -56,10 +67,12 @@ const report = { origin, prefix, businesses: businessRows.length, jobs: jobs.len
     const jobResponse = await page.goto(origin + prefix + '/Job-Listings/');
     assert.equal(jobResponse.status(), 200);
     await page.waitForFunction(count => document.querySelectorAll('#results tr').length === count, jobs.length);
-    assert.deepEqual(await page.locator('#sticky-head th').allTextContents(), ['job_url', 'company_name', 'job_title', 'job_experience_level', 'job_category', 'city', 'country', 'remote_policy', 'is_fulltime', 'salary', 'date_posted', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'job_id', 'ats_provider', 'date_added_to_dataset']);
+    const jobColumns = ['job_url', 'company_name', 'job_title', 'job_experience_level', 'job_category', 'city', 'country', 'remote_policy', 'is_fulltime', 'salary', 'date_posted', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'job_id', 'ats_provider', 'date_added_to_dataset'];
+    assert.deepEqual(await page.locator('#sticky-head th').allTextContents(), jobColumns.map(displayColumn));
+    assert.deepEqual(await page.locator('#sticky-head th').evaluateAll(headers => headers.map(header => header.dataset.column)), jobColumns);
     assert.equal(await page.locator('#sticky-head th[draggable="true"]').count(), 18);
     assert.deepEqual(await page.locator('#results tr td:first-child a').evaluateAll(links => links.map(a => a.href)), jobs.map(job => job.job_url));
-    const companyValues = await page.locator('#company option').evaluateAll(options => options.map(option => option.value).filter(Boolean).sort());
+    const companyValues = await page.locator('#company input[type="checkbox"]').evaluateAll(options => options.map(option => option.value).filter(Boolean).sort());
     assert.deepEqual(companyValues, [...new Set(jobs.map(job => job.company_name))].sort());
     const rendered = await page.locator('#results tr').evaluateAll(rows => rows.map(row => ({
       title: row.querySelector('.title').textContent,
@@ -74,23 +87,20 @@ const report = { origin, prefix, businesses: businessRows.length, jobs: jobs.len
     report.checks.push('Job page: every posting link, title, business, responsibility and qualification list matches JSON');
     console.log(report.checks.at(-1));
     for (const company of [companyValues[0], companyValues.at(-1)]) {
-      await page.selectOption('#company', company);
+      await choose(page, 'company', [company]);
       assert.equal(await page.locator('#results tr').count(), jobs.filter(row => row.company_name === company).length);
     }
     await page.click('#reset');
-    const category = jobs.find(row => row.job_category).job_category;
-    await page.selectOption('#category', category);
-    assert.equal(await page.locator('#results tr').count(), jobs.filter(row => row.job_category === category).length);
-    await page.click('#reset');
+    assert.equal(await page.locator('#category').count(), 0, 'job_category is retained as a column, not a filter');
     for (const policy of ['remote', 'hybrid', 'in-office', 'unknown']) {
       await page.selectOption('#remote', policy);
       const expected = jobs.filter(row => policy === 'unknown' ? !row.remote_policy : row.remote_policy.split(';').map(value => value.trim()).includes(policy)).length;
       assert.equal(await page.locator('#results tr').count(), expected);
     }
     await page.click('#reset');
-    await page.check('input[data-level][value="entry-level / junior"]');
+    await choose(page, 'experience-levels', ['entry-level / junior']);
     assert.equal(await page.locator('#results tr').count(), jobs.filter(row => row.job_experience_level.split('; ').includes('entry-level / junior')).length);
-    await page.check('#experience-unspecified');
+    await choose(page, 'experience-levels', ['entry-level / junior', '']);
     assert.equal(await page.locator('#results tr').count(), jobs.filter(row => !row.job_experience_level || row.job_experience_level.split('; ').includes('entry-level / junior')).length);
     await page.click('#reset');
     await page.fill('#query', jobs.at(-1).job_id);
@@ -108,7 +118,7 @@ const report = { origin, prefix, businesses: businessRows.length, jobs: jobs.len
     const download = await downloadPromise;
     assert.equal(download.suggestedFilename(), 'Job_Listings.csv');
     assert.deepEqual(fs.readFileSync(await download.path()), fs.readFileSync(path.join(root, 'site/Job-Listings/Job_Listings.csv')));
-    report.checks.push('Job filters: company/category/all remote policies/junior+unknown/ID/empty/reset, saved advertisement panel, actual CSV download');
+    report.checks.push('Job filters: company checkbox dropdown/all remote policies/junior+unspecified/ID/empty/reset, saved advertisement panel, actual CSV download');
     console.log(report.checks.at(-1));
     await page.evaluate(() => window.scrollTo(0, 1400));
     await page.waitForFunction(() => document.querySelector('#dataset-sticky').getBoundingClientRect().top < 2);
