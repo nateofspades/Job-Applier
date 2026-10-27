@@ -13,8 +13,8 @@ const prefix = process.env.PREVIEW_PREFIX || '';
 const snapshot = JSON.parse(fs.readFileSync(path.join(root, 'Job-Listings/jobs.json')));
 const businesses = JSON.parse(execFileSync('python3', ['-c', 'import csv,json,sys; print(json.dumps(list(csv.DictReader(sys.stdin))))'], { input: fs.readFileSync(path.join(root, 'Business-Listings/Business_Listings.csv')) }));
 const levels = ['internship', 'entry-level / junior', 'mid-level / intermediate', 'senior', 'lead', 'staff', 'principal', 'manager', 'director', 'executive'];
-const businessColumns = Object.keys(businesses[0]);
-const jobColumns = ['job_url', 'company_name', 'job_title', 'job_experience_level', 'job_category', 'city', 'country', 'remote_policy', 'is_fulltime', 'salary', 'date_posted', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'job_id', 'ats_provider', 'date_added_to_dataset'];
+const businessColumns = ['company_name','career_page_url','ats_provider','company_description','industries','city','country','date_added_to_dataset','business_id'];
+const jobColumns = ['job_url', 'job_title', 'company_name', 'ats_provider', 'job_category', 'remote_policy', 'job_experience_level', 'is_fulltime', 'salary', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'city', 'country', 'date_posted', 'date_added_to_dataset', 'job_id'];
 const displayColumn = key => ({ company_name: 'company', ats_provider: 'ats' })[key] || key;
 const split = value => (value || '').split(';').map(token => token.trim()).filter(Boolean);
 // Diversity, not invented data: first records plus actual examples of every
@@ -149,7 +149,7 @@ test('both listing pages load the shared stylesheet and native checkbox filters'
   for (const route of ['Business-Listings', 'Job-Listings']) {
     const page = await openPage(route);
     try {
-      for (const [id, label] of [['company', 'Company'], ['ats', 'ATS'], ...(route === 'Job-Listings' ? [['experience-levels', 'Experience level']] : [])]) {
+      for (const [id, label] of [['company', 'Company'], ['ats', 'ATS'], ...(route === 'Job-Listings' ? [['remote', 'Remote policy'], ['experience-levels', 'Experience level']] : [])]) {
         assert.equal(await page.locator(`div#${id} details summary[aria-label="${label}"]`).count(), 1, `${route}: ${label} is inside its stable div host`);
         const details = await toggle(page, id, true);
         assert.equal(await details.getByRole('button', { name: 'Select all', exact: true }).count(), 1);
@@ -180,7 +180,7 @@ test('both listing pages load the shared stylesheet and native checkbox filters'
         assert.deepEqual(await page.locator('#experience-levels input[type="checkbox"]').evaluateAll(inputs => inputs.map(input => input.value)), [...levels, '']);
         assert.deepEqual(await page.locator('#results tr td:first-child a').allTextContents(), jobs.map(() => 'View posting'));
       }
-      await assertDefault(page, ['company', 'ats', ...(route === 'Job-Listings' ? ['experience-levels'] : [])]);
+      await assertDefault(page, ['company', 'ats', ...(route === 'Job-Listings' ? ['remote', 'experience-levels'] : [])]);
       assert.deepEqual(page.errors, []);
     } finally { await page.close(); }
   }
@@ -244,7 +244,7 @@ test('checkbox filters union within a filter, intersect between filters, select 
       await assertRows(page, route, rows.filter(row => providers.includes(row.ats_provider || '')));
       await page.click('#reset');
       await assertRows(page, route, rows);
-      await assertDefault(page, ['company', 'ats', ...(route === 'Job-Listings' ? ['experience-levels'] : [])]);
+      await assertDefault(page, ['company', 'ats', ...(route === 'Job-Listings' ? ['remote', 'experience-levels'] : [])]);
       // Blank is an actual unspecified value, never an all-values sentinel.
       await choose(page, 'ats', ['']);
       await assertRows(page, route, rows.filter(row => !row.ats_provider));
@@ -273,7 +273,7 @@ test('experience vocabulary, blank-only, union, none and Company/ATS/remote/sear
     await choose(page, 'company', [row.company_name]);
     await choose(page, 'ats', [row.ats_provider || '']);
     await choose(page, 'experience-levels', [level]);
-    await page.selectOption('#remote', policy);
+    await choose(page, 'remote', [policy]);
     await assertRows(page, 'Job-Listings', jobs.filter(candidate => candidate.company_name === row.company_name && candidate.ats_provider === row.ats_provider && split(candidate.job_experience_level).includes(level) && split(candidate.remote_policy).includes(policy)));
     await page.fill('#query', row.job_id);
     await assertRows(page, 'Job-Listings', [row]);
@@ -281,8 +281,7 @@ test('experience vocabulary, blank-only, union, none and Company/ATS/remote/sear
     await assertRows(page, 'Job-Listings', []);
     await page.click('#reset');
     assert.equal(await page.locator('#query').inputValue(), '');
-    assert.equal(await page.locator('#remote').inputValue(), '');
-    await assertDefault(page, ['company', 'ats', 'experience-levels']);
+    await assertDefault(page, ['company', 'ats', 'remote', 'experience-levels']);
     await assertRows(page, 'Job-Listings', jobs);
     assert.deepEqual(page.errors, []);
   } finally { await page.close(); }
@@ -291,7 +290,7 @@ test('mobile dropdowns stay clamped, expose accessible labels, and close with Es
   for (const route of ['Business-Listings', 'Job-Listings']) {
     const page = await openPage(route, 390);
     try {
-      for (const [id, label] of [['company', 'Company'], ['ats', 'ATS'], ...(route === 'Job-Listings' ? [['experience-levels', 'Experience level']] : [])]) {
+      for (const [id, label] of [['company', 'Company'], ['ats', 'ATS'], ...(route === 'Job-Listings' ? [['remote', 'Remote policy'], ['experience-levels', 'Experience level']] : [])]) {
         const details = page.locator(`#${id} details`), summary = details.locator('summary');
         assert.equal(await summary.getAttribute('aria-label'), label);
         await summary.focus();

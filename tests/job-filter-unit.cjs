@@ -22,6 +22,13 @@ test('query, scalar compatibility and remote aliases remain unchanged', () => {
   assert.deepEqual(indexes({ companies: ['Alpha', 'Beta'], company: 'Alpha', atsProviders: ['', 'Workday'], category: 'Engineering', levels: ['Senior'], remote: 'remote' }), [0]);
 });
 
+test('remote policy selection combines aliases, multiple choices, and unspecified values', () => {
+  assert.deepEqual(indexes({ remotePolicies: ['remote', 'in-office'] }), [0, 1, 3]);
+  assert.deepEqual(indexes({ remotePolicies: ['hybrid', ''] }), [0, 2, 4]);
+  assert.deepEqual(indexes({ remotePolicies: [] }), []);
+  assert.deepEqual(indexes({ remotePolicies: ['remote'], companies: ['Beta'] }), []);
+});
+
 test('filtering full English source records preserves references, fields and source bytes', () => {
   const fs = require('node:fs');
   const path = require('node:path');

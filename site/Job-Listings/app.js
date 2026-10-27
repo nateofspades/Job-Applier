@@ -1,10 +1,10 @@
 'use strict';
-const defaultColumns=["job_url", "company_name", "job_title", "job_experience_level", "job_category", "city", "country", "remote_policy", "is_fulltime", "salary", "date_posted", "job_summary", "job_responsibilities", "experience_required", "full_job_post", "job_id", "ats_provider", "date_added_to_dataset"];
+const defaultColumns=['job_url','job_title','company_name','ats_provider','job_category','remote_policy','job_experience_level','is_fulltime','salary','job_summary','job_responsibilities','experience_required','full_job_post','city','country','date_posted','date_added_to_dataset','job_id'];
 const columnLabels={company_name:'company',ats_provider:'ats'};
 const columnOrderStorageKey='job-listings-column-order-v1';
 const $=id=>document.getElementById(id);
 let rows=[],filtered=[],columns=loadColumnOrder(),draggedColumn=null;
-let companyFilter,atsFilter,experienceFilter,resettingFilters=false;
+let companyFilter,atsFilter,remoteFilter,experienceFilter,resettingFilters=false;
 
 function loadColumnOrder(){
  try{
@@ -44,10 +44,10 @@ function renderHeader(){
  $('sticky-head').replaceChildren(makeHeader(true));
 }
 function render(){
- if(resettingFilters||!companyFilter||!atsFilter||!experienceFilter)return;
+ if(resettingFilters||!companyFilter||!atsFilter||!remoteFilter||!experienceFilter)return;
  const levels=experienceFilter.values();
  filtered=JobFilters.selectRows(rows,{
-  query:$('query').value,remote:$('remote').value,
+  query:$('query').value,remotePolicies:remoteFilter.values(),
   companies:companyFilter.values(),atsProviders:atsFilter.values(),
   levels:levels.filter(Boolean),includeUnspecified:levels.includes(''),levelsActive:true
  });
@@ -81,13 +81,14 @@ async function start(){
   const atsOptions=options('ats_provider');
   if(!atsOptions.some(option=>option.value===''))atsOptions.push({value:'',label:'Not specified'});
   atsFilter=CheckboxFilter.create($('ats'),{label:'ATS',options:atsOptions,selected:'all',onChange:render});
+  remoteFilter=CheckboxFilter.create($('remote'),{label:'Remote policy',options:['in-office','remote','hybrid',''].map(value=>({value,label:value||'Not specified'})),selected:'all',onChange:render});
   const levels=['internship','entry-level / junior','mid-level / intermediate','senior','lead','staff','principal','manager','director','executive',''];
   experienceFilter=CheckboxFilter.create($('experience-levels'),{label:'Experience level',options:levels.map(value=>({value,label:value||'Not specified'})),selected:'all',onChange:render});
-  for(const id of ['query','remote'])$(id).addEventListener('input',render);
+  $('query').addEventListener('input',render);
   $('reset').addEventListener('click',()=>{
    resettingFilters=true;
-   $('query').value='';$('remote').value='';
-   companyFilter.reset();atsFilter.reset();experienceFilter.reset();
+   $('query').value='';
+   companyFilter.reset();atsFilter.reset();remoteFilter.reset();experienceFilter.reset();
    resettingFilters=false;render();
   });
   $('column-order-reset').addEventListener('click',()=>{columns=[...defaultColumns];try{localStorage.removeItem(columnOrderStorageKey);}catch{/* Reset still works without storage. */}render();});

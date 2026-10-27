@@ -41,7 +41,7 @@ jobs:
           python3 -m http.server 18766 --bind 127.0.0.1 --directory "$preview_root" > "$RUNNER_TEMP/listings-http.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"; rm -rf "$preview_root"' EXIT
-          curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:18766/Job-Applier/index.html > /dev/null
+          curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:18766/Job-Applier/Business-Listings/ > /dev/null
           PREVIEW_ORIGIN=http://127.0.0.1:18766/Job-Applier npm run test:browser
 
   deploy:

@@ -12,7 +12,7 @@
   for (const row of tableRows) [...row.cells].forEach((cell, index) => {
     cell.dataset.column = sourceHeaders[index].dataset.column;
   });
-  const defaultColumns = sourceHeaders.map(header => header.dataset.column);
+  const defaultColumns = ['company_name', 'career_page_url', 'ats_provider', 'company_description', 'industries', 'city', 'country', 'date_added_to_dataset', 'business_id'];
   const storageKey = 'business-listings-column-order-v1';
   let columns = [...defaultColumns];
   let draggedColumn = null;

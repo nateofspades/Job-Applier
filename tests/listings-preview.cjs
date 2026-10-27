@@ -34,10 +34,10 @@ async function choose(page, id, values) {
     const response = await page.goto(origin + prefix + '/Business-Listings/');
     assert.equal(response.status(), 200);
     assert.equal(await page.locator('tbody tr').count(), businessRows.length);
-    const businessColumns = ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset'];
+    const businessColumns = ['company_name', 'career_page_url', 'ats_provider', 'company_description', 'industries', 'city', 'country', 'date_added_to_dataset', 'business_id'];
     assert.deepEqual(await page.locator('thead th').allTextContents(), businessColumns.map(displayColumn));
     assert.deepEqual(await page.locator('thead th').evaluateAll(headers => headers.map(header => header.dataset.column)), businessColumns);
-    assert.deepEqual(await page.locator('tbody tr').evaluateAll(rows => rows.map(row => [...row.cells].map(cell => cell.textContent))), businessRows.map(row => Object.entries(row).map(([key, value]) => key === 'ats_provider' && !value ? 'Not verified' : value)));
+    assert.deepEqual(await page.locator('tbody tr').evaluateAll(rows => rows.map(row => [...row.cells].map(cell => cell.textContent))), businessRows.map(row => businessColumns.map(key => key === 'ats_provider' && !row[key] ? 'Not verified' : row[key])));
     // Exercise the real input handler for every ID without a cross-process
     // actionability/layout round trip per row on the shared small host.
     const searchResults = await page.evaluate(ids => {
@@ -46,7 +46,7 @@ async function choose(page, id, values) {
         input.value = id;
         input.dispatchEvent(new Event('input', { bubbles: true }));
         const visible = [...document.querySelectorAll('tbody tr')].filter(row => !row.hidden);
-        return { id, matches: visible.length, company: visible[0]?.cells[1].textContent };
+        return { id, matches: visible.length, company: visible[0]?.querySelector('[data-column="company_name"]').textContent };
       });
     }, businessRows.map(row => row.business_id));
     assert.deepEqual(searchResults, businessRows.map(row => ({ id: row.business_id, matches: 1, company: row.company_name })));
@@ -67,7 +67,7 @@ async function choose(page, id, values) {
     const jobResponse = await page.goto(origin + prefix + '/Job-Listings/');
     assert.equal(jobResponse.status(), 200);
     await page.waitForFunction(count => document.querySelectorAll('#results tr').length === count, jobs.length);
-    const jobColumns = ['job_url', 'company_name', 'job_title', 'job_experience_level', 'job_category', 'city', 'country', 'remote_policy', 'is_fulltime', 'salary', 'date_posted', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'job_id', 'ats_provider', 'date_added_to_dataset'];
+    const jobColumns = ['job_url', 'job_title', 'company_name', 'ats_provider', 'job_category', 'remote_policy', 'job_experience_level', 'is_fulltime', 'salary', 'job_summary', 'job_responsibilities', 'experience_required', 'full_job_post', 'city', 'country', 'date_posted', 'date_added_to_dataset', 'job_id'];
     assert.deepEqual(await page.locator('#sticky-head th').allTextContents(), jobColumns.map(displayColumn));
     assert.deepEqual(await page.locator('#sticky-head th').evaluateAll(headers => headers.map(header => header.dataset.column)), jobColumns);
     assert.equal(await page.locator('#sticky-head th[draggable="true"]').count(), 18);
@@ -92,9 +92,9 @@ async function choose(page, id, values) {
     }
     await page.click('#reset');
     assert.equal(await page.locator('#category').count(), 0, 'job_category is retained as a column, not a filter');
-    for (const policy of ['remote', 'hybrid', 'in-office', 'unknown']) {
-      await page.selectOption('#remote', policy);
-      const expected = jobs.filter(row => policy === 'unknown' ? !row.remote_policy : row.remote_policy.split(';').map(value => value.trim()).includes(policy)).length;
+    for (const policy of ['remote', 'hybrid', 'in-office', '']) {
+      await choose(page, 'remote', [policy]);
+      const expected = jobs.filter(row => !policy ? !row.remote_policy : row.remote_policy.split(';').map(value => value.trim()).includes(policy)).length;
       assert.equal(await page.locator('#results tr').count(), expected);
     }
     await page.click('#reset');

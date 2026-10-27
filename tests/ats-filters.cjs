@@ -74,7 +74,7 @@ test('Job ATS checkbox dropdown: exact providers, all existing filters, empty/re
     assert.equal(await page.locator('#category').count(), 0, 'category is not a filter');
     assert.equal(await page.locator('#sticky-head [data-column="job_category"]').count(), 1, 'job_category remains a visible column');
     const policy = row.remote_policy.split('; ')[0];
-    await page.selectOption('#remote', policy);
+    await choose(page, 'remote', [policy]);
     const level = row.job_experience_level.split('; ')[0];
     await choose(page, 'experience-levels', [level]);
     await assertJobs(jobs.filter(r => r.ats_provider === row.ats_provider && r.company_name === row.company_name && r.remote_policy.split('; ').includes(policy) && r.job_experience_level.split('; ').includes(level)));

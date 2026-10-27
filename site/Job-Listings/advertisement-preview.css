@@ -9,3 +9,4 @@
 @media(max-width:600px){.advertisement-header{padding:16px 20px}.advertisement-header h2{font-size:21px}.advertisement-body{padding:18px 20px 32px}}
 
 .advertisement-body{white-space:pre-line}.advertisement-open{margin-top:0;min-width:130px}
+.jobs-page td.date-added-to-dataset{min-width:210px}

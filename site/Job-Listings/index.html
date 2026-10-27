@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en"><head><base href="./"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Job Listings — career explorer</title>
 <link rel="stylesheet" href="../shared/listings.css?v=listings-values-v2">
-<link rel="stylesheet" href="advertisement-preview.css?v=full-post-v2">
+<link rel="stylesheet" href="advertisement-preview.css?v=date-width-v1">
 </head><body class="jobs-page"><main>
-<header><div><h1>Job Listings</h1><p id="snapshot">Search roles, compare requirements, and explore saved advertisements.</p></div><a class="download" href="Job_Listings.csv" download>Download CSV</a></header>
+<header><div><h1>Job Listings</h1><p id="snapshot">Search roles, compare requirements, and explore saved job posts.</p></div><a class="download" href="Job_Listings.csv" download>Download CSV</a></header>
 <section class="filters" aria-label="Filter jobs">
 <div class="filter-field search-filter"><label class="filter-label" for="query">Search every column</label><input id="query" type="search" placeholder="Job title, skill, keyword…"></div>
 <div class="filter-field"><span class="filter-label" id="company-label">Company</span><div id="company"></div></div>
 <div class="filter-field"><span class="filter-label" id="ats-label">ATS</span><div id="ats"></div></div>
-<div class="filter-field"><label class="filter-label" for="remote">Remote policy</label><select id="remote"><option value="">Any</option><option value="in-office">in-office</option><option value="remote">remote</option><option value="hybrid">hybrid</option><option value="unknown">Not specified</option></select></div>
+<div class="filter-field"><span class="filter-label" id="remote-label">Remote policy</span><div id="remote"></div></div>
 <div class="filter-field"><span class="filter-label" id="experience-label">Experience level</span><div id="experience-levels"></div></div>
 </section>
 <div class="toolbar"><div><strong id="status" role="status" aria-live="polite">Loading jobs…</strong><div class="toolbar-help">Scroll horizontally for all 18 columns. Drag a column header to change the displayed order.</div></div><div class="toolbar-actions"><button id="column-order-reset" type="button">Reset column order</button><button id="reset" type="button">Reset filters</button></div></div>
 <div id="dataset-sticky" class="dataset-sticky"><div id="table-top-scroll" class="table-top-scroll" tabindex="0" role="region" aria-label="Scroll job dataset horizontally" aria-controls="table-wrap"><div></div></div><div class="table-sticky-head" aria-hidden="true"><table><thead id="sticky-head"></thead></table></div></div>
 <div class="table-wrap" id="table-wrap" tabindex="0" aria-label="Job spreadsheet, scroll horizontally"><table><thead id="head" class="visually-hidden-header"></thead><tbody id="results"></tbody></table></div><div id="empty" hidden>No jobs match these filters.</div>
 <div class="toolbar"><span class="muted" id="range"></span></div>
-</main><script src="../shared/checkbox-filter.js?v=consistent-ui-v1"></script><script src="filter.js?v=consistent-ui-v1"></script><script src="advertisement-preview.js?v=full-post-v2"></script><script src="app.js?v=consistent-ui-v1"></script><script src="top-scroll.js?v=sticky-columns-v2"></script></body></html>
+</main><script src="../shared/checkbox-filter.js?v=consistent-ui-v1"></script><script src="filter.js?v=remote-multiselect-v1"></script><script src="advertisement-preview.js?v=full-post-v2"></script><script src="app.js?v=remote-multiselect-v1"></script><script src="top-scroll.js?v=sticky-columns-v2"></script></body></html>
