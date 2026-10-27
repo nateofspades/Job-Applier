@@ -8,7 +8,17 @@ Public, read-only employer and job-posting research, hosted on GitHub Pages.
 
 ## Published content
 
-Only `site/` is deployed. This repository starts with the public versions of the existing listings: 133 businesses and 1,277 saved job advertisements. The migration preserves all dataset bytes, IDs, row order, fields, and posting text. The HTML differs only in its directory-relative base URL; there is also a new homepage linking the two listings.
+Only `site/` is deployed. The initial publication copied the existing public listings: 133 businesses and 1,277 saved job advertisements, with dataset bytes, IDs, row order, fields and posting text preserved. Those counts describe that publication, not fixed limits. Subsequent interface changes must continue to preserve dataset content unless a data update is explicitly requested.
+
+## Shared interface contract
+
+Both listing pages use `site/shared/listings.css` for typography, content width, control sizing, spacing and table styling. Company and ATS use the same searchable checkbox dropdown component (`site/shared/checkbox-filter.js`), defaulting to all options selected. Options combine with OR within each dropdown and AND between dropdowns and the other filters. Clearing a dropdown selects no records; Reset filters restores every dropdown to its default selection. Job Experience level uses the same dropdown, including Not specified.
+
+Visible column labels `company` and `ats` map to the unchanged data keys `company_name` and `ats_provider`. Keep the original data keys for CSV/JSON, `data-column` identities and saved column orders. `job_category` remains a column, not a filter.
+
+Do not add yellow release/snapshot banners, URL-audit announcements, or maintenance changelogs to either listing page. Record release details in pull requests, Git history or source metadata instead. Keep source metadata intact without automatically rendering it as an announcement. The interface contract tests guard against reintroducing the removed notices and controls.
+
+`npm run test:ui` checks the shared component and presentation using a clearly identified fixture of unchanged real job records. The full `tests/listings-preview.cjs` suite continues to exercise all real rows and downloads without intercepted data.
 
 These are dated research snapshots, not a live feed or an assertion that every vacancy is still open. Verify details on the employer's official website. Employer advertisements remain third-party content; no blanket software or data license is granted over them.
 

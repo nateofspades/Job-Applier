@@ -5,9 +5,11 @@ function selectRows(rows,filters){
   const matches=(value,choice)=>!choice||(choice==='unknown'?value==='':value===choice);
   const policyToken=value=>{const token=value.trim().toLocaleLowerCase();return ({'fully remote':'remote','fully in office':'in-office','in office':'in-office'})[token]||token;};
   return rows.filter(r=>(!query||Object.values(r).some(v=>String(v).toLocaleLowerCase().includes(query)))
+    &&(!Array.isArray(f.companies)||f.companies.includes(r.company_name??''))
+    &&(!Array.isArray(f.atsProviders)||f.atsProviders.includes(r.ats_provider??''))
     &&matches(r.company_name,f.company)&&matches(r.job_category,f.category)&&matches(r.ats_provider??'',f.ats)
     &&(!f.remote||(f.remote==='unknown'?r.remote_policy==='':r.remote_policy.split(';').some(v=>policyToken(v)===policyToken(f.remote))))
-    &&(!(f.levels?.length||f.includeUnspecified)||(r.job_experience_level ? r.job_experience_level.split(';').some(v=>(f.levels||[]).includes(v.trim())) : !!f.includeUnspecified)));
+    &&(!(f.levelsActive===true||f.levels?.length||f.includeUnspecified)||(r.job_experience_level ? r.job_experience_level.split(';').some(v=>(f.levels||[]).includes(v.trim())) : !!f.includeUnspecified)));
 }
 if(typeof module!=='undefined'&&module.exports) module.exports={selectRows};
 else root.JobFilters={selectRows};

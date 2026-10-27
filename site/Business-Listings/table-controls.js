@@ -6,7 +6,8 @@
   const stickyHead = document.getElementById('sticky-head');
   table.tHead.classList.add('visually-hidden-header');
   const sourceHeaders = [...table.querySelectorAll('thead th')];
-  sourceHeaders.forEach(header => { header.dataset.column = header.textContent.trim(); });
+  sourceHeaders.forEach(header => { header.dataset.column ||= header.textContent.trim(); });
+  const columnLabels = { company_name: 'company', ats_provider: 'ats' };
   const tableRows = [...table.querySelectorAll('tr')];
   for (const row of tableRows) [...row.cells].forEach((cell, index) => {
     cell.dataset.column = sourceHeaders[index].dataset.column;
@@ -31,7 +32,7 @@
     stickyHead.replaceChildren(...columns.map(column => {
       const visibleHeader = document.createElement('div');
       visibleHeader.dataset.column = column;
-      visibleHeader.textContent = column;
+      visibleHeader.textContent = columnLabels[column] || column;
       if (column === 'date_added_to_dataset') visibleHeader.classList.add('date-added-to-dataset');
       visibleHeader.draggable = true;
       visibleHeader.title = 'Drag to change displayed column order';
