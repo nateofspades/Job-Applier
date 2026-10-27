@@ -72,12 +72,22 @@ class PublicationTests(unittest.TestCase):
                     self.assertTrue(target.is_relative_to(SITE))
                     self.assertTrue(target.is_file(), f'Missing asset {reference}')
 
-    def test_homepage_links_to_both_listings(self):
-        home = SITE / 'index.html'
-        self.assertTrue(home.is_file(), 'Publish a homepage linking to both listings')
-        page = Page(home.read_text())
-        for reference in ['Business-Listings/', 'Job-Listings/']:
-            self.assertIn(reference, page.links)
+    def test_workflow_healthcheck_targets_retained_page(self):
+        workflow = (ROOT / '.github/workflows/pages.yml').read_text()
+        self.assertIn('/Job-Applier/Business-Listings/', workflow)
+        self.assertNotIn('/Job-Applier/index.html', workflow)
+
+    def test_no_root_landing_page_or_readme_link(self):
+        self.assertFalse((SITE / 'index.html').exists())
+        self.assertNotIn('https://nateofspades.github.io/Job-Applier/)', (ROOT / 'README.md').read_text())
+
+    def test_dataset_dates_are_populated(self):
+        for name, filename, count in [('business', 'Business-Listings/Business_Listings.csv', 153), ('job', 'Job-Listings/Job_Listings.csv', 1318)]:
+            with self.subTest(dataset=name):
+                records = csv_rows(SITE / filename)[:count]
+                self.assertEqual(len(records), count)
+                self.assertTrue(all(row['date_added_to_dataset'] for row in records))
+                self.assertTrue(any(row['date_added_to_dataset'] == '2026-09-04' for row in records))
 
     def test_download_aliases_match(self):
         for name, canonical, alias in [
@@ -107,7 +117,7 @@ class PublicationTests(unittest.TestCase):
 
     def test_public_site_has_only_expected_assets(self):
         expected = {
-            'index.html', '.nojekyll',
+            '.nojekyll',
             'shared/listings.css', 'shared/checkbox-filter.js',
             'Business-Listings/business.js',
             'Business-Listings/Business_Listings.csv', 'Business-Listings/Business_Spreadsheet.csv',

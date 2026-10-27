@@ -8,7 +8,7 @@ const { execFileSync } = require('node:child_process');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..', 'site');
 const businessCount = JSON.parse(execFileSync('python3', ['-c', 'import csv,json,sys; print(json.dumps(list(csv.DictReader(sys.stdin))))'], { input: fs.readFileSync(path.join(root, 'Business-Listings/Business_Listings.csv')) })).length;
-const columns = ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset'];
+const columns = ['company_name', 'career_page_url', 'ats_provider', 'company_description', 'industries', 'city', 'country', 'date_added_to_dataset', 'business_id'];
 const displayColumn = key => ({ company_name: 'company', ats_provider: 'ats' })[key] || key;
 const storageKey = 'business-listings-column-order-v1';
 let server, browser, origin;
@@ -58,13 +58,24 @@ async function drag(page, from, to) {
   await page.locator(`#sticky-head [data-column="${from}"]`).dragTo(page.locator(`#sticky-head [data-column="${to}"]`));
   await settled(page);
 }
+test('first visit displays the requested business columns in order', async () => {
+  const page = await openPage();
+  try {
+    const expected = ['company_name', 'career_page_url', 'ats_provider', 'company_description', 'industries', 'city', 'country', 'date_added_to_dataset', 'business_id'];
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').evaluateAll(headers => headers.map(header => header.dataset.column)), expected);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), expected.map(displayColumn));
+    assert.deepEqual(await page.locator('#table-wrap thead th').evaluateAll(headers => headers.map(header => header.dataset.column)), expected);
+    await geometry(page);
+    assert.deepEqual(page.errors, []);
+  } finally { await page.close(); }
+});
 test('dragging columns preserves all row values, semantic widths, saved order and reset', async () => {
   const page = await openPage();
   try {
     assert.equal(await page.locator('#sticky-head [draggable="true"]').count(), 9, 'all columns can be dragged');
     const original = await page.locator('#table-wrap tbody tr').evaluateAll(rows => rows.map(row => ({ id: row.id, cells: Object.fromEntries([...row.cells].map(cell => [cell.dataset.column, cell.textContent])) })));
-    await drag(page, 'company_name', 'business_id');
-    const order = ['company_name', 'business_id', ...columns.slice(2)];
+    await drag(page, 'company_name', 'ats_provider');
+    const order = [columns[1], columns[2], columns[0], ...columns.slice(3)];
     assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order.map(displayColumn));
     assert.deepEqual(await page.locator('#table-wrap thead th').allTextContents(), order.map(displayColumn));
     assert.deepEqual(await page.locator('#sticky-head [data-column]').evaluateAll(headers => headers.map(header => header.dataset.column)), order);
@@ -73,7 +84,7 @@ test('dragging columns preserves all row values, semantic widths, saved order an
     await page.reload();
     assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), order.map(displayColumn));
     await page.evaluate(() => { document.querySelector('#table-top-scroll').scrollLeft = 0; window.scrollTo(0, 1400); });
-    await drag(page, 'business_id', 'company_name');
+    await drag(page, 'company_name', 'career_page_url');
     assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn), 'dragging works while headers are frozen');
     await page.evaluate(() => document.querySelector('#table-top-scroll').scrollLeft = 10000);
     await settled(page);
@@ -84,7 +95,7 @@ test('dragging columns preserves all row values, semantic widths, saved order an
       from.dispatchEvent(new DragEvent('dragstart', { bubbles: true, dataTransfer }));
       to.dispatchEvent(new DragEvent('drop', { bubbles: true, cancelable: true, dataTransfer }));
     });
-    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), [columns[8], ...columns.slice(0, 8)].map(displayColumn));
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), [...columns.slice(0, 7), columns[8], columns[7]].map(displayColumn));
     await geometry(page);
     await page.setViewportSize({ width: 390, height: 844 });
     await geometry(page);
@@ -100,7 +111,7 @@ test('dragging columns preserves all row values, semantic widths, saved order an
 test('filters, empty results, mobile resizing and byte-identical CSV downloads survive reordering', async () => {
   const page = await openPage();
   try {
-    await drag(page, 'company_name', 'business_id');
+    await drag(page, 'company_name', 'ats_provider');
     const ats = page.locator('#ats details');
     assert.equal(await ats.locator('summary[aria-label="ATS"]').count(), 1);
     await ats.locator('summary').click();
@@ -116,8 +127,8 @@ test('filters, empty results, mobile resizing and byte-identical CSV downloads s
     assert(await page.locator('#empty').isVisible());
     await page.click('#reset');
     assert.equal(await page.locator('#table-wrap tbody tr:visible').count(), businessCount);
-    assert.equal(await page.locator('#sticky-head [data-column]').first().textContent(), 'company', 'filter reset does not discard column preferences');
-    assert.equal(await page.locator('#sticky-head [data-column]').first().getAttribute('data-column'), 'company_name');
+    assert.equal(await page.locator('#sticky-head [data-column]').nth(2).textContent(), 'company', 'filter reset does not discard column preferences');
+    assert.equal(await page.locator('#sticky-head [data-column]').nth(2).getAttribute('data-column'), 'company_name');
     await geometry(page);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 844 });
@@ -135,6 +146,19 @@ test('filters, empty results, mobile resizing and byte-identical CSV downloads s
     assert.deepEqual(page.errors, []);
   } finally { await page.close(); }
 });
+test('a valid previously saved business order is preserved until reset', async () => {
+  const oldOrder = ['business_id', 'company_name', 'company_description', 'industries', 'country', 'city', 'career_page_url', 'ats_provider', 'date_added_to_dataset'];
+  const page = await openPage({ saved: JSON.stringify(oldOrder) });
+  try {
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').evaluateAll(headers => headers.map(header => header.dataset.column)), oldOrder);
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').allTextContents(), oldOrder.map(displayColumn));
+    await geometry(page);
+    await page.click('#column-order-reset');
+    assert.deepEqual(await page.locator('#sticky-head [data-column]').evaluateAll(headers => headers.map(header => header.dataset.column)), columns);
+    assert.equal(await page.evaluate(key => localStorage.getItem(key), storageKey), null);
+    assert.deepEqual(page.errors, []);
+  } finally { await page.close(); }
+});
 test('invalid saved orders fall back to defaults and unavailable storage does not break dragging or reset', async () => {
   const page = await openPage();
   try {
@@ -147,8 +171,8 @@ test('invalid saved orders fall back to defaults and unavailable storage does no
   } finally { await page.close(); }
   const blocked = await openPage({ blockStorage: true });
   try {
-    await drag(blocked, 'company_name', 'business_id');
-    assert.equal(await blocked.locator('#sticky-head [data-column]').first().textContent(), 'company');
+    await drag(blocked, 'company_name', 'ats_provider');
+    assert.equal(await blocked.locator('#sticky-head [data-column]').nth(2).textContent(), 'company');
     await blocked.click('#column-order-reset');
     assert.deepEqual(await blocked.locator('#sticky-head [data-column]').allTextContents(), columns.map(displayColumn));
     assert.deepEqual(blocked.errors, []);

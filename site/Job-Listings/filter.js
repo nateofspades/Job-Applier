@@ -8,6 +8,7 @@ function selectRows(rows,filters){
     &&(!Array.isArray(f.companies)||f.companies.includes(r.company_name??''))
     &&(!Array.isArray(f.atsProviders)||f.atsProviders.includes(r.ats_provider??''))
     &&matches(r.company_name,f.company)&&matches(r.job_category,f.category)&&matches(r.ats_provider??'',f.ats)
+    &&(!Array.isArray(f.remotePolicies)||(String(r.remote_policy??'').trim() ? String(r.remote_policy).split(';').some(v=>f.remotePolicies.some(choice=>policyToken(choice)===policyToken(v))) : f.remotePolicies.includes('')))
     &&(!f.remote||(f.remote==='unknown'?r.remote_policy==='':r.remote_policy.split(';').some(v=>policyToken(v)===policyToken(f.remote))))
     &&(!(f.levelsActive===true||f.levels?.length||f.includeUnspecified)||(r.job_experience_level ? r.job_experience_level.split(';').some(v=>(f.levels||[]).includes(v.trim())) : !!f.includeUnspecified)));
 }

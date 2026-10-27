@@ -4,7 +4,6 @@ Public, read-only employer and job-posting research, hosted on GitHub Pages.
 
 - [Business Listings](https://nateofspades.github.io/Job-Applier/Business-Listings/)
 - [Job Listings](https://nateofspades.github.io/Job-Applier/Job-Listings/)
-- [Homepage](https://nateofspades.github.io/Job-Applier/)
 
 ## Published content
 
