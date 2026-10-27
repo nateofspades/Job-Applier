@@ -1,6 +1,7 @@
 """Append-only contract for the twenty user-supplied employers."""
 import csv
 import hashlib
+import io
 import json
 import unittest
 from collections import Counter
@@ -32,7 +33,7 @@ class ExpansionContract(unittest.TestCase):
             # The approved default replaced only formerly blank baseline dates.
             # Reverse that migration before checking the immutable original digest.
             for row in baseline:
-                if row['date_added_to_dataset'] == '2026-09-04':
+                if row['date_added_to_dataset'] in ('2026-09-04', '2026-09-30'):
                     row['date_added_to_dataset'] = ''
             self.assertEqual(digest(baseline), MANIFEST[name + '_sha256'])
 
@@ -48,7 +49,19 @@ class ExpansionContract(unittest.TestCase):
 
     def test_original_csv_prefix_bytes_unchanged(self):
         for name, relative in [('business', 'Business-Listings/Business_Listings.csv'), ('job', 'Job-Listings/Job_Listings.csv')]:
-            data = (SITE / relative).read_bytes().replace(b',2026-09-04\r\n', b',\r\n')[:MANIFEST[name + '_csv_prefix_bytes']]
+            with (SITE / relative).open(newline='', encoding='utf-8') as stream:
+                reader = csv.DictReader(stream)
+                fields = reader.fieldnames
+                baseline = list(reader)[:MANIFEST[name + '_count']]
+            for row in baseline:
+                if row['date_added_to_dataset'] in ('2026-09-04', '2026-09-30'):
+                    row['date_added_to_dataset'] = ''
+            output = io.StringIO(newline='')
+            writer = csv.DictWriter(output, fieldnames=fields, lineterminator='\r\n')
+            writer.writeheader()
+            writer.writerows(baseline)
+            data = output.getvalue().encode('utf-8')
+            self.assertEqual(len(data), MANIFEST[name + '_csv_prefix_bytes'])
             self.assertEqual(hashlib.sha256(data).hexdigest(), MANIFEST[name + '_csv_prefix_sha256'])
 
     def test_new_jobs_are_complete_and_reference_new_businesses(self):
