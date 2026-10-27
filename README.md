@@ -42,6 +42,8 @@ This is a fresh public repository, not a fork or copy of the private project's G
 
 No scheduled collection or automatic refresh of employer postings is enabled. The existing server pages are separate copies and are not updated by this repository's deployment.
 
+For explicitly supplied employer batches, retain each requested business even when no jobs meet the saved Canada-only, English/substantive-bilingual and known-age selection rules. Record zero-result reasons in coverage metadata; do not create placeholder jobs or imply old postings were refreshed. Preserve the supplied career URLs exactly. New business and job rows share their batch's first-insertion calendar date in America/Toronto, independently of the source publication date. The expansion contract tests protect original row values, CSV prefix bytes and supplied employer order/URLs.
+
 ## Local verification
 
 Requires Python 3, Node.js 22, and npm.

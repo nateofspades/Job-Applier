@@ -1,6 +1,6 @@
 {
   "collected_at": "2026-10-01 19:08",
-  "company_count": 133,
+  "company_count": 153,
   "coverage": [
     {
       "company_name": "Ubisoft Montreal",
@@ -799,9 +799,129 @@
       "count": 2,
       "status": "Audited saved October 1 snapshot: complete requested scope",
       "notes": "Saved sources only; availability can change after capture."
+    },
+    {
+      "company_name": "Adviso",
+      "count": 0,
+      "status": "complete",
+      "notes": "Board explicitly reports 10 vacancies; all 10 unique exact-ID full descriptions archived and reviewed. All 10 excluded as French-only advertisements. No language-switch or pagination links on the Manatal board. Application page identifies Manatal. Employer retained as explicitly approved despite zero eligible jobs."
+    },
+    {
+      "company_name": "Data Sciences",
+      "count": 3,
+      "status": "complete",
+      "notes": "Primary current board recovered as complete HTML using www hostname (redirected to supplied canonical), with 3 exact job links and no pagination. Later complete extracted board at both slash variants confirms the same 3 jobs. All 3 full exact-posting advertisements were recovered and archived in correctly decoded text; direct HTTP detail requests remain 403. Initial truncated extraction/search snapshots showed additional Analytics Engineer and Research Analyst; complete detail text was recovered for both, but neither is linked by the consistently recovered current board, and Research Analyst is explicitly dated 2023. Those supplementary candidates are separately excluded and do not inflate the current-board denominator. No unresolved included-job description blocker. LinkedIn is an advertised application route for the 2 marketing roles, not a verified dedicated ATS. Source publication dates retained; central insertion date blank."
+    },
+    {
+      "company_name": "Potloc",
+      "count": 0,
+      "status": "complete",
+      "notes": "Official career page links directly to Lever Potloc. Complete unfiltered public Lever API returned 2 exact-ID advertisements, matching the 2 jobs in the archived board. Both are Open Application talent pools and excluded. All description fields are archived in the API JSON; no pagination or additional eligible jobs. Employer retained despite zero eligible vacancies."
+    },
+    {
+      "company_name": "StatsDrone",
+      "count": 1,
+      "status": "complete",
+      "notes": "Career archive lists exactly 3 advertisements on its sole numbered page (1). All 3 complete exact-posting descriptions archived. AI ML Engineer explicitly advertises Montreal, Quebec, Canada and qualifies. Head of Agents is remote with Montreal HQ only; Outreach & GTM Coordinator states no job location. Those 2 are excluded for unresolved Canada-only job geography, not silently treated as foreign. Applications direct applicants to LinkedIn messages; actual ATS is unknown and blank."
+    },
+    {
+      "company_name": "Compass Data and AI",
+      "count": 3,
+      "status": "complete",
+      "notes": "All 3 Current Openings cards enumerated and all full employer-preferred detail advertisements archived. All 3 qualify, including the specifically described 1–3-opening Full Stack / Data & AI Engineer Intern behind New Graduate / Internship Applications. No pagination on the career page. Application links go to an Airtable form; fetch returned generic Airtable shell rather than rendered fields, so actual ATS is unknown and blank. Publication dates and salaries are unstated."
+    },
+    {
+      "company_name": "Mizo",
+      "count": 3,
+      "status": "complete",
+      "notes": "Complete employer-hosted board: 4 unique linked advertisements, all fetched; 3 eligible English Montreal roles and 1 excluded spontaneous application. No pagination. Forms post to Web3Forms; it is a form backend rather than a verified applicant tracking system, so ATS blank. Publication dates absent."
+    },
+    {
+      "company_name": "Unito",
+      "count": 0,
+      "status": "complete",
+      "notes": "Official page has one linked vacancy; exact detail is closed. Actual Breezy board has no positions and public /json returns []. Thus zero current active postings, not an inaccessible-board assumption. Employer retained as explicitly approved."
+    },
+    {
+      "company_name": "Stay22",
+      "count": 12,
+      "status": "complete",
+      "notes": "All 14 active Greenhouse IDs enumerated; meta.total=14, matching unique IDs in the actual supplied board HTML. All exact detail pages fetched and full API content saved. Twelve specific English/substantively bilingual Canada-only Montreal roles retained. Excluded one general application and one Remote posting explicitly favoring NYC or London without Canada-only eligibility. No age or deadline exclusions among retained roles. Salary and employment type not stated; left blank. No dedicated employer-hosted detail URLs linked: Greenhouse detail URLs retained."
+    },
+    {
+      "company_name": "Osedea",
+      "count": 6,
+      "status": "complete",
+      "notes": "Official page links 13 IDs, including one closed 404 Full Stack link. Live unfiltered Lever board has 14 active IDs: two current Senior Software Developer variants were absent from static official list. All 14 full API descriptions archived. Seven ads are French-only with separate English variants; English Senior AI Developer is 277 days old and excluded. Six English Canada jobs retained, including English Senior Software Developer mislabeled Montréal (FR). Pagination exhaustion confirmed by skip=14 returning []. No eligible roles silently capped."
+    },
+    {
+      "company_name": "Spiria",
+      "count": 8,
+      "status": "complete",
+      "notes": "Official careers inline script fetches https://api.lever.co/v0/postings/spiria?mode=json, filters categories.commitment by EN/FR, and replaces static placeholder cards. Actual board has 16 active IDs; all 16 full API descriptions archived. Eight English Canada ads retained, eight French-only variants excluded. Stale HTML placeholder titles Accountant, Bilingual Business Analyst and UX/UI Designer are not live board records. Pagination exhaustion confirmed by skip=16 returning []. No explicit full-time evidence: EN commitment is language, not employment type."
+    },
+    {
+      "company_name": "Flare",
+      "count": 3,
+      "status": "complete",
+      "notes": "Complete BambooHR /careers/list: meta.totalCount=9, nine distinct IDs and no pagination/cap. Seven Canadian full descriptions captured and reviewed; two UK-only IDs excluded directly from country metadata. Included 137,151,157; excluded two old-but-open postings (29 datePosted 2022-07-27, 64 datePosted 2024-04-03), French variants 150/158 and UK-only 144/147. Corporate direct HTTP 403 recovered through web extraction; exact job full text and metadata recovered directly from public BambooHR detail JSON. No separate employer-hosted detail pages were exposed; careers links directly to BambooHR. Full ad text includes complete bilingual/company/legal description and all source header values. Country determined from exact Canadian detail location, never HQ."
+    },
+    {
+      "company_name": "Moov AI",
+      "count": 0,
+      "status": "complete",
+      "notes": "Official careers page points to Publicis Groupe Moov AI board. Its searchConfig enforces tags2=Moov AI. Public read-only /api/jobs returns totalCount=4 and four exact requisitions in both en-US and fr-FR queries; page 2 returns jobs=[] with totalCount=4. languageCounts is fr-fr=4; all four full descriptions/responsibilities/qualifications are French-only despite one bilingual title. Source list payload contains complete advertisement text for each exact requisition and individual private JSON copies are saved. Three French detail HTML shells and one working French detail page were also captured; en-US variant for 170235 returns 404, corroborating no English variant. Corporate direct HTTP is 403; recovered corporate extract is partial, but board/application identity and all vacancy descriptions are fully captured directly. Scope is Moov AI, not the entire Publicis group. No included jobs."
+    },
+    {
+      "company_name": "Keatext",
+      "count": 0,
+      "status": "complete",
+      "notes": "Both supplied French and linked English careers pages explicitly say there are no openings; all page links inspected, no separate board or job-detail links. ATS unknown: no application provider is exposed on the empty page. Business retained by explicit user approval."
+    },
+    {
+      "company_name": "Local Logic",
+      "count": 0,
+      "status": "complete",
+      "notes": "Supplied JazzHR root, /apply/, /apply, and official locallogic.co/careers redirect all show \"There are no open positions at this time.\" No vacancy links/pagination remain. Three stale search-index postings individually return HTTP 410 and closure messages. Official homepage links back to this same board. Job coverage complete; business legal-page office address has search-index-only provenance because direct legal/about HTTP returned 403; recovered about extract is partial. Business retained by explicit user approval."
+    },
+    {
+      "company_name": "Panorama",
+      "count": 1,
+      "status": "complete",
+      "notes": "English careers page contains exactly one vacancy card, explicitly linked to the employer-hosted English detail /en-us/full-stack-developer. Archived detail HTTP 200 contains the full substantive advertisement, including five duty bullets, sixteen professional qualification bullets, office attendance, stack, benefits, company material and inclusive application invitation; full main content is preserved. No other vacancy links, recruitment iframe or pagination. Email application; ATS unknown. Salary, actual posting date, deadline and explicit seniority remain unspecified. French locale is a separate variant and is not duplicated. Old short-card extraction and claim of no linked detail/lists are corrected by this audit."
+    },
+    {
+      "company_name": "Dialekta",
+      "count": 0,
+      "status": "complete",
+      "notes": "Fetched the exact supplied English career URL and its embedded https://api.collage.co/v1/positions/dialekta?4 endpoint, plus the full live Collage board. All 8 exact posting IDs reconcile between board and API; all 8 full hosted detail pages and API descriptions are archived. Six specific roles are French-only even where the shell says Full Time / Hybrid / Apply Now in English; the other two are spontaneous applications. The career frontend filters locale=en and therefore hides the six French-only vacancies; no extra English variant exists in the complete API. No pagination controls or pagination metadata in this board/API. Canadian office fields are scoped to Montréal; the careers page also lists a Paris office."
+    },
+    {
+      "company_name": "Rablab",
+      "count": 0,
+      "status": "complete",
+      "notes": "The supplied English corporate careers page lists stale SEM ID 45463 and spontaneous ID 42000. Followed the actual linked Collage board, which currently has 4 live IDs: 42000, 53378, 56104, 65346. The full API and all 4 hosted details were archived and reconciled. Three specific ads are entirely French, not English ads merely requiring French; the fourth is a spontaneous application. No separate English variant or pagination in complete board/API. The stale corporate ID is recorded separately and is not part of the 4-live-posting denominator."
+    },
+    {
+      "company_name": "My Little Big Web",
+      "count": 0,
+      "status": "complete",
+      "notes": "The English corporate careers page exposes only English spontaneous application ID 64523; its full English employer detail and Collage detail were captured. Followed the French alternate page and all 5 French employer details: spontaneous 55051 and four freelance collaborator pools 52752, 52961, 54045, 54358. The actual Collage board/API contains all 6 IDs and matches these application links exactly. All full descriptions archived. The four freelance ads are French-only and explicitly build a future collaborator pool even if no assignment is currently available; they are not omitted because they are freelance. The English locale is incorrectly fr for ID 64523, so actual text, not metadata, was reviewed. Other French detail pages’ EN selectors lead to the homepage, not translated ads. No pagination in full board/API. Verdun is the Montréal office borough, not a second independent office city."
+    },
+    {
+      "company_name": "Aviseo Conseil",
+      "count": 0,
+      "status": "complete",
+      "notes": "Fetched supplied French page, linked English careers page, and both exact employer-hosted full job details. French board has exactly 2 postings, both French-only; English board has no job cards, and the detail-page EN links lead to English homepage. Both deadlines are future as of 2026-10-27, so neither was excluded for age/deadline. Applications go by email to recrutement@aviseo.ca, not a verified ATS: ats_provider intentionally blank. No pagination or external board links. Business location fields describe Canadian offices; an additional Casablanca, Morocco office is expressly listed in the source and is not an advertised location for these two jobs."
+    },
+    {
+      "company_name": "Wavo",
+      "count": 1,
+      "status": "complete",
+      "notes": "Supplied BambooHR career page is a JavaScript shell, not an empty board. Recovered /careers/list JSON showing meta.totalCount=1 and exactly ID 56. Exact /careers/56/detail returns the complete open advertisement with Montreal, Quebec, addressCountry Canada, explicit Mid-level and Full-Time metadata, and source publication date 2026-10-22. Full bilingual description captured and read. No pagination is needed for the one-result board and no separate English variant exists. No excluded live postings. The corporate home links to this exact BambooHR tenant, and the corporate contact page verifies Montréal office. No inaccessible posting scope; only the numeric workplace code remains unnormalized."
     }
   ],
-  "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged.",
+  "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",
   "filtered_at_utc": "2026-09-11T15:39:06.494379+00:00",
   "selection_rules": {
     "advertisement_language": "English or bilingual with substantive English description",
@@ -828,5 +948,12 @@
     "timezone": "America/Toronto",
     "migration_id": "date-columns-20261001",
     "built_at_utc": "2026-10-01T20:23:56.197024+00:00"
+  },
+  "latest_append": {
+    "batch_id": "user-businesses-20261027",
+    "businesses_added": 20,
+    "jobs_added": 41,
+    "date_added_to_dataset": "2026-10-26",
+    "timezone": "America/Toronto"
   }
 }
