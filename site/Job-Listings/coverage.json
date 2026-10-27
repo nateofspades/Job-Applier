@@ -1,6 +1,6 @@
 {
   "collected_at": "2026-10-01 19:08",
-  "company_count": 158,
+  "company_count": 163,
   "coverage": [
     {
       "company_name": "Ubisoft Montreal",
@@ -949,6 +949,36 @@
       "count": 0,
       "status": "No openings on employer careers page at collection",
       "notes": "The employer's own careers page states that there are no open positions at this time. No job records were created; the contact invitation is not a vacancy. The site does not identify an applicant tracking system."
+    },
+    {
+      "company_name": "Heylist",
+      "count": 3,
+      "status": "Reviewed career-page snapshot",
+      "notes": "Fifteen named vacancies observed. Three Montreal-located English advertisements are included; twelve other roles are labelled Flexible without an explicit Canada-only work location and are not included. An open application is not a specific vacancy. Employer posting dates are not specified; verify current status with the employer."
+    },
+    {
+      "company_name": "Inmind Technologies",
+      "count": 0,
+      "status": "Reviewed English career-page snapshot",
+      "notes": "The one English advertisement is for Mind in a Box, an Inmind spin-off. The webpage metadata indicates publication on 2026-04-01, more than 180 days before collection, but may not be the job posting date; the role was withheld conservatively under the age rule. Its text says French is an asset, while the careers landing page says French is mandatory."
+    },
+    {
+      "company_name": "Nixa",
+      "count": 0,
+      "status": "Career page reviewed",
+      "notes": "The supplied careers page invites resume submissions but did not display individual vacancies. A separate legacy jobs page was not linked from this supplied page and current availability could not be verified."
+    },
+    {
+      "company_name": "Walter Interactive",
+      "count": 0,
+      "status": "Career page reviewed",
+      "notes": "The supplied careers page has a general application form and did not display individual vacancies."
+    },
+    {
+      "company_name": "IVADO Labs",
+      "count": 0,
+      "status": "Career page reviewed, location and language selection",
+      "notes": "Three named roles were listed. Two English advertisements did not specify a job location, so Canada-only geography could not be established; the third advertisement was French-language. A spontaneous application is not a specific vacancy."
     }
   ],
   "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",
