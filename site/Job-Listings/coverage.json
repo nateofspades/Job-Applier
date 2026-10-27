@@ -1,6 +1,6 @@
 {
   "collected_at": "2026-10-01 19:08",
-  "company_count": 153,
+  "company_count": 158,
   "coverage": [
     {
       "company_name": "Ubisoft Montreal",
@@ -919,6 +919,36 @@
       "count": 1,
       "status": "complete",
       "notes": "Supplied BambooHR career page is a JavaScript shell, not an empty board. Recovered /careers/list JSON showing meta.totalCount=1 and exactly ID 56. Exact /careers/56/detail returns the complete open advertisement with Montreal, Quebec, addressCountry Canada, explicit Mid-level and Full-Time metadata, and source publication date 2026-10-22. Full bilingual description captured and read. No pagination is needed for the one-result board and no separate English variant exists. No excluded live postings. The corporate home links to this exact BambooHR tenant, and the corporate contact page verifies Montréal office. No inaccessible posting scope; only the numeric workplace code remains unnormalized."
+    },
+    {
+      "company_name": "Velixo",
+      "count": 2,
+      "status": "reviewed board snapshot",
+      "notes": "Four distinct exact IDs in archived official JazzHR board, each with archived detail; two included Canada-only remote English jobs, two excluded solely for mixed-country geography. Unknown age is retained in principle and citizenship is never screened against candidate qualifications. The undated overseas-inclusive software ad is excluded only for geographic scope; the similarly titled Montreal ad is separate. Broad scope retains engineering. Dates for included roles are exact source JSON-LD; no inferred publication date. The Montreal listing is remote across Canada with Quebec priority, with Montreal shown on its board/detail. Archived application forms were checked without submissions. Re-fetched four exact detail URLs successfully; no verification of an actual submission or employer authenticity beyond official-domain linkage. Capture 2026-10-27 America/Toronto. LinkedIn provides an employer-reported 51–200 range, not an exact headcount."
+    },
+    {
+      "company_name": "Finance Montréal",
+      "count": 1,
+      "status": "verified_employer_career_page",
+      "notes": "On 2026-10-27 the employer-owned English careers index lists one posting, and the French careers index lists one corresponding posting under /fr/carrieres-details/; the corporate English detail links to a recruiter-hosted Zoho listing explicitly naming Finance Montréal. One employer-board listing included, zero excluded. The recruiter board may contain unrelated clients and was not treated as Finance Montréal inventory. The unsolicited application form is not a vacancy. The applicant form rendered, but no application was submitted or end-to-end delivery tested. This is coverage of the observed employer career indexes, not proof that every vacancy is advertised there. Seniority, bilingualism and travel are not collection exclusions."
+    },
+    {
+      "company_name": "Code Marketing",
+      "count": 0,
+      "status": "reviewed board snapshot",
+      "notes": "Company eligibility verified independently: its own careers page recruits for Code employees, not agency client vacancies. Both live official language boards list one matching specific role, whose substantive job description is French-only despite its English title and board summary; therefore zero English-language job descriptions are included and one vacancy is excluded. Spontaneous application is not a separate vacancy. Official careers sitemap contains the same role in French and English and no additional job URLs; page sitemap also checked. Scope is the official boards and published sitemaps, not third-party listings or unpublished vacancies. A listed vacancy is not proof of a currently open hiring process; posting age unknown."
+    },
+    {
+      "company_name": "AssistIQ",
+      "count": 1,
+      "status": "reviewed board snapshot",
+      "notes": "Official careers page links to AssistIQ Workable. Count reports 5 distinct jobs; 12 widget location rows resolve to 5 shortcodes. One Canada-only Toronto-listed remote role is included; one Canada/US mixed-country role and three US-only roles are excluded. Quebec remote eligibility is not established. No applicant-fit gating; an unknown posting date alone would not cause exclusion. Company-scoped exact application form was verified without submission; original short-form application URL redirects to generic Workable search."
+    },
+    {
+      "company_name": "Precision Analytics",
+      "count": 0,
+      "status": "No openings on employer careers page at collection",
+      "notes": "The employer's own careers page states that there are no open positions at this time. No job records were created; the contact invitation is not a vacancy. The site does not identify an applicant tracking system."
     }
   ],
   "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",

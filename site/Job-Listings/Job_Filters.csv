@@ -116785,3 +116785,269 @@ Compensation + Work Environment
 Equal Opportunity Employer
 
 Wavo hires, compensates, trains, and promotes employees regardless of race, religion or belief, national, social or ethnic origin, disability, veteran status, or any other protected status. Wavo will not tolerate discrimination or harassment based on any of these characteristics. Wavo encourages applicants of all ages, backgrounds and identities; as we firmly believe in fostering a diverse and welcoming workspace.",https://wavo.bamboohr.com/careers/56,job_b4064f7a471e541081c7d5647be8efd2,BambooHR,2026-10-26
+Velixo,Applied AI Engineer,,Engineering,,Canada,remote,yes,,2026-08-27,"Build evaluation infrastructure for an ERP AI gateway, measure quality and unit costs, optimize model and prompt economics, and supply finance with data for pricing. The position is remote across Canada, with priority for Quebec candidates.","• Build and maintain regression suites for GIQL query generation, writeback correctness, and tool selection
+• Define what ""good"" means for each action type and make it measurable
+• Run structured evaluations before every model upgrade or prompt change, and produce a clear ship or no-ship recommendation
+• Track quality over time so we notice degradation before customers do
+• Instrument every Gateway action for tokens, cache behavior, model, latency, and tenant
+• Establish and maintain the cost-per-action baseline that the rest of the company plans against
+• Reduce cost through prompt compression, prompt caching, context pruning, and routing work to smaller models where evaluation shows quality holds
+• Identify the expensive tail: which customers, which query shapes, which failure and retry loops
+• Track new model releases across providers and evaluate them against our workloads rather than published benchmarks
+• Maintain a current view of the price and performance frontier for what we do
+• Recommend when to migrate, when to wait, and when to run models in parallel
+• Supply the unit cost data behind our credit pricing and plan allowances
+• Model the margin impact of proposed pricing changes alongside our VP Finance
+• Flag when product decisions will move the cost curve before they ship
+• Days 1 to 30: Full instrumentation of the Gateway. A dashboard showing cost per action type, per tenant, and per model that the exec team checks weekly.
+• Days 31 to 60: A working evaluation suite covering our highest-volume action types, with a documented baseline.
+• Days 61 to 90: A prioritized cost reduction roadmap with sized estimates, and at least one shipped optimization with measured before-and-after quality.","• Substantial experience building on LLM APIs in production, not in demos or notebooks
+• You have built an eval harness before and can explain why the naive version of it misleads you
+• Hands-on with the current tooling landscape: tracing and observability platforms such as Langfuse, eval frameworks such as promptfoo. You have opinions about which of these earn their keep and which add ceremony without adding signal.
+• Comfortable with token accounting, context window management, and caching strategies
+• Strong analytical instincts and fluency with data. You reach for a query or a notebook before you reach for an opinion.
+• Able to write clearly about tradeoffs for a non-technical audience, because your conclusions will land in board decks and pricing meetings
+• Python or TypeScript proficiency
+• Preferred: Experience with MCP or other tool-calling frameworks
+• Preferred: Background in ERP, accounting, or financial systems
+• Preferred: Prior exposure to usage-based or credit-based pricing models
+• Preferred: Experience at a small company where you set your own priorities","About
+Velixo
+Velixo builds Excel-native reporting, planning, and automation for finance teams running Acumatica, Sage Intacct, Business Central, and MYOB. Founded in 2017 and headquartered in Montreal, we serve finance and accounting teams who live in spreadsheets and need their ERP data to be live, trustworthy, and writable.
+Velixo is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+This is a fully remote position. While we welcome applications from across Canada, we are giving priority to candidates located in Quebec at this time.
+The role
+You will own how well Velixo Intelligence works and what it costs us to run. That means building the evaluation infrastructure that tells us whether a model change made our product better or worse, and driving down the cost per action without degrading quality.
+This is a measurement-first engineering role. Today we ship AI features and form opinions about quality from anecdotes. You will replace that with evidence.
+About Velixo Intelligence
+Velixo Intelligence is our MCP-based gateway that lets finance teams query their ERP in natural language and perform governed writebacks from Claude, ChatGPT, and Copilot. Reads run through GIQL, our query language. Writes go through the ERP's own screen APIs so that every permission, validation, and audit rule still applies.
+It launched in public preview this year. Usage is growing, the surface area is expanding, and our understanding of the unit economics has not kept pace. That gap is the reason this role exists.
+What you will own
+Evaluation
+Build and maintain regression suites for GIQL query generation, writeback correctness, and tool selection
+Define what ""good"" means for each action type and make it measurable
+Run structured evaluations before every model upgrade or prompt change, and produce a clear ship or no-ship recommendation
+Track quality over time so we notice degradation before customers do
+Cost engineering
+Instrument every Gateway action for tokens, cache behavior, model, latency, and tenant
+Establish and maintain the cost-per-action baseline that the rest of the company plans against
+Reduce cost through prompt compression, prompt caching, context pruning, and routing work to smaller models where evaluation shows quality holds
+Identify the expensive tail: which customers, which query shapes, which failure and retry loops
+Model strategy
+Track new model releases across providers and evaluate them against our workloads rather than published benchmarks
+Maintain a current view of the price and performance frontier for what we do
+Recommend when to migrate, when to wait, and when to run models in parallel
+Partnership with Finance
+Supply the unit cost data behind our credit pricing and plan allowances
+Model the margin impact of proposed pricing changes alongside our VP Finance
+Flag when product decisions will move the cost curve before they ship
+You will not own pricing decisions. You will own the numbers those decisions depend on.
+First 90 days
+Days 1 to 30: Full instrumentation of the Gateway. A dashboard showing cost per action type, per tenant, and per model that the exec team checks weekly.
+Days 31 to 60: A working evaluation suite covering our highest-volume action types, with a documented baseline.
+Days 61 to 90: A prioritized cost reduction roadmap with sized estimates, and at least one shipped optimization with measured before-and-after quality.
+What we are looking for
+Substantial experience building on LLM APIs in production, not in demos or notebooks
+You have built an eval harness before and can explain why the naive version of it misleads you
+Hands-on with the current tooling landscape: tracing and observability platforms such as Langfuse, eval frameworks such as promptfoo. You have opinions about which of these earn their keep and which add ceremony without adding signal.
+Comfortable with token accounting, context window management, and caching strategies
+Strong analytical instincts and fluency with data. You reach for a query or a notebook before you reach for an opinion.
+Able to write clearly about tradeoffs for a non-technical audience, because your conclusions will land in board decks and pricing meetings
+Python or TypeScript proficiency
+Nice to have
+Experience with MCP or other tool-calling frameworks
+Background in ERP, accounting, or financial systems
+Prior exposure to usage-based or credit-based pricing models
+Experience at a small company where you set your own priorities
+Why this role is interesting
+Most companies bolt a chat box onto their product and hope. We are building governed, auditable write access to financial systems of record, where a wrong answer has real consequences and a hallucinated journal entry is unacceptable. The evaluation problem here is genuinely hard and genuinely matters.
+You will also have unusual visibility. The numbers you produce will directly shape what we charge and what we build.",https://careers.velixo.com/apply/Gatyy1Hbml/Applied-AI-Engineer,job_5c03086a47ef5fbe9c79aef50503a07f,JazzHR,2026-10-27
+Velixo,"Senior Software Engineer (Typescript, Business Logic Intensive)",senior,Engineering,Montreal,Canada,remote,yes,,2026-08-27,"Develop and test business-logic-heavy full-stack software, shape technical designs, fix bugs and maintain CI/CD pipelines. The role is fully remote across Canada, with priority for Quebec candidates.","• New feature development. A significant part of that will involve shaping high-level user stories into technical designs and discussing them with the stakeholders prior to the implementation.
+• Bug fixing.
+• Testing your own code with unit tests (and integration tests where needed).
+• Tech debt maintenance tasks and refactoring to ensure best engineering practices.
+• Selected engineers on the team will also eventually conduct code reviews.
+• Make sure the CI/CD pipelines are in smooth sailing mode. Occasional SSH into our development/production servers.","• 5 years of software development experience.
+• College / university degree in a STEM field. We are open to considering exceptional candidates without a degree with a proven track record of senior-level work.
+• Good written English skills.
+• Tech stack - Velixo primarily works with TypeScript and C# (ASP.NET Core 8), and knowledge of React is a significant plus. Additionally, experience with Docker, Nginx, and AWS would be valuable. We are also open to exceptional people from Java, Rust, or Go-based technical stacks who are open-switching. We would like someone who is proficient in at least some of those technologies, and ready to work with all of them.
+• Business-oriented mindset: someone who loves beautiful code but keeps the end goals in mind: making the customer happy and driving the company forward.
+• Experience working in an ERP industry and basic accounting knowledge is a plus.","About
+Velixo
+Velixo is an award-winning vendor of Excel-based reporting solutions for Enterprise Resource Planning (ERP) software, such as Acumatica, MYOB, Cegid and Sage Intacct. We serve customers of every size, in every industry, by enhancing their reporting and planning experience, and introducing a world of innovative features and integrations in the Excel they love.
+Headquartered in Montreal, Canada, we are a diverse and fast-paced organization that is rapidly growing in revenue and personnel. Our team is spread out across the world to support a growing base strong of 1800+ customers and 200+ value-added resellers worldwide.
+This is a fully remote position. While we welcome applications from across Canada, we are giving priority to candidates located in Quebec at this time.
+Who we are looking for:
+As a talented full-stack developer, you will contribute your excellent technical design & coding skills, as well as your impressive productivity. You'll be a part of a brilliant, high-paced, customer- and quality-oriented team.
+This role is very business logic intensive. You will thrive if:
+you like being a programming generalist that directly impacts the lives of the customers.
+are a self-starter who thrives without micromanagement (“
+a manager of one
+”).
+you prefer to write clean, readable, and maintainable code without overengineering things.
+love math, algorithms & data structures.
+enjoy and are open to learning, in-depth, how a company works and reports its activity.
+The UI layout will take no more than 10% of your time, business logic implementation/bug fixing will be about 70%, and you can expect to spend up to 20% on technical design and shaping high-level user stories for new features.
+Responsibilities
+New feature development. A significant part of that will involve shaping high-level user stories into technical designs and discussing them with the stakeholders prior to the implementation.
+Bug fixing.
+Testing your own code with unit tests (and integration tests where needed).
+Tech debt maintenance tasks and refactoring to ensure best engineering practices.
+Selected engineers on the team will also eventually conduct code reviews.
+Make sure the CI/CD pipelines are in smooth sailing mode. Occasional SSH into our development/production servers.
+Requirements:
+5 years of software development experience.
+College / university degree in a STEM field.
+We are open to considering exceptional candidates without a degree with a proven track record of senior-level work.
+Good written English skills.
+Tech stack - Velixo primarily works with TypeScript and C# (ASP.NET Core 8), and knowledge of React is a significant plus. Additionally, experience with Docker, Nginx, and AWS would be valuable. We are also open to exceptional people from Java, Rust, or Go-based technical stacks who are open-switching. We would like someone who is proficient in at least some of those technologies, and ready to work with all of them.
+Business-oriented mindset: someone who loves beautiful code but keeps the end goals in mind: making the customer happy and driving the company forward.
+Experience working in an ERP industry and basic accounting knowledge is a plus.
+Why Join Velixo
+We believe in empowering our employees and creating a workplace where you can thrive. Here’s what we offer:
+Competitive salary
+Comprehensive benefits package, including:
+Group health insurance
+DPSP match (up to 6% of base salary)
+Remote work environment
+Career growth opportunities in a rapidly expanding company
+A dynamic and supportive team that values innovation, collaboration, and customer success.
+Join a collaborative and innovative team that values work-life balance and celebrates individual achievements",https://careers.velixo.com/apply/dj4RcEQihw/Senior-Software-Engineer-Typescript-Business-Logic-Intensive,job_a57f99ca61795160b9fc90018eacd6d3,JazzHR,2026-10-27
+Finance Montréal,Head of Venture growth,lead,Business Operations; Business Consulting,Montreal,Canada,hybrid,yes,,2026-09-18,"Lead Fintech Station startup acceleration programs, advise resident companies, develop ecosystem relationships, and support initiatives and reporting. Requires 5 to 10 years of relevant project management experience and functional English and French; the advertisement also requires occasional travel, including trips abroad approximately five to six times a year. The employer careers page describes a hybrid-work policy; the role describes flexibility in scheduling and remote work without specifying a schedule.","• Lead the construction, execution and continuous improvement of the Fintech Station acceleration program(s);
+• Ensure the recruitment and lead the selection of high-potential companies responding to the Fintech Station acceleration offer;
+• Structure the support offered to resident companies at the Fintech Station;
+• Act as a dedicated advisor to a portfolio of resident companies at the Fintech Station;
+• Develop and maintain relationships of trust with venture capital investors;
+• Collaborate in the organization and coordination of business meetings, B2B sessions, economic missions, and networking activities between companies and ecosystem partners;
+• Collaborate transversally with the entire Fintech team, from planning to carrying out projects and initiatives (start-up programs, economic missions, events, workshops, strategic initiatives, etc.);
+• Participate in the various stages of projects and initiatives, follow-ups, and relationships with our clients and partners;
+• Contribute to updating data for our internal and external publications and reports;
+• Coordinate and carry out follow-ups as well as accountability with regard to the mandates and projects entrusted;
+• Working in collaboration with our members and the key players in the Fintech ecosystem;
+• Contribute to the strategic monitoring of the Fintech Station’s activities related to the innovations and products of the start-ups occupying the Fintech Station;
+• Represent the Station Fintech and Finance Montréal at events, conferences, networking activities and meetings with current partners. s and potential.le.s.","• You are available for occasional travel, including some trips abroad, approximately 5 to 6 times per year;
+• Your organizational skills, rigor and ability to manage several projects simultaneously independently distinguish you;
+• You have good adaptability and are comfortable working in a multitasking environment;
+• You are recognized for your diplomatic skills and sense;
+• You have a proven ability to work as part of a team and build relationships with a variety of stakeholders (start-up representatives, partners, colleagues, etc.);
+• You have knowledge and a strong interest in the world of start-ups.
+• Training in a relevant discipline
+• 5 to 10 years of relevant professional experience in project management
+• Functional bilingualism (English, French)
+• Good knowledge of start-ups
+• Knowledge of the Fintech environment
+• Proficiency in customer relationship management (CRM) tools, notably Salesforce, an asset
+• Excellent political acumen, diplomacy and high networking and influence skills.
+• Proven ability to represent the organization with professionalism and credibility to strategic partners","Head of Venture growth
+
+September 18 2026
+
+Your mission in the Station Fintech team
+Created in 2010, Finance Montréal, the Québec financial cluster, is at the heart of the development and promotion of the Québec financial services industry and its international positioning as a world-class, growing, competitive, attractive and innovative marketplace. A flagship initiative of Finance Montréal, the Fintech Station aims to develop the Fintech ecosystem of Quebec. The Station Fintech is a modern hub located at Place Ville Marie, in the heart of downtown Montreal. The Fintech hub serves as a development catalyst for Fintech start-ups while supporting corporate innovation. Over the years, multiple initiatives have been created by the team to support the growth of the ecosystem; the Fintech Canada Forum, the largest event of its kind in the country, the Fintech Station Accelerator and the AMF-Finance Montréal, a research chair entirely dedicated to the study of the impacts of financial technologies.
+Reporting to the Vice-President of Fintech & Technological Innovations, your main mission will be to ensure the quality of the support offered to the companies in the Fintech Station and to manage its acceleration programs.
+Your daily challenges
+Lead the construction, execution and continuous improvement of the Fintech Station acceleration program(s);
+Ensure the recruitment and lead the selection of high-potential companies responding to the Fintech Station acceleration offer;
+Structure the support offered to resident companies at the Fintech Station;
+Act as a dedicated advisor to a portfolio of resident companies at the Fintech Station;
+Develop and maintain relationships of trust with venture capital investors;
+Collaborate in the organization and coordination of business meetings, B2B sessions, economic missions, and networking activities between companies and ecosystem partners;
+Collaborate transversally with the entire Fintech team, from planning to carrying out projects and initiatives (start-up programs, economic missions, events, workshops, strategic initiatives, etc.);
+Participate in the various stages of projects and initiatives, follow-ups, and relationships with our clients and partners;
+Contribute to updating data for our internal and external publications and reports;
+Coordinate and carry out follow-ups as well as accountability with regard to the mandates and projects entrusted;
+Working in collaboration with our members and the key players in the Fintech ecosystem;
+Contribute to the strategic monitoring of the Fintech Station’s activities related to the innovations and products of the start-ups occupying the Fintech Station;
+Represent the Station Fintech and Finance Montréal at events, conferences, networking activities and meetings with current partners. s and potential.le.s.
+Why this job is for you
+You are available for occasional travel, including some trips abroad, approximately 5 to 6 times per year;
+Your organizational skills, rigor and ability to manage several projects simultaneously independently distinguish you;
+You have good adaptability and are comfortable working in a multitasking environment;
+You are recognized for your diplomatic skills and sense;
+You have a proven ability to work as part of a team and build relationships with a variety of stakeholders (start-up representatives, partners, colleagues, etc.);
+You have knowledge and a strong interest in the world of start-ups.
+What you need to succeed in this role
+Training in a relevant discipline
+5 to 10 years of relevant professional experience in project management
+Functional bilingualism (English, French)
+Good knowledge of start-ups
+Knowledge of the Fintech environment
+Proficiency in customer relationship management (CRM) tools, notably Salesforce, an asset
+Excellent political acumen, diplomacy and high networking and influence skills.
+Proven ability to represent the organization with professionalism and credibility to strategic partners
+It’s good to work at Finance Montréal because we offer
+A workplace where kindness, teamwork, humor and fun are integral to our values
+Flexibility: scheduling and remote work
+Collaborative workspaces
+A competitive remuneration
+A group insurance plan
+A program to help employees and their families
+An RRSP contribution
+Personal and illness days granted annually
+Holiday policy that adds to the closure of the office during the holidays (to allow you to spend time with your loved ones and benefit from your vacation for later in the year)
+A summer schedule
+Finally, fun and challenges guaranteed!
+Position: full-time, permanent contract
+Start at post: as soon as possible
+Location: Montreal
+Salary: by experience
+Submit my application",https://www.finance-montreal.com/en/position-details/head-of-venture-growth,job_f0584d5cf65c59d88308252e58e2d91a,Zoho Recruit,2026-10-27
+AssistIQ,Senior Software Developer,senior,Software Development,Toronto,Canada,remote,yes,,2026-08-28,"AssistIQ seeks a senior software developer to build and manage AWS cloud services for its healthcare platform. The role includes AI-assisted software development, deployment automation and an on-call support rotation. It is advertised as remote with Toronto as its location; eligibility to work from Quebec is not explicitly established.","• Be a key stakeholder of the AWS cloud platform and ensure we follow engineering and cloud best practices
+• Design, develop and enhance the capabilities of the AssistIQ platform
+• Leverage AI-assisted development tools throughout the software development lifecycle to improve engineering velocity, quality and effectiveness
+• Use AI to accelerate activities such as software development, code review, debugging, testing, documentation, technical research and system design
+• Identify opportunities to use AI and automation to simplify repetitive engineering tasks and improve development workflows
+• Streamline the deployment process and ensure automation and continuous integration best practices are followed
+• Develop internal tools to optimize the management and monitoring of our deployments
+• Analyze current technologies and processes, and rapidly research, evaluate and experiment with new approaches to improve them, leveraging AI tools to accelerate the path from idea to implementation
+• Provide technical and analytical guidance to other Engineering team members
+• Participate in drafting, reviewing and maintaining technical documentation
+• Participate in product management planning of product features and development projects
+• Participate in the on-call production support rotation","• 5+ years’ experience in software development
+• 3+ years’ experience building serverless AWS applications and working with the AWS SDK
+• 3+ years’ experience monitoring, supporting and enhancing production applications
+• 1+ years’ experience actively using modern AI development tools as a core part of the software development lifecycle, including coding, debugging, testing, code review, technical research, documentation and system design
+• Demonstrated ability to leverage AI to materially improve engineering productivity while maintaining strong engineering judgment, code quality, security and reliability
+• Expertise in one of the following: JavaScript/TypeScript, Python or Go
+• Experience building CI/CD pipelines and applying automation and continuous integration best practices
+• Experience with infrastructure as code using AWS CDK or Terraform
+• Experience with SQL and NoSQL datastores such as PostgreSQL and DynamoDB
+• Experience with monitoring tools such as CloudWatch, Datadog or New Relic
+• Computer Science degree, relevant diploma or demonstrable equivalent work experience
+• Experience with ReactJS or React Native is an asset
+• Experience in the life sciences, healthcare or technology industry is an asset
+• Excellent oral and written communication skills in English; French communication skills are an asset","About the role:
+As a Senior Software Developer, you will be responsible for designing, developing and managing the cloud based services that power the AssistIQ platform.
+We’re excited by candidates who enjoy and are capable of working in a fast-growing entrepreneurial environment. Your ultimate goal is to ensure we build our platform in a pragmatic, scalable and sustainable way.
+We are looking for an engineer who embraces modern AI tools as a core part of their development workflow. You should be someone who actively uses AI to accelerate software development, improve code quality, troubleshoot problems, automate repetitive work and increase your overall engineering leverage.
+To be successful, you will have to be able to juggle responsibilities in parallel, prioritize competing deliverables efficiently, communicate effectively across the organization and be driven by continuous improvement.
+We would expect you to be knowledgeable, articulate, sensible, able to coordinate with other peers and senior executives, and collaborate and deliver results in a fast-paced environment where teamwork, professionalism, confidentiality, and communication are essential.
+Key Responsibilities
+Be a key stakeholder of the AWS cloud platform and ensure we follow engineering and cloud best practices
+Design, develop and enhance the capabilities of the AssistIQ platform
+Leverage AI-assisted development tools throughout the software development lifecycle to improve engineering velocity, quality and effectiveness
+Use AI to accelerate activities such as software development, code review, debugging, testing, documentation, technical research and system design
+Identify opportunities to use AI and automation to simplify repetitive engineering tasks and improve development workflows
+Streamline the deployment process and ensure automation and continuous integration best practices are followed
+Develop internal tools to optimize the management and monitoring of our deployments
+Analyze current technologies and processes, and rapidly research, evaluate and experiment with new approaches to improve them, leveraging AI tools to accelerate the path from idea to implementation
+Provide technical and analytical guidance to other Engineering team members
+Participate in drafting, reviewing and maintaining technical documentation
+Participate in product management planning of product features and development projects
+Participate in the on-call production support rotation
+
+5+ years’ experience in software development
+3+ years’ experience building serverless AWS applications and working with the AWS SDK
+3+ years’ experience monitoring, supporting and enhancing production applications
+1+ years’ experience actively using modern AI development tools as a core part of the software development lifecycle, including coding, debugging, testing, code review, technical research, documentation and system design
+Demonstrated ability to leverage AI to materially improve engineering productivity while maintaining strong engineering judgment, code quality, security and reliability
+Expertise in one of the following: JavaScript/TypeScript, Python or Go
+Experience building CI/CD pipelines and applying automation and continuous integration best practices
+Experience with infrastructure as code using AWS CDK or Terraform
+Experience with SQL and NoSQL datastores such as PostgreSQL and DynamoDB
+Experience with monitoring tools such as CloudWatch, Datadog or New Relic
+Computer Science degree, relevant diploma or demonstrable equivalent work experience
+Experience with ReactJS or React Native is an asset
+Experience in the life sciences, healthcare or technology industry is an asset
+Excellent oral and written communication skills in English; French communication skills are an asset
+You are legally entitled to work in Canada",https://apply.workable.com/assistiq/j/38ECF1DFA7/,job_43883a3a38e45c50a6ef88a53c3b1c53,Workable,2026-10-27
