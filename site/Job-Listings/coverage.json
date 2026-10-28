@@ -1,6 +1,6 @@
 {
   "collected_at": "2026-10-01 19:08",
-  "company_count": 163,
+  "company_count": 173,
   "coverage": [
     {
       "company_name": "Ubisoft Montreal",
@@ -979,6 +979,66 @@
       "count": 0,
       "status": "Career page reviewed, location and language selection",
       "notes": "Three named roles were listed. Two English advertisements did not specify a job location, so Canada-only geography could not be established; the third advertisement was French-language. A spontaneous application is not a specific vacancy."
+    },
+    {
+      "company_name": "Clinia",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The linked Humi board listed only an older spontaneous application, not a specific vacancy."
+    },
+    {
+      "company_name": "MEDFAR Clinical Solutions",
+      "count": 19,
+      "status": "Reviewed careers snapshot",
+      "notes": "The linked SmartRecruiters board listed 31 advertisements: 19 eligible English Canadian advertisements, six French-language advertisements, one over 180 days old, and five outside Canada. Dates reflect the provider release date; distinct advertisement IDs are retained."
+    },
+    {
+      "company_name": "Plotly",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The linked Ashby board listed two bilingual roles in both Canada and the United States; neither meets the Canada-only selection."
+    },
+    {
+      "company_name": "Wrk",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The supplied career page states that no positions are currently open."
+    },
+    {
+      "company_name": "SuccessFinder",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The linked BambooHR board had no open positions at collection."
+    },
+    {
+      "company_name": "WorkJam",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "Directly retrieved official SuccessFactors search showed no open positions; stale indexed postings were not counted as current."
+    },
+    {
+      "company_name": "Busbud",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The supplied careers page showed no confirmed openings; indexed detail URLs returned 404 and independently located empty third-party boards could not be tied to the current page."
+    },
+    {
+      "company_name": "Bus.com",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "Direct access to the supplied career page was blocked; an extracted copy mentioned no openings, but its freshness is unconfirmed. A separate employer-branded board could not be verified as the current official careers integration."
+    },
+    {
+      "company_name": "OPAL-RT Technologies",
+      "count": 12,
+      "status": "Reviewed careers snapshot",
+      "notes": "The linked BambooHR board listed 22 jobs: 12 eligible Canadian bilingual advertisements, two Canadian advertisements older than 180 days, and eight postings outside Canada or without confirmed Canada-only geography."
+    },
+    {
+      "company_name": "Dakis",
+      "count": 0,
+      "status": "Reviewed careers snapshot",
+      "notes": "The supplied career URL returned HTTP 404 on direct retrieval while an extracted copy displayed a different job list; current openings and ATS could not be reliably established."
     }
   ],
   "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",
