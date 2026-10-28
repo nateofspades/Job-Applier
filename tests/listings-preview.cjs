@@ -107,7 +107,7 @@ async function choose(page, id, values) {
     assert.equal(await page.locator('#results tr').count(), 1);
     await page.locator('.advertisement-open').click();
     assert(await page.locator('dialog').isVisible());
-    assert((await page.locator('dialog').innerText()).includes(jobs.at(-1).full_job_post.trim().slice(0, 90)));
+    assert.equal(await page.locator('.advertisement-body').textContent(), jobs.at(-1).full_job_post);
     await page.keyboard.press('Escape');
     await page.fill('#query', 'zzzz_NO_SUCH_JOB_zzzz');
     assert(await page.locator('#empty').isVisible());
