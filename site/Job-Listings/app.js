@@ -68,7 +68,7 @@ function render(){
  }
  $('results').replaceChildren(fragment);
  $('status').textContent=`${filtered.length.toLocaleString()} of ${rows.length.toLocaleString()} jobs`;
- $('empty').hidden=filtered.length!==0;$('table-wrap').hidden=filtered.length===0;
+ $('empty').hidden=filtered.length!==0;
  $('range').textContent=filtered.length?`Showing all ${filtered.length.toLocaleString()} matching postings`:'No matching rows';
  document.dispatchEvent(new Event('job-listings-rendered'));
 }

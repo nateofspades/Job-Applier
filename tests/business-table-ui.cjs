@@ -108,6 +108,25 @@ test('dragging columns preserves all row values, semantic widths, saved order an
     assert.deepEqual(page.errors, []);
   } finally { await page.close(); }
 });
+test('empty message remains visible after horizontal scrolling', async () => {
+  const page = await openPage();
+  try {
+    await page.evaluate(() => { document.querySelector('#table-wrap').scrollLeft = 1200; });
+    await settled(page);
+    await page.fill('#search', 'does-not-match-any-business-xyz');
+    await settled(page);
+    const rect = await page.locator('#empty').evaluate(element => {
+      const box = element.getBoundingClientRect();
+      return { left: box.left, right: box.right, width: innerWidth, inScroller: !!element.closest('#table-wrap') };
+    });
+    assert(!rect.inScroller && rect.left >= 0 && rect.right <= rect.width, JSON.stringify(rect));
+    assert(await page.locator('#empty').isVisible());
+    assert.equal(await page.locator('#empty').textContent(), 'No businesses match these filters.');
+    await page.click('#reset');
+    assert(!(await page.locator('#empty').isVisible()));
+    assert.equal(await page.locator('#table-wrap tbody tr:visible').count(), businessCount);
+  } finally { await page.close(); }
+});
 test('filters, empty results, mobile resizing and byte-identical CSV downloads survive reordering', async () => {
   const page = await openPage();
   try {

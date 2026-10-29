@@ -40,6 +40,24 @@ test('default columns use requested order and labels and preserve saved orders',
 
 test('intro describes saved job posts',async()=>{const page=await open(); try{assert.equal(await page.locator('#snapshot').textContent(),'Search roles, compare requirements, and explore saved job posts.');}finally{await page.close();}});
 
+test('empty results retain usable column headers across resize and reset',async()=>{
+ const page=await open(); try{
+  await page.fill('#query','no-such-job-xyz');
+  assert(await page.locator('#empty').isVisible());
+  for(const width of [1280,390]){
+   await page.setViewportSize({width,height:800});
+   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+   assert(await page.locator('#table-wrap').isVisible());
+   const metrics=await page.locator('#sticky-head th').evaluateAll(headers=>headers.map(h=>({width:h.getBoundingClientRect().width,overflow:h.scrollWidth>h.clientWidth})));
+   assert.equal(metrics.length,expectedColumns.length);
+   assert(metrics.every(m=>m.width>20&&!m.overflow),JSON.stringify(metrics));
+  }
+  await page.click('#reset');
+  assert.equal(await page.locator('#results tr').count(),3);
+  assert(!(await page.locator('#empty').isVisible()));
+ }finally{await page.close();}
+});
+
 test('date added header fits and stays aligned after reordering',async()=>{
  const page=await open(); try{
   await page.evaluate(()=>{const from=document.querySelector('#sticky-head [data-column="date_added_to_dataset"]'),to=document.querySelector('#sticky-head [data-column="job_title"]'); const dataTransfer=new DataTransfer(); from.dispatchEvent(new DragEvent('dragstart',{bubbles:true,dataTransfer})); to.dispatchEvent(new DragEvent('drop',{bubbles:true,dataTransfer}));});
