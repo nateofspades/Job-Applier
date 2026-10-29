@@ -6,7 +6,7 @@
   const stickyTable = document.querySelector('.table-sticky-head table');
 
   function syncHeaderWidths() {
-    const sourceCells = tableWrap.querySelectorAll('tbody tr:first-child td');
+    const sourceCells = tableWrap.querySelectorAll(table.tBodies[0].rows.length ? 'tbody tr:first-child td' : 'thead th');
     const stickyCells = document.querySelectorAll('#sticky-head th');
     if (sourceCells.length !== stickyCells.length) return;
     sourceCells.forEach((cell, index) => {
