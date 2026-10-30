@@ -1,0 +1,292 @@
+{
+  "insertion_date": "2026-10-30",
+  "baseline_job_count": 1356,
+  "added_job_count": 40,
+  "new_jobs": [
+    {
+      "job_id": "job_8cee2669ff094817cbd786828468e8e1",
+      "company_name": "Adastra Corporation",
+      "job_title": "Data Analyst - Identity and Access management",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5905/data-analyst---identity-and-access-management/job?in_iframe=1",
+      "row_sha256": "c6287be82d589e87e9f02e5941b6e8bda49e20fbbe90d845b528269f572eec4c"
+    },
+    {
+      "job_id": "job_4b36760677dbdf94953f984335ad7ff8",
+      "company_name": "Adastra Corporation",
+      "job_title": "Senior Full Stack Developer (AWS)",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5888/senior-full-stack-developer-%28aws%29/job?in_iframe=1",
+      "row_sha256": "c93c82be885be702564dba95b25137486c5b83c35312194062e6ff9e2ac6522f"
+    },
+    {
+      "job_id": "job_31f0f0cfda5db3ae9c703437b7145141",
+      "company_name": "Adastra Corporation",
+      "job_title": "Fullstack Developer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5883/fullstack-developer/job?in_iframe=1",
+      "row_sha256": "e19731969d8393ba0e823c786541b55644a3300105af91fea566d18290832242"
+    },
+    {
+      "job_id": "job_dce0761b9fbc384805032806e4502455",
+      "company_name": "Adastra Corporation",
+      "job_title": "Cloud Infrastructure Architect",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5865/cloud-infrastructure-architect/job?in_iframe=1",
+      "row_sha256": "b80b93fd3e4a7065844232234508a317a34ff5235030d793a4b9a1c910d1fd49"
+    },
+    {
+      "job_id": "job_d1ba064dfd31be828bc773d93123804d",
+      "company_name": "Adastra Corporation",
+      "job_title": "SAS/Python Developer (Full-Time, Hybrid)",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5862/sas-python-developer-%28full-time%2c-hybrid%29/job?in_iframe=1",
+      "row_sha256": "54403e7c4c1e5d6fb2103913ced085b47ceaf883e4f1020b15e13cfceb0a210e"
+    },
+    {
+      "job_id": "job_72fd94f1cae39f49e77fcf9faa3dab0b",
+      "company_name": "Adastra Corporation",
+      "job_title": "Senior Rust Developer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5854/senior-rust-developer/job?in_iframe=1",
+      "row_sha256": "aa0dfed100502a8915aa04c6e39264ef503a7bb911bb74dd8d2f73330e855854"
+    },
+    {
+      "job_id": "job_7e1a0eab3e24e15ceb556efed3eb4cd6",
+      "company_name": "Adastra Corporation",
+      "job_title": "AWS Cloud Support Engineer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5841/aws-cloud-support-engineer/job?in_iframe=1",
+      "row_sha256": "bf21d7b3396f2f407d61e1d2b8348d12c50e141fe5087abc52b89c330a50a0a2"
+    },
+    {
+      "job_id": "job_d6bc7f8b4f7760ef0765277425de6983",
+      "company_name": "Adastra Corporation",
+      "job_title": "Principal Presales Solutions Architect",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5804/principal-presales-solutions-architect/job?in_iframe=1",
+      "row_sha256": "578c3da1d7b7d4fbd91ec38573c6a8675d97e507a95c7f1f61004628736a862a"
+    },
+    {
+      "job_id": "job_8cb5cbdead03d9f0fc56aab341f1d640",
+      "company_name": "Adastra Corporation",
+      "job_title": "Workday Integration Developer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5794/workday-integration-developer/job?in_iframe=1",
+      "row_sha256": "46a6956011d8c8b466e51798fe0aa76f9319fea9144d065fc046e85d4bcbbbd7"
+    },
+    {
+      "job_id": "job_8d4a72b37bc1f2b5ca2f89330fab4e28",
+      "company_name": "Adastra Corporation",
+      "job_title": "Broadcom Clarity Developer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5793/broadcom-clarity-developer/job?in_iframe=1",
+      "row_sha256": "ea233ef9b82bd815916a962bbf111e3d84aa2c964b64464153ddd18b32b5421d"
+    },
+    {
+      "job_id": "job_e40480ee9a74de9b1cecd291441f818e",
+      "company_name": "Adastra Corporation",
+      "job_title": "Flag Football Data Product Analyst",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5787/flag-football-data-product-analyst/job?in_iframe=1",
+      "row_sha256": "6aee381ba3d33836da9fb72ef8570dc82cf469af55d01b1f6c86b736d9dfcc76"
+    },
+    {
+      "job_id": "job_8e2cfd4e176e362fee084e28299ea7e9",
+      "company_name": "Adastra Corporation",
+      "job_title": "Data Product Analyst (Data Science)",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5714/data-product-analyst-%28data-science%29/job?in_iframe=1",
+      "row_sha256": "75b6233d5b60dcd4eb6771be45c7b335f5b6c57cc38c3bbc48e04460e2fe9eae"
+    },
+    {
+      "job_id": "job_3ee44a5b4922a63a07b1f8243c1d7040",
+      "company_name": "Adastra Corporation",
+      "job_title": "Partner Operations Manager",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5712/partner-operations-manager/job?in_iframe=1",
+      "row_sha256": "931f0017f324ded561ab14e1b27d5ee709cc15aeb1bc358948609f71637bcc33"
+    },
+    {
+      "job_id": "job_9b6454e93d3a3903abab1d16a6c9d238",
+      "company_name": "Adastra Corporation",
+      "job_title": "Fullstack Developer",
+      "job_url": "https://careers-adastragrp.icims.com/jobs/5688/fullstack-developer/job?in_iframe=1",
+      "row_sha256": "8043378011bbbb61615e6d7d614d5c9d281a504afa3ec48aff59ad397c5800e5"
+    },
+    {
+      "job_id": "job_8eb8f4bd692fd8d49a98c755e9f724c6",
+      "company_name": "JADX",
+      "job_title": "Social Media Manager",
+      "job_url": "https://www.jadxagency.com/us/careers/social-media-manager",
+      "row_sha256": "f64e306fee5f63e7c31a7aeaa48db6683d4cd2ea741821293a8caf63aaf9de44"
+    },
+    {
+      "job_id": "job_836b03dcd4cebf8bf745665b11ef1682",
+      "company_name": "JADX",
+      "job_title": "Business Development Representative",
+      "job_url": "https://www.jadxagency.com/us/careers/sales",
+      "row_sha256": "f2e336b7484e5488f9845259a134e5fe2982871318c6180bc4d6316dd268d239"
+    },
+    {
+      "job_id": "job_9c7ed61b2c705372caa93d456e4e969d",
+      "company_name": "Pertinence Media",
+      "job_title": "Digital Marketing Specialist",
+      "job_url": "https://www.pertinencemedia.com/en/career/digital-marketing-specialist/",
+      "row_sha256": "dedcd1a850571f1cfc451e271c12c1198b421082c4fbbd8f0fb099eb2ce51f0a"
+    },
+    {
+      "job_id": "job_0219b379b46932ab09d0701caa5b8e25",
+      "company_name": "Pertinence Media",
+      "job_title": "Digital Strategist",
+      "job_url": "https://www.pertinencemedia.com/en/career/digital-strategist/",
+      "row_sha256": "b2853211254c72101bccd7f9ea2e069710f18c861f94c67edbd2f44929476af8"
+    },
+    {
+      "job_id": "job_67a28501b18a8e5319aa3756c37faa97",
+      "company_name": "Pertinence Media",
+      "job_title": "Digital marketing intern",
+      "job_url": "https://www.pertinencemedia.com/en/career/digital-marketing-internship/",
+      "row_sha256": "aa69998318331db53c63c56f91c90a22be56eac8cd30dc4b8c900ca1e0cacb0a"
+    },
+    {
+      "job_id": "job_1124204ef031c2d837ebac68b558df49",
+      "company_name": "IMAGEMOTION",
+      "job_title": "Integrated Marketing Manager",
+      "job_url": "https://imagemotion.com/were-hiring-integrated-marketing-manager/",
+      "row_sha256": "3731ff3cc6cc20d47e0d50d599c492a563b5af2c4c9e38ec26beca6bef1cc71e"
+    },
+    {
+      "job_id": "custom-a05ea47a24f062690643",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "Brand & Supplier Operations Analyst",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "2ba7c000b284b51a5f724244b1d1c0bb0efdceae16bf5dbc7e3d6a0f74df2da0"
+    },
+    {
+      "job_id": "custom-4a3571dddbeac5722d2f",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "Showroom Sales Consultant – Decorative Hardware",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "1bc9187dd0b658200b8fd9336294660e7308545dad5c9f95d8e1c1cc6fb8faa6"
+    },
+    {
+      "job_id": "custom-b85f158c6740c7550ff1",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "E-Commerce Logistics & Order Entry Analyst",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "1552a1c2f0d627ba40c15b63d827881d914705ae91d693a6d459e11bbdf852c7"
+    },
+    {
+      "job_id": "custom-08adb068c3cc9c9a7bf2",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "Design and Sales Consultant -Showroom (Bilingual)",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "cdf24d17ee3ca5ec741ff1536ac80db3e297c22b04ff8211ccf8b3dede7b8e54"
+    },
+    {
+      "job_id": "custom-5ed7a6dcab9f402bb3d8",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "Showroom Assembly & Placement Specialist",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "4d1425836a624de1ebca16656b43ae0beb92500d7f29f9ba1e4c825d892b909f"
+    },
+    {
+      "job_id": "custom-6f1764dfc4bf4c950d0f",
+      "company_name": "Union Lighting & Décor",
+      "job_title": "E-Commerce Customer Service Representative (Billingual)",
+      "job_url": "https://unionlighting.com/en-us/pages/careers",
+      "row_sha256": "b59c3bc757d9b860bc4b34fc92361e49af96da5d7a4834b43dfecf81d9a38808"
+    },
+    {
+      "job_id": "custom-cef155fcd75e6dd9dcf0",
+      "company_name": "EMRN",
+      "job_title": "Customer Service Representative (In-Office – Montreal, QC)",
+      "job_url": "https://emrn.ca/Careers/",
+      "row_sha256": "5c5969805d1549f14dd3276e918dc6dd5fc9b5ab0fe1da719d49d8336a82556a"
+    },
+    {
+      "job_id": "custom-c079e2ced746daedf1b6",
+      "company_name": "EMRN",
+      "job_title": "Territory Sales Manager (Remote – Canada-Wide)",
+      "job_url": "https://emrn.ca/Careers/",
+      "row_sha256": "e19a8a520794ea79c39058b4fb6cb57e27e21440b2cf9fe404f896d2401c5b50"
+    },
+    {
+      "job_id": "custom-573e1a823c7e3bf0da7f",
+      "company_name": "EMRN",
+      "job_title": "Executive Assistant – In-Office (Montreal, QC)",
+      "job_url": "https://emrn.ca/Careers/",
+      "row_sha256": "7c25e170ad543454ba6e90eb1857c1a8589c4f45cab59922fd1f67162da5dc0a"
+    },
+    {
+      "job_id": "custom-c5a22a960634d1f85a80",
+      "company_name": "OnClic",
+      "job_title": "Digital Marketing Strategist – SEO, SEM & AI Referencing (GEO)",
+      "job_url": "https://onclic.ca/en/about/careers/digital-marketing-strategist-seo-sem-ai-referencing-geo/",
+      "row_sha256": "22c4c5c7d947ce8dfcb4c9fe7841434a530ba4a2b8f2368227f175ec505fb725"
+    },
+    {
+      "job_id": "custom-300e63641f1d4aecbe4b",
+      "company_name": "OnClic",
+      "job_title": "Web Developer / Integrator",
+      "job_url": "https://onclic.ca/en/about/careers/web-developer-integrator/",
+      "row_sha256": "fdd800aa6215d024ac421bb650cbc78d1798c9aab8249317db85ca7f7ff730f0"
+    },
+    {
+      "job_id": "custom-a87319f842c8a6811ae4",
+      "company_name": "OnClic",
+      "job_title": "Web Developer / Full Stack",
+      "job_url": "https://onclic.ca/en/about/careers/web-developer-full-stack/",
+      "row_sha256": "efa407995bbef8aefae5c259730a6073d274e49651f96e43b34fa61dc0011056"
+    },
+    {
+      "job_id": "custom-f7f84819de92cd247219",
+      "company_name": "Markétika",
+      "job_title": "Graphic Designer",
+      "job_url": "https://marketika.co/careers/graphic-designer-position",
+      "row_sha256": "b067ef1100158420e739e77a6896a6cacc4bb75ea411e1c612d5a628c47772a4"
+    },
+    {
+      "job_id": "custom-08320f83273315a6a513",
+      "company_name": "Markétika",
+      "job_title": "Videographer",
+      "job_url": "https://marketika.co/careers/videographer",
+      "row_sha256": "917630ece6a0afe32cd5006ba1f97665500c6bcfe3bc1bf78a8392e3bd6512f5"
+    },
+    {
+      "job_id": "custom-1e0d4b104afcc808522c",
+      "company_name": "Markétika",
+      "job_title": "Social Media and Digital Content Coordinator",
+      "job_url": "https://marketika.co/careers/social-media-digital-content-coordinator",
+      "row_sha256": "0afa26b8e55b19d653befceaeb85a5f9abb094755bfc8d624478c643b377fb2f"
+    },
+    {
+      "job_id": "custom-726fe9c44f2ffa9415fb",
+      "company_name": "Markétika",
+      "job_title": "Senior Paid Media Specialist",
+      "job_url": "https://marketika.co/careers/senior-paid-media-specialist/",
+      "row_sha256": "3afb00c146d421dd4b572e609d82bf24da7dc630bcfb636749baa32868f8c1e2"
+    },
+    {
+      "job_id": "custom-3a8de11b2a352553dfe5",
+      "company_name": "Catalys Lubricants",
+      "job_title": "Corporate controller",
+      "job_url": "https://www.catalyslubricants.ca/en/node/5074",
+      "row_sha256": "0cb2f0ea68c6fb6fa5602fdbd63c55eafd0c77f5e1d70ee859a3bcd04bac3b91"
+    },
+    {
+      "job_id": "custom-9c018121e9e477587994",
+      "company_name": "Catalys Lubricants",
+      "job_title": "FP&A & Operations Finance Business Partner",
+      "job_url": "https://www.catalyslubricants.ca/en/node/5075",
+      "row_sha256": "107dfccfba2885689f6265021963055dd719dd635114d61505382bcdcfcc3a07"
+    },
+    {
+      "job_id": "custom-16a852bcafbffaefc6f5",
+      "company_name": "Hoski",
+      "job_title": "Digital Sales Strategy Director – Performance Marketing",
+      "job_url": "https://hoski.ca/careers/",
+      "row_sha256": "b9c9a723d9a38530a8f5a3bc14cf7ebeb1eaf8cf464c225ab77b59129dc6a681"
+    },
+    {
+      "job_id": "custom-8805df7452bad6a053f0",
+      "company_name": "Brand’s Media Group",
+      "job_title": "INTERNSHIP POSITIONS OPENING | WINTER + SPRING 2027",
+      "job_url": "https://brandsmediagroup.com/careers/intern",
+      "row_sha256": "a81558ea4d715dfe6d3238ab2d4a8147f0bd26acd141202da6b2580b890c4999"
+    }
+  ],
+  "business_assets_sha256": {
+    "Business-Listings/Business_Listings.csv": "b9d0c20f6e6271eebb5992e4906b76045afbf58accdc1acad4d046d3395886f8",
+    "Business-Listings/Business_Spreadsheet.csv": "b9d0c20f6e6271eebb5992e4906b76045afbf58accdc1acad4d046d3395886f8",
+    "Business-Listings/index.html": "f775715885007eff2db92324707a0af6fbab9180833de17ce6d189120ed72866"
+  }
+}
