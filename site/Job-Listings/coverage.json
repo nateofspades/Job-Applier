@@ -1043,140 +1043,140 @@
     {
       "company_name": "ByteGurus",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "No publication-ready records; scoped holds documented",
+      "notes": "Verified source snapshot 2026-10-30. Fresh official careers board fetched; prior 112 detail captures reviewed for Canadian geography. No explicit Canadian location established. Zero included does not mean no jobs or no possible Canadian applicants. Prior detail captures were reused, not freshly refetched."
     },
     {
       "company_name": "Higglo",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "No publication-ready records; scoped holds documented",
+      "notes": "Verified source snapshot 2026-10-30. Fresh official careers board fetched; prior 48 detail captures reviewed for Canadian geography. Remote or hybrid wording alone is insufficient for Canada-only geography. Prior detail captures were reused, not freshly refetched."
     },
     {
       "company_name": "IMAGEMOTION",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 1,
+      "status": "Verified publication-ready records",
+      "notes": "Verified source snapshot 2026-10-30. Fresh careers archive and six 2026 detail pages checked. One English Montréal/remote advertisement retained; one Montréal/Miami advertisement excluded and four dated advertisements exceed the standing 180-day maximum. Older archive entries were not fully reverified; archive presence does not independently confirm an active vacancy. Shared Miami footer is not a job location."
     },
     {
       "company_name": "Adastra Corporation",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 14,
+      "status": "Verified publication-ready records",
+      "notes": "Verified source snapshot 2026-10-30. Fresh in-iframe current official iCIMS board has 21 links on one results page. All 20 previously selected individual English details were freshly refetched: 14 Canada-only retained, five mixed USA/Canada excluded, one HTTP 410 closed. Remaining board entries are a talent community and a pipeline hold. Exact complete role-body HTML including company/legal text preserved; no dates inferred from requisition year. city retains ATS office cities and expressly offered body cities, including metadata/body conflicts documented in evidence."
     },
     {
       "company_name": "Pertinence Media",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 3,
+      "status": "Verified publication-ready records",
+      "notes": "Verified source snapshot 2026-10-30. Fresh official board and three English details recovered with web_extract after direct HTTP 403/526. All three current board roles retained, including internship; substantive role sections and benefits captured without truncation markers. Montréal/hybrid supplied by board and details, remote choice explicitly supported by benefits. Application/CAPTCHA functionality was not tested."
     },
     {
       "company_name": "JADX",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 2,
+      "status": "Verified publication-ready records",
+      "notes": "Verified source snapshot 2026-10-30. Fresh official careers page and both linked English role pages checked. Both Montréal positions retained; French and English requirements preserved. Currency selector/US path does not establish US job location. Field sales is not relabeled in-office; application submission was not tested."
     },
     {
       "company_name": "Agence Rinaldi",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "No publication-ready records; scoped holds documented",
+      "notes": "Verified source snapshot 2026-10-30. Fresh French and English employer pages plus both linked Grenier detail pages checked. English page has only brief cards, while complete linked ads are French-only and explicitly closed. Both held/excluded; no English full advertisement fabricated."
     },
     {
       "company_name": "TurnBerry Acai",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "No publication-ready records; scoped holds documented",
+      "notes": "Verified source snapshot 2026-10-30. Fresh official careers page confirms one Montréal hybrid full-time role. Details discovered in client bundle, but rendered expanded full-post verification unresolved; browser tools timed out and subsequent executable extraction was denied. Role held; no invented URL or fragment."
     },
     {
       "company_name": "Aura Social",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "no_named_vacancies",
+      "notes": "Verified source snapshot 2026-10-30. Only a spontaneous application is advertised; not counted as a vacancy."
     },
     {
       "company_name": "Redbox Media",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "no_named_vacancies",
+      "notes": "Verified source snapshot 2026-10-30. Spontaneous applications only on reviewed official career page."
     },
     {
       "company_name": "Agence FDM",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "excluded_language",
+      "notes": "Verified source snapshot 2026-10-30. Three named French-only advertisements; no substantive English advertisement variant verified."
     },
     {
       "company_name": "Brand’s Media Group",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 1,
+      "status": "verified_with_source_conflict",
+      "notes": "Verified source snapshot 2026-10-30. One internship; detail expressly states Montreal hybrid and Winter/Spring 2027. Index Fall/Winter 2026 label is stale/conflicting; detail terms preserved."
     },
     {
       "company_name": "Markétika",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 4,
+      "status": "verified_with_holds",
+      "notes": "Verified source snapshot 2026-10-30. Four full English descriptions verified. Senior Paid Media is linked in current raw board, and trailing-slash detail recovered HTTP 200; prior not-on-board hold resolved. Videographer is explicitly part-time, not full-time."
     },
     {
       "company_name": "Archipel",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "explicit_no_open_roles",
+      "notes": "Verified source snapshot 2026-10-30. Official page explicitly says there are currently no available positions; spontaneous application is separate."
     },
     {
       "company_name": "Terfuu",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "held_location",
+      "notes": "Verified source snapshot 2026-10-30. English Creative Strategist ad is live, but generic remote and Montreal agency headquarters do not establish Canada-only advertised workplace."
     },
     {
       "company_name": "Agencilia",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "held_location",
+      "notes": "Verified source snapshot 2026-10-30. Four short role listings reviewed. Employer offices do not establish job locations; first explicitly lists Montreal and Miami."
     },
     {
       "company_name": "Catalys Lubricants",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 2,
+      "status": "verified_with_holds",
+      "notes": "Verified source snapshot 2026-10-30. Corporate controller detail now contains a complete English description, resolving prior title-only source. Two eligible finance roles retained; permanent does not by itself establish full-time."
     },
     {
       "company_name": "Union Lighting & Décor",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 6,
+      "status": "verified",
+      "notes": "Verified source snapshot 2026-10-30. All six full English ads captured on employer careers page. Shared canonical URL retained; stable IDs derive from URL plus exact title."
     },
     {
       "company_name": "EMRN",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 3,
+      "status": "verified",
+      "notes": "Verified source snapshot 2026-10-30. All three full English ads captured on shared employer page. Remote territory is expressly all Canadian provinces; city stays blank. Territory Sales Manager is account/territory management, not inferred people-management seniority."
     },
     {
       "company_name": "The Kersheh Group",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "blocked_ats",
+      "notes": "Verified source snapshot 2026-10-30. Official page links ADP tenant 77beec31-416a-4e33-a035-275ab9fedacb. ADP HTML returns application shell; two attempted read-only recruitment endpoints returned 404. Current inventory and detail bodies could not be verified; third-party roles not imported."
     },
     {
       "company_name": "OnClic",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 3,
+      "status": "verified_with_holds",
+      "notes": "Verified source snapshot 2026-10-30. Canonical company_name is OnClic. Three complete English roles retained; South Shore is regional, not added as a city."
     },
     {
       "company_name": "COURONS MTL",
       "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "status": "no_named_vacancies",
+      "notes": "Verified source snapshot 2026-10-30. Reviewed official Job Offers page shows career invitation/contact but no individual vacancies; not a claim about other sources."
     },
     {
       "company_name": "Hoski",
-      "count": 0,
-      "status": "Collection pending",
-      "notes": "Business directory addition; corresponding job collection is being verified separately. No new job records in this business-only release."
+      "count": 1,
+      "status": "verified",
+      "notes": "Verified source snapshot 2026-10-30. Live raw official page reconfirms Director title and $52.50 CAD/hour; previous Manager rendition not used. English and French sections are one role, not two."
     }
   ],
   "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",
