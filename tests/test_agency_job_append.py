@@ -22,12 +22,18 @@ class AgencyJobAppend(unittest.TestCase):
         self.assertEqual(digest(jobs[:1356]), 'db58ab030a9de1eb9294939c2a25d24cae5f2dc59b498a2e16f9da05fd9e1e4d')
         added = jobs[1356:1396]
         self.assertEqual(len(added), MANIFEST['added_job_count'])
-        self.assertEqual([r['job_id'] for r in added], [r['job_id'] for r in MANIFEST['new_jobs']])
+        # The approved prefix-only repair maps historical custom- IDs to job_.
+        # Keep the original manifest/digests and reverse ONLY that ID migration
+        # when verifying the archived rows, preserving every other field check.
+        expected_ids = [('job_' + r['job_id'][len('custom-'):]
+                         if r['job_id'].startswith('custom-') else r['job_id'])
+                        for r in MANIFEST['new_jobs']]
+        self.assertEqual([r['job_id'] for r in added], expected_ids)
         levels = ['internship', 'entry-level / junior', 'mid-level / intermediate', 'senior',
                   'lead', 'staff', 'principal', 'manager', 'director', 'executive']
         for row, expected in zip(added, MANIFEST['new_jobs']):
             with self.subTest(job=row['job_id']):
-                self.assertEqual(digest(row), expected['row_sha256'])
+                self.assertEqual(digest(dict(row, job_id=expected['job_id'])), expected['row_sha256'])
                 self.assertEqual(row['country'], 'Canada')
                 self.assertEqual(row['date_added_to_dataset'], MANIFEST['insertion_date'])
                 self.assertIn(row['ats_provider'], ('', 'iCIMS'))
