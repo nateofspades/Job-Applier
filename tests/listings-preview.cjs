@@ -77,11 +77,14 @@ async function choose(page, id, values) {
     const rendered = await page.locator('#results tr').evaluateAll(rows => rows.map(row => ({
       title: row.querySelector('.title').textContent,
       company: row.querySelector('.company').textContent,
+      jobId: row.querySelector('[data-column="job_id"]').textContent,
       dateAdded: row.querySelector('.date-added-to-dataset').textContent,
       lists: [...row.querySelectorAll('.details-list ul')].map(list => [...list.children].map(li => li.textContent))
     })));
     assert.deepEqual(rendered.map(row => row.title), jobs.map(row => row.job_title));
     assert.deepEqual(rendered.map(row => row.company), jobs.map(row => row.company_name));
+    assert.deepEqual(rendered.map(row => row.jobId), jobs.map(row => row.job_id));
+    assert(rendered.every(row => /^job_.+/.test(row.jobId)), 'Every rendered job_id starts with job_');
     assert.deepEqual(rendered.map(row => row.dateAdded), jobs.map(row => row.date_added_to_dataset || ''));
     assert.deepEqual(rendered.map(row => row.lists), jobs.map(row => ['job_responsibilities', 'experience_required'].filter(key => row[key]).map(key => row[key].split('\n').filter(Boolean).map(line => line.replace(/^• /, '')))));
     report.checks.push('Job page: every posting link, title, business, responsibility and qualification list matches JSON');

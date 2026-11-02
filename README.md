@@ -26,7 +26,7 @@ This is a fresh public repository, not a fork or copy of the private project's G
 ## Future updates
 
 1. Prepare a feature branch with the requested, source-verified changes.
-2. Preserve existing IDs and unrelated records, and reconcile jobs with their businesses.
+2. Preserve existing IDs and unrelated records, and reconcile jobs with their businesses. Every new `job_id` must start with `job_` and have a nonempty suffix, regardless of the collection source or ATS. Keep employer/ATS-native identifiers in private source evidence rather than using them as public IDs. The prefix-only correction of the 20 historical `custom-` IDs retains their suffixes; do not regenerate existing `job_` IDs. `npm test` checks this rule in JSON and both CSV downloads, and the required test job blocks Pages deployment if it fails.
 3. Update all affected published representations together:
    - Business CSV: `site/Business-Listings/Business_Listings.csv`.
    - Identical business compatibility download: `Business_Spreadsheet.csv`.

@@ -110,6 +110,20 @@ class PublicationTests(unittest.TestCase):
         self.assertTrue(all(row['job_id'] and row['company_name'] in names for row in jobs))
         self.assertTrue(all(row['job_url'].startswith(('https://', 'http://')) for row in jobs))
 
+    def test_all_job_ids_use_job_prefix(self):
+        datasets = {
+            'Job_Listings.csv': csv_rows(SITE / 'Job-Listings/Job_Listings.csv'),
+            'Job_Filters.csv': csv_rows(SITE / 'Job-Listings/Job_Filters.csv'),
+            'jobs.json': json.loads((SITE / 'Job-Listings/jobs.json').read_text())['jobs'],
+        }
+        for filename, rows in datasets.items():
+            with self.subTest(dataset=filename):
+                invalid = [row['job_id'] for row in rows
+                           if not isinstance(row['job_id'], str)
+                           or not row['job_id'].startswith('job_')
+                           or len(row['job_id']) <= len('job_')]
+                self.assertEqual(invalid, [], 'Every job_id must start with job_ and have a nonempty suffix')
+
     def test_business_table_matches_csv(self):
         rows = csv_rows(SITE / 'Business-Listings/Business_Listings.csv')
         page = Page((SITE / 'Business-Listings/index.html').read_text())
