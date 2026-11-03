@@ -1,0 +1,90 @@
+{
+  "baseline_commit": "02db8784447a0076892e1c2fe6d09c7c89b4ec44",
+  "baseline_count": 196,
+  "baseline_rows_sha256": "9fdb8c959e3f13d828c5cb47287c3b808688b49a1d3b0576fb30bdd3eff786cd",
+  "baseline_csv_bytes": 58331,
+  "baseline_csv_sha256": "b9d0c20f6e6271eebb5992e4906b76045afbf58accdc1acad4d046d3395886f8",
+  "insertion_date": "2026-11-03",
+  "requested": [
+    {
+      "company_name": "Hamak",
+      "career_page_url": "https://hamak.ca/en/careers/"
+    },
+    {
+      "company_name": "Digitad / Groupe Intégral",
+      "career_page_url": "https://digitad.ca/carrieres/"
+    },
+    {
+      "company_name": "Dreww",
+      "career_page_url": "https://ats.rippling.com/fr-CA/dreww-jobs/jobs"
+    },
+    {
+      "company_name": "Akufen",
+      "career_page_url": "https://www.akufen.ca/en/talents/"
+    },
+    {
+      "company_name": "Clark Influence",
+      "career_page_url": "https://www.clarkinfluence.com/en/carriere"
+    },
+    {
+      "company_name": "Bouclair",
+      "career_page_url": "https://www.bouclair.com/pages/careers"
+    },
+    {
+      "company_name": "Locomotive",
+      "career_page_url": "https://locomotive.ca/en/careers"
+    },
+    {
+      "company_name": "Bang Marketing",
+      "career_page_url": "https://www.bang-marketing.com/en/careers/"
+    },
+    {
+      "company_name": "Beauvoir",
+      "career_page_url": "https://beauvoir.ca/carrieres/"
+    },
+    {
+      "company_name": "L’Empreinte coopérative",
+      "career_page_url": "https://www.lempreintecoop.com/en/pages/work-with-us"
+    },
+    {
+      "company_name": "Aplo Group",
+      "career_page_url": "https://www.aplogroup.com/careers"
+    },
+    {
+      "company_name": "Bite Size",
+      "career_page_url": "https://bitesizeinc.com/en/career"
+    },
+    {
+      "company_name": "WSI Montreal",
+      "career_page_url": "https://wsisme.com/contact-us/digital-marketing-jobs/"
+    },
+    {
+      "company_name": "Studio Blanc",
+      "career_page_url": "https://studioblancmtl.com/jobs/"
+    },
+    {
+      "company_name": "SC Digital",
+      "career_page_url": "https://scdigital.ca/careers"
+    },
+    {
+      "company_name": "Black Suede Studio",
+      "career_page_url": "https://blacksuedestudio.com/pages/careers"
+    },
+    {
+      "company_name": "Pilar Agueci",
+      "career_page_url": "https://pilaragueci.com/pages/job-opportunities"
+    },
+    {
+      "company_name": "Paperole",
+      "career_page_url": "https://www.paperole.com/pages/jobs"
+    },
+    {
+      "company_name": "Pony / Maison Pony",
+      "career_page_url": "https://ponymtl.com/en/pages/travaille-avec-nous"
+    },
+    {
+      "company_name": "Boutique 1861",
+      "career_page_url": "https://careers.smartrecruiters.com/Boutique1861"
+    }
+  ]
+}

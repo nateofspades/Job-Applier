@@ -1,7 +1,9 @@
 """Pin the reviewed 40-job append without publishing private source captures."""
 import csv
 import hashlib
+import io
 import json
+import re
 import unittest
 from collections import Counter
 from datetime import date
@@ -75,8 +77,28 @@ class AgencyJobAppend(unittest.TestCase):
                     self.assertEqual(row['job_experience_level'], 'senior; principal')
 
     def test_job_release_preserves_all_business_assets(self):
+        # Preserve the historical release's exact hashes, projecting only later
+        # appended directory rows and their total out of the current assets.
+        baseline_count = 196
         for path, expected in MANIFEST['business_assets_sha256'].items():
-            self.assertEqual(hashlib.sha256((SITE / path).read_bytes()).hexdigest(), expected)
+            data = (SITE / path).read_bytes()
+            if path.endswith('.csv'):
+                reader = csv.DictReader(io.StringIO(data.decode(), newline=''))
+                records = list(reader)
+                output = io.StringIO(newline='')
+                writer = csv.DictWriter(output, fieldnames=reader.fieldnames, lineterminator='\r\n')
+                writer.writeheader()
+                writer.writerows(records[:baseline_count])
+                data = output.getvalue().encode()
+            elif path.endswith('/index.html'):
+                before, rest = data.decode().split('<tbody>', 1)
+                body, after = rest.split('</tbody>', 1)
+                records = re.findall(r'<tr id="biz_[^"]+">.*?</tr>\n*', body, re.S)
+                self.assertEqual(''.join(records), body)
+                before = re.sub(r'\d+ of \d+ businesses',
+                                f'{baseline_count} of {baseline_count} businesses', before)
+                data = (before + '<tbody>' + ''.join(records[:baseline_count]) + '</tbody>' + after).encode()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), expected, path)
 
     def test_all_23_employers_have_scoped_coverage_matching_job_counts(self):
         payload = json.loads((SITE / 'Job-Listings/jobs.json').read_text())
