@@ -64,8 +64,14 @@ class AgencyBusinesses(unittest.TestCase):
         self.assertEqual(digest(jobs[:1356]), 'db58ab030a9de1eb9294939c2a25d24cae5f2dc59b498a2e16f9da05fd9e1e4d')
         payload = json.loads((SITE / 'Job-Listings/jobs.json').read_text())
         businesses = rows('Business-Listings/Business_Listings.csv')
-        self.assertEqual(payload['company_count'], len(businesses))
-        self.assertEqual([r['company_name'] for r in payload['coverage']], [r['company_name'] for r in businesses])
+        # Business-only appends do not silently expand the job-collection snapshot.
+        covered_count = payload['company_count']
+        self.assertIs(type(covered_count), int)
+        self.assertGreaterEqual(covered_count, 196)
+        self.assertLessEqual(covered_count, len(businesses))
+        self.assertEqual(len(payload['coverage']), covered_count)
+        self.assertEqual([r['company_name'] for r in payload['coverage']],
+                         [r['company_name'] for r in businesses[:covered_count]])
         counts = Counter(r['company_name'] for r in jobs)
         for entry in payload['coverage']:
             self.assertEqual(entry['count'], counts[entry['company_name']])

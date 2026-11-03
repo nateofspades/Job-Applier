@@ -39,6 +39,8 @@ This is a fresh public repository, not a fork or copy of the private project's G
 5. After the owner's publication approval, merge into `main`. GitHub Actions runs the checks again and publishes only if they pass.
 6. Check the actual published pages, filters and CSV downloads.
 
+A Business Listings-only release may append employers without collecting jobs or modifying any `site/Job-Listings/` files. In that case, `company_count` and `coverage` continue to describe the unchanged job-collection snapshot, not the expanded business directory; do not add zero-vacancy claims or mark those employers as collected. Validate coverage against the corresponding business-directory prefix and verify every existing job still references a real business.
+
 No scheduled collection or automatic refresh of employer postings is enabled. The existing server pages are separate copies and are not updated by this repository's deployment.
 
 For explicitly supplied employer batches, retain each requested business even when no jobs meet the saved Canada-only, English/substantive-bilingual and known-age selection rules. Record zero-result reasons in coverage metadata; do not create placeholder jobs or imply old postings were refreshed. Preserve the supplied career URLs exactly. New business and job rows share their batch's first-insertion calendar date in America/Toronto, independently of the source publication date. The expansion contract tests protect original row values, CSV prefix bytes and supplied employer order/URLs.

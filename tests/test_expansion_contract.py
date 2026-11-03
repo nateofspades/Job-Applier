@@ -90,9 +90,16 @@ class ExpansionContract(unittest.TestCase):
     def test_coverage_matches_both_datasets_and_each_employer(self):
         other = json.loads((SITE / 'Job-Listings/coverage.json').read_text())
         self.assertEqual(other, {k: v for k, v in self.payload.items() if k != 'jobs'})
-        self.assertEqual(self.payload['company_count'], len(self.businesses))
+        # Coverage counts the job snapshot, which may predate directory-only additions.
+        covered_count = self.payload['company_count']
+        self.assertIs(type(covered_count), int)
+        self.assertGreaterEqual(covered_count, MANIFEST['business_count'] + 20)
+        self.assertLessEqual(covered_count, len(self.businesses))
         counts = Counter(row['company_name'] for row in self.jobs)
         coverage = self.payload['coverage']
+        self.assertEqual(len(coverage), covered_count)
+        self.assertEqual([row['company_name'] for row in coverage],
+                         [row['company_name'] for row in self.businesses[:covered_count]])
         self.assertEqual(len({row['company_name'] for row in coverage}), len(coverage))
         for row in MANIFEST['new_businesses']:
             matched = [c for c in coverage if c['company_name'] == row['company_name']]
