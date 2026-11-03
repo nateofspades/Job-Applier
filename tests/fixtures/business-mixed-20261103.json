@@ -1,0 +1,111 @@
+{
+  "baseline_commit": "b179caa011b30bba5159b24fe34b553f59366de3",
+  "baseline_count": 236,
+  "baseline_rows_sha256": "0792490f667af1152dd634007ffb2c62052bad55f26b9f6d143b64a2f2bf9346",
+  "baseline_csv_bytes": 71406,
+  "baseline_csv_sha256": "4b86fa3f167f76c0127b9cf1982ae66a43478092e4b4f1d2104742010facb880",
+  "insertion_date": "2026-11-03",
+  "baseline_site_sha256": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Business-Listings/table-controls.css": "552ee6a47562ff009f112aa7090ade7ba8c56f108af8c186315d5fb6e3847ab5",
+    "Business-Listings/Business_Spreadsheet.csv": "4b86fa3f167f76c0127b9cf1982ae66a43478092e4b4f1d2104742010facb880",
+    "Business-Listings/index.html": "2f4a8efd489b46167f65fdaadf52602e55a98b79f44cde76f1cd45a9eb24689c",
+    "Business-Listings/Business_Listings.csv": "4b86fa3f167f76c0127b9cf1982ae66a43478092e4b4f1d2104742010facb880",
+    "Business-Listings/business.js": "db519cabaf31675e30274b9840d77ec323f217259453db1cfefb529edd2f6dc0",
+    "Business-Listings/table-controls.js": "66c26c22b3e35a648f032e637349d06a50d56103dd4bdcee41e794199a5f46c5",
+    "Job-Listings/filter.js": "1268e88204ef1511f8923424f4c524763e5aa7643e34cebaa757b72735bbfa50",
+    "Job-Listings/jobs.json": "dd9d8774ebd771eb71efe4be97ab531cb0968c21396306ad1202ef315e1bb4b3",
+    "Job-Listings/top-scroll.js": "45a0f4dfba6748854324736bfa4e87663322ed33b407bdbb88dc48cfcf122801",
+    "Job-Listings/index.html": "c80a61d6806fe99e035bcb9c94b381969eb104497ad1e50cc3402a62c8a9061e",
+    "Job-Listings/Job_Listings.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/Job_Filters.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/advertisement-preview.js": "d33c58349857e16f899f2e893360190323e1080f3f16f40d1ff4c396ed5891b8",
+    "Job-Listings/app.js": "14a4f023cca1a2189ed62f53dfae0815a6fb21e1a483aa441cfee924445dfabc",
+    "Job-Listings/coverage.json": "5dd633e65f69958f286f49a101236514fb782e1d2a8a90f8f0b6f11a5f0ac1fb",
+    "Job-Listings/advertisement-preview.css": "2379d1f1420e035d5df0a9ecf5d3f8e1816f48b3d43090ebc764de9f4b9ded26",
+    "shared/listings.css": "a9bd307c3887ba38eb3e2066ca88b132413e9b60d0b159fbf35618af649db6e7",
+    "shared/checkbox-filter.js": "a56ee60fcc95be3ec93a8ab8b94a302364086ec1f1ee4ee4af6919f71024c79f"
+  },
+  "requested": [
+    {
+      "company_name": "VIBRANT Marketing",
+      "career_page_url": "https://vibrant.marketing/careers/"
+    },
+    {
+      "company_name": "Agence Cartier",
+      "career_page_url": "https://agencecartier.com/fr/carrieres/"
+    },
+    {
+      "company_name": "Lufa Farms",
+      "career_page_url": "https://montreal.lufa.com/en/carrieres"
+    },
+    {
+      "company_name": "APP Group (Mackage / SOIA & KYO)",
+      "career_page_url": "https://www.soiakyo.ca/pages/careers"
+    },
+    {
+      "company_name": "ATTITUDE",
+      "career_page_url": "https://ca.attitudeliving.com/fr/carrieres-siege-social"
+    },
+    {
+      "company_name": "Orko Media",
+      "career_page_url": "https://orkomedia.com/careers.html"
+    },
+    {
+      "company_name": "Kitco Metals",
+      "career_page_url": "https://corp.kitco.com/career.html"
+    },
+    {
+      "company_name": "Imprimerie Maxime",
+      "career_page_url": "https://www.imprimeriemaxime.ca/en/careers/"
+    },
+    {
+      "company_name": "GIRO",
+      "career_page_url": "https://www.giro.ca/en-ca/careers"
+    },
+    {
+      "company_name": "Expretio",
+      "career_page_url": "https://expretio.com/careers/"
+    },
+    {
+      "company_name": "GURUS Solutions (Alan Allman Associates)",
+      "career_page_url": "https://www.gurussolutions.com/careers/jobs"
+    },
+    {
+      "company_name": "Duchesnay Pharmaceutical Group",
+      "career_page_url": "https://duchesnaypharmaceuticalgroup.com/en/careers"
+    },
+    {
+      "company_name": "Letmetalk",
+      "career_page_url": "https://letmetalk.ai/careers"
+    },
+    {
+      "company_name": "BAM Strategy",
+      "career_page_url": "https://bamstrategy.com/join-our-team"
+    },
+    {
+      "company_name": "Lumen (Sonepar)",
+      "career_page_url": "https://www.lumen.ca/en/careers"
+    },
+    {
+      "company_name": "RUDSAK",
+      "career_page_url": "https://us.rudsak.com/pages/careers"
+    },
+    {
+      "company_name": "Linen Chest",
+      "career_page_url": "https://www.linenchest.com/en_ca/career-opportunities"
+    },
+    {
+      "company_name": "Mobilia",
+      "career_page_url": "https://mobilia.ca/en-ca/pages/careers"
+    },
+    {
+      "company_name": "Sistemalux (iGuzzini / Fagerhult)",
+      "career_page_url": "https://www.sistemalux.com/careers"
+    },
+    {
+      "company_name": "TUX Creative House",
+      "career_page_url": "https://tux.co/en/career/"
+    }
+  ]
+}
