@@ -1,0 +1,111 @@
+{
+  "baseline_commit": "ea2ba7f15994e456e66e47c4275dc35b24fe9961",
+  "baseline_count": 216,
+  "baseline_rows_sha256": "7db7f9673d5ac9d7807fbd28ee1813f6e24faca6b65c48aa1e7f8d44febd64fc",
+  "baseline_csv_bytes": 64776,
+  "baseline_csv_sha256": "d4465b2be2a588e707c7e26d50979368a1465788796db6575d474e0988fce77c",
+  "insertion_date": "2026-11-03",
+  "baseline_site_sha256": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Business-Listings/table-controls.css": "552ee6a47562ff009f112aa7090ade7ba8c56f108af8c186315d5fb6e3847ab5",
+    "Business-Listings/Business_Spreadsheet.csv": "d4465b2be2a588e707c7e26d50979368a1465788796db6575d474e0988fce77c",
+    "Business-Listings/index.html": "708c254a0b677494fc911cd9d1f229bf3ea7f4d3acb50b7f081b2f23c506891d",
+    "Business-Listings/Business_Listings.csv": "d4465b2be2a588e707c7e26d50979368a1465788796db6575d474e0988fce77c",
+    "Business-Listings/business.js": "db519cabaf31675e30274b9840d77ec323f217259453db1cfefb529edd2f6dc0",
+    "Business-Listings/table-controls.js": "66c26c22b3e35a648f032e637349d06a50d56103dd4bdcee41e794199a5f46c5",
+    "Job-Listings/filter.js": "1268e88204ef1511f8923424f4c524763e5aa7643e34cebaa757b72735bbfa50",
+    "Job-Listings/jobs.json": "dd9d8774ebd771eb71efe4be97ab531cb0968c21396306ad1202ef315e1bb4b3",
+    "Job-Listings/top-scroll.js": "45a0f4dfba6748854324736bfa4e87663322ed33b407bdbb88dc48cfcf122801",
+    "Job-Listings/index.html": "c80a61d6806fe99e035bcb9c94b381969eb104497ad1e50cc3402a62c8a9061e",
+    "Job-Listings/Job_Listings.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/Job_Filters.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/advertisement-preview.js": "d33c58349857e16f899f2e893360190323e1080f3f16f40d1ff4c396ed5891b8",
+    "Job-Listings/app.js": "14a4f023cca1a2189ed62f53dfae0815a6fb21e1a483aa441cfee924445dfabc",
+    "Job-Listings/coverage.json": "5dd633e65f69958f286f49a101236514fb782e1d2a8a90f8f0b6f11a5f0ac1fb",
+    "Job-Listings/advertisement-preview.css": "2379d1f1420e035d5df0a9ecf5d3f8e1816f48b3d43090ebc764de9f4b9ded26",
+    "shared/listings.css": "a9bd307c3887ba38eb3e2066ca88b132413e9b60d0b159fbf35618af649db6e7",
+    "shared/checkbox-filter.js": "a56ee60fcc95be3ec93a8ab8b94a302364086ec1f1ee4ee4af6919f71024c79f"
+  },
+  "requested": [
+    {
+      "company_name": "Canspan BMG",
+      "career_page_url": "https://canspan.com/careers/"
+    },
+    {
+      "company_name": "K6 Agency",
+      "career_page_url": "https://www.k6agency.com/careers/"
+    },
+    {
+      "company_name": "Made in",
+      "career_page_url": "https://madein.co/en/career/"
+    },
+    {
+      "company_name": "WANT Les Essentiels / Quartz Co.",
+      "career_page_url": "https://www.wantlesessentiels.com/pages/careers"
+    },
+    {
+      "company_name": "Camden",
+      "career_page_url": "https://camdenpublicite.com/en/careers"
+    },
+    {
+      "company_name": "Reptile",
+      "career_page_url": "https://reptile.tech/en/career/"
+    },
+    {
+      "company_name": "Parkour3",
+      "career_page_url": "https://www.parkour3.com/en/careers"
+    },
+    {
+      "company_name": "Republik",
+      "career_page_url": "https://republik.ca/en/careers/"
+    },
+    {
+      "company_name": "Substance",
+      "career_page_url": "https://agencesubstance.ca/carriere"
+    },
+    {
+      "company_name": "Symetris",
+      "career_page_url": "https://symetris.com/en/our-story/careers"
+    },
+    {
+      "company_name": "Matt & Nat / Via Vegan",
+      "career_page_url": "https://mattandnat.com/pages/careers"
+    },
+    {
+      "company_name": "Frank Lyman Design",
+      "career_page_url": "https://www.franklyman.com/en/careers"
+    },
+    {
+      "company_name": "Orage / MTNDEWDS Distribution",
+      "career_page_url": "https://orage.com/pages/careers"
+    },
+    {
+      "company_name": "Momentumm",
+      "career_page_url": "https://www.momentumm.co/en/careers"
+    },
+    {
+      "company_name": "Upperkut",
+      "career_page_url": "https://upperkut.com/carrieres/"
+    },
+    {
+      "company_name": "Kryzalid",
+      "career_page_url": "https://kryzalid.net/en/career/"
+    },
+    {
+      "company_name": "La Canadienne",
+      "career_page_url": "https://lacanadienneshoes.com/pages/careers"
+    },
+    {
+      "company_name": "Guarana Technologies",
+      "career_page_url": "https://guarana-technologies.com/careers"
+    },
+    {
+      "company_name": "The Decision Lab",
+      "career_page_url": "https://thedecisionlab.com/careers"
+    },
+    {
+      "company_name": "Wepoint / nventive / Onepoint",
+      "career_page_url": "https://www.wepoint.com/en/join-wepoint/"
+    }
+  ]
+}
