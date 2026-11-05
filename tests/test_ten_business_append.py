@@ -3,6 +3,7 @@ import csv
 import hashlib
 import json
 import unittest
+from collections import Counter
 from pathlib import Path
 SITE = Path(__file__).resolve().parents[1] / 'site'
 def load(path):
@@ -31,7 +32,11 @@ class TenBusinessAppend(unittest.TestCase):
         self.assertEqual(json.loads((SITE/'Job-Listings/jobs.json').read_text())['jobs'],rows)
     def test_coverage(self):
         data=json.loads((SITE/'Job-Listings/coverage.json').read_text())['coverage']
-        counts={r['company_name']:r['count'] for r in data}
+        jobs=load('Job-Listings/Job_Listings.csv')
+        live=Counter(row['company_name'] for row in jobs)
+        for entry in data:
+            self.assertEqual(entry['count'],live[entry['company_name']])
+        counts=Counter(row['company_name'] for row in jobs[:1356])
         for name in ['Clinia','Plotly','Wrk','SuccessFinder','WorkJam','Busbud','Bus.com','Dakis']:
             self.assertEqual(counts[name],0)
         self.assertEqual(counts['MEDFAR Clinical Solutions'],19)

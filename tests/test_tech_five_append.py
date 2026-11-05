@@ -3,6 +3,7 @@ import csv
 import hashlib
 import json
 import unittest
+from collections import Counter
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parents[1] / 'site'
@@ -28,12 +29,16 @@ class TechnologyAppend(unittest.TestCase):
         self.assertEqual({(r['company_name'], r['job_title']) for r in data[1322:1325]}, {('Heylist','Marketing Director'), ('Heylist','Account Executive'), ('Heylist','Creator Success Manager')})
         self.assertTrue(all(r['date_added_to_dataset'] == '2026-10-27' and r['country'] == 'Canada' and r['full_job_post'] for r in data[1322:1325]))
         batch = {'Heylist', 'Inmind Technologies', 'Nixa', 'Walter Interactive', 'IVADO Labs'}
-        self.assertEqual([r for r in data if r['company_name'] in batch], data[1322:1325])
+        self.assertEqual([r for r in data[:1325] if r['company_name'] in batch], data[1322:1325])
         self.assertEqual(json.loads((SITE / 'Job-Listings/jobs.json').read_text())['jobs'], data)
 
     def test_coverage_matches_batch(self):
         coverage = json.loads((SITE / 'Job-Listings/coverage.json').read_text())['coverage']
-        actual = {r['company_name']: r['count'] for r in coverage}
+        data = rows('Job-Listings/Job_Listings.csv')
+        live = Counter(row['company_name'] for row in data)
+        for entry in coverage:
+            self.assertEqual(entry['count'], live[entry['company_name']])
+        actual = Counter(row['company_name'] for row in data[:1325])
         self.assertEqual({n: actual[n] for n in ('Heylist','Inmind Technologies','Nixa','Walter Interactive','IVADO Labs')}, {'Heylist': 3, 'Inmind Technologies': 0, 'Nixa': 0, 'Walter Interactive': 0, 'IVADO Labs': 0})
 
 if __name__ == '__main__':
