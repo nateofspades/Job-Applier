@@ -3,6 +3,7 @@ import csv
 import hashlib
 import json
 import unittest
+from collections import Counter
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parents[1] / 'site'
@@ -33,7 +34,12 @@ class FiveBusinessAppend(unittest.TestCase):
 
     def test_coverage_reports_zero_jobs_without_inventing_vacancies(self):
         data = json.loads((SITE / 'Job-Listings/coverage.json').read_text())
-        counts = {r['company_name']: r['count'] for r in data['coverage']}
+        jobs = rows('Job-Listings/Job_Listings.csv')
+        live = Counter(row['company_name'] for row in jobs)
+        for entry in data['coverage']:
+            self.assertEqual(entry['count'], live[entry['company_name']])
+        # These exact counts describe this historical release, not all future jobs.
+        counts = Counter(row['company_name'] for row in jobs[:1322])
         self.assertEqual({n: counts[n] for n in ['Velixo', 'Finance Montréal', 'Code Marketing', 'AssistIQ', 'Precision Analytics']}, {'Velixo': 2, 'Finance Montréal': 1, 'Code Marketing': 0, 'AssistIQ': 1, 'Precision Analytics': 0})
 
 if __name__ == '__main__':

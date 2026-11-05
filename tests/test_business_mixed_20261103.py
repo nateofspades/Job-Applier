@@ -7,6 +7,7 @@ import re
 import unittest
 from datetime import date
 from pathlib import Path
+from append_only_contract import historical_job_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site'
@@ -41,12 +42,16 @@ class BusinessMixedAppend(unittest.TestCase):
                 self.assertNotIn(row['ats_provider'], ('Unknown', 'WordPress', 'Shopify', 'Custom', 'Employer website'))
 
     def test_all_job_assets_and_other_frontend_files_unchanged(self):
+        # Check the original snapshot hashes after independently validating live
+        # prefixes/metadata; later reviewed appends must not freeze job assets.
+        historical = historical_job_assets(SITE)
         changed = {'Business-Listings/Business_Listings.csv', 'Business-Listings/Business_Spreadsheet.csv',
                    'Business-Listings/index.html'}
         for name, expected in MANIFEST['baseline_site_sha256'].items():
             if name not in changed:
                 with self.subTest(asset=name):
-                    self.assertEqual(digest((SITE / name).read_bytes()), expected)
+                    data = historical[name] if name in historical else (SITE / name).read_bytes()
+                    self.assertEqual(digest(data), expected)
 
     def test_preexisting_business_html_preserved_byte_for_byte(self):
         data = (SITE / 'Business-Listings/index.html').read_text()

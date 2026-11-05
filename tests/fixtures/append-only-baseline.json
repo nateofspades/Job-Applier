@@ -1,0 +1,1308 @@
+{
+  "schema_version": 1,
+  "source_commit": "fb39265ccc8bdc10753f4298d227bee4f1f69aef",
+  "note": "Immutable approved snapshot. Never regenerate to make a failing test pass. Later releases extend append-only-batches.json, not this fixture.",
+  "datasets": {
+    "business": {
+      "count": 256,
+      "fields": [
+        "business_id",
+        "company_name",
+        "company_description",
+        "industries",
+        "country",
+        "city",
+        "career_page_url",
+        "ats_provider",
+        "date_added_to_dataset"
+      ],
+      "csv_bytes": 77226,
+      "csv_sha256": "d1742188bfcbf8ee13600d0fb739be2d8b0321c490e6c50ec78bd2e0d50325aa",
+      "rows_sha256": "0e50527de438540a5f1e41547abf35eca066885a042d08d863d71d6c24d8872b"
+    },
+    "job": {
+      "count": 1396,
+      "fields": [
+        "company_name",
+        "job_title",
+        "job_experience_level",
+        "job_category",
+        "city",
+        "country",
+        "remote_policy",
+        "is_fulltime",
+        "salary",
+        "date_posted",
+        "job_summary",
+        "job_responsibilities",
+        "experience_required",
+        "full_job_post",
+        "job_url",
+        "job_id",
+        "ats_provider",
+        "date_added_to_dataset"
+      ],
+      "csv_bytes": 13390355,
+      "csv_sha256": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+      "rows_sha256": "4ffe228ec873c5dec26588b9f6d8d2becb08cbe9c02ebfa1dd069f2dd85951cd"
+    }
+  },
+  "job_payload_keys": [
+    "collected_at",
+    "company_count",
+    "jobs",
+    "coverage",
+    "coverage_note",
+    "filtered_at_utc",
+    "selection_rules",
+    "location_notes",
+    "job_url_policy",
+    "url_review_notes",
+    "url_reviewed_at_utc",
+    "country_filtered_at_utc",
+    "company_filtered_at_utc",
+    "expansion_checked_at_utc",
+    "baseline_collected_at",
+    "baseline_coverage_note",
+    "date_schema",
+    "latest_append"
+  ],
+  "job_metadata": {
+    "collected_at": "2026-10-01 19:08",
+    "company_count": 196,
+    "coverage": [
+      {
+        "company_name": "Ubisoft Montreal",
+        "count": 71,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): Montreal only, matching the supplied location-specific career page. 150 distinct advertisements represent 78 requisitions; bilingual posting URLs are retained. Removed 2 postings older than 180 days from the original collection. Language selection excluded 77 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements."
+      },
+      {
+        "company_name": "Behaviour Interactive",
+        "count": 30,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): Full live Lever board. Three stale 404 career-page entries excluded; one additional live ATS posting included. Hybrid attendance uses the employer’s stated Tuesday–Thursday office policy. Language selection excluded 0 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements. Header-field review: title, department/team, status and city taken from employer job-page headers; 5 linked pages displaying 404 / Page Not Found removed. A blank Status remains unspecified."
+      },
+      {
+        "company_name": "Lightspeed Commerce",
+        "count": 54,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): All locations on the live Ashby board. Two stale marketing-page links excluded. Separate language/location posting URLs retained; one salary currency conflict is identified in the salary field. Removed 5 postings older than 180 days from the original collection. Language selection excluded 34 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements."
+      },
+      {
+        "company_name": "Moment Factory",
+        "count": 12,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): All 18 stable posting IDs, including publicly listed freelance talent pools. English/French versions share IDs and are not duplicated. Published dates are explicitly labeled as republication dates. Removed 2 postings older than 180 days from the original collection. Language selection excluded 3 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements."
+      },
+      {
+        "company_name": "Hopper",
+        "count": 8,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): All 36 postings from the live Ashby board, all locations. Salary fields distinguish structured pay from differing narrative total-compensation ranges where present. Language selection excluded 0 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements. Live Hopper review 2026-09-18: all 10 original detail URLs inspected; 8 retained and corrected from displayed sidebar and English body sections, 2 verified Job not found pages removed. Sidebar region labels are retained alongside cities; Canada and Remote suffixes are omitted from city. Two French-only headers use explicit English role designations in the same posting introduction. Compensation includes complete English sidebar text where displayed."
+      },
+      {
+        "company_name": "Dialogue",
+        "count": 28,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): Both boards: 30 English and 28 French descriptions read. One explicitly expired internal posting excluded, leaving 57 distinct public posting URLs. Some postings offer multiple full-time, part-time, or contract arrangements; alternatives are retained in summaries. Language selection excluded 27 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements. Live Dialogue review 2026-09-18: all 30 existing URLs checked directly; 28 exact-ID detail pages retained and corrected from visible title/sidebar and English responsibility/qualification sections. Two URLs redirected to the generic Open Positions board with multiple View job cards and were removed. Remote is recorded only when the sidebar explicitly says Remote; every advertised city is retained and province-only locations have no city."
+      },
+      {
+        "company_name": "Workleap",
+        "count": 8,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): Both Greenhouse boards: eight English and eight French postings, representing eight requisitions. Language-specific requirements are retained independently. Language selection excluded 8 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements."
+      },
+      {
+        "company_name": "Unity",
+        "count": 14,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): All 122 current Workday postings across seven API pages. Four careers-page-only cards could not be confirmed live (not in the ATS inventory; detail API returned 403) and are excluded. Language selection excluded 0 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements."
+      },
+      {
+        "company_name": "Coveo",
+        "count": 35,
+        "status": "Collected snapshot, age/language-filtered, Canada-only",
+        "notes": "Original collection notes (before filtering): Both Greenhouse boards: 58 English and 39 French postings, representing 46 internal requisitions. Distinct language/location posting URLs and labeled future-opening/talent-community posts are retained. Removed 12 postings older than 180 days from the original collection. Language selection excluded 33 advertisements from the age-filtered set. Canada-only selection excludes foreign-only and mixed-country advertisements. Employer-header and section review: 36 exact-ID employer headers verified; omitted or malformed body bullets restored from matching live ATS sections and checked against visible employer text; 3 generic Open Positions @ Coveo pages removed. Missing employment-type headers remain blank; remote alternatives follow the header, not the generic FAQ. Generic-page recheck 2026-09-18: all 36 retained employer links requested; recovered exact-ID employer pages corroborated against both live ATS boards. Staff Product Designer (8488063002) removed because its exact linked page shows Open Positions @ Coveo; 35 retained. Direct requests were blocked by empty HTTP 202 responses, so employer content used fresh recovery rather than direct browser confirmation."
+      },
+      {
+        "company_name": "ESMIA Consultants",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Dunsky Energy + Climate Advisors",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "dcbel",
+        "count": 7,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Boralex",
+        "count": 7,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Innergex Renewable Energy",
+        "count": 11,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Cogeco",
+        "count": 9,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Genetec",
+        "count": 25,
+        "status": "New collection: complete requested scope",
+        "notes": "Non-Canadian board entries excluded by location before full-description retrieval. All 92 Canada detail records retrieved; selected analytical descriptions read."
+      },
+      {
+        "company_name": "Amilia",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Mila",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "David Suzuki Foundation",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Acuity Insights",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": "Board has location-expanded duplicates; 7 unique shortcodes, not 21 distinct roles. Foreign-only listings screened using explicit metadata without fetching full foreign ads."
+      },
+      {
+        "company_name": "Fiera Capital",
+        "count": 19,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Innocap",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Flinks",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Nuvei",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Shakepay",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "PSP Investments",
+        "count": 36,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Mako Fintech",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Addenda Capital",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": "Both English (2) and French (4) current-vacancy boards exhausted; generic talent-pool CTA obU7qfwm is not a vacancy and not counted."
+      },
+      {
+        "company_name": "Jarislowsky Fraser",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": "All 5 results on dedicated official JFL board, not all Scotiabank business lines."
+      },
+      {
+        "company_name": "Novacap",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": "English and French boards each have 7 advertisements; language variants are excluded rather than counted as separate jobs. No publication dates exposed; active board membership and exact full descriptions verified."
+      },
+      {
+        "company_name": "Altasciences",
+        "count": 20,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Nomic Bio",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Precision Medicine Group",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "LGI Healthcare Solutions",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Intelerad",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "AlayaCare",
+        "count": 8,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "IQVIA",
+        "count": 35,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "AbbVie",
+        "count": 12,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Medavie",
+        "count": 29,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Indero",
+        "count": 19,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Averna",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Delmar International",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": "Widget repeats multi-location postings; 15 location rows deduplicated to 11 exact shortcodes."
+      },
+      {
+        "company_name": "Mecademic",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Matrox",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Groupe Robert",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": "All 38 exact-ID payloads captured; French-language postings are excluded even on English navigation."
+      },
+      {
+        "company_name": "CMC Electronics",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": "18 English-board records include one French-only advertisement. Same source requisition 12179679 appears under two process IDs and was deduplicated."
+      },
+      {
+        "company_name": "Centurion Asset Management",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "BFL CANADA",
+        "count": 21,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Echelon Insurance",
+        "count": 42,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "LGM Financial Services",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "BGO (BentallGreenOak)",
+        "count": 7,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Beneva",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Northbridge Financial Corporation",
+        "count": 33,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Wawanesa Insurance",
+        "count": 54,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Optimum Group",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Gameloft",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "People Can Fly",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Eidos-Montreal",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": "All links on employer official careers page reconciled; independent unlinked ATS-wide discovery was unavailable and is not asserted."
+      },
+      {
+        "company_name": "Epic Games",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "2K (Take-Two Interactive)",
+        "count": 7,
+        "status": "New collection: complete requested scope",
+        "notes": "Coverage is the 2K publishing-label board, including Cloud Chamber, Gearbox and 2K SportsLab; not every unrelated Take-Two label. Cloud Chamber English board was separately compared and contained no additional eligible unique requisition."
+      },
+      {
+        "company_name": "Rodeo FX",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Stingray",
+        "count": 8,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Cirque du Soleil",
+        "count": 13,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Ludia",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "SSENSE",
+        "count": 15,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Browns Shoes",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Dollarama",
+        "count": 27,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "ALDO Group",
+        "count": 17,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Psycho Bunny",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Reitmans (Canada) Limited",
+        "count": 11,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Structube",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Groupe Dynamite",
+        "count": 25,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "BESTSELLER Canada",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Mejuri",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Evolving Web",
+        "count": 6,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Bloom",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Datmos (formerly O2 Web)",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Richter",
+        "count": 18,
+        "status": "New collection: complete requested scope",
+        "notes": "Manager, Internal Audit exact source has no published responsibility list; job_responsibilities intentionally blank and explained in evidence."
+      },
+      {
+        "company_name": "Analysis Group",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Levio",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Sid Lee",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Cossette (Plus Company)",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": "Two otherwise relevant media-planning advertisements had past explicit closing dates despite board listings; excluded for uncertain active status."
+      },
+      {
+        "company_name": "Talan (including Createch)",
+        "count": 11,
+        "status": "New collection: complete requested scope",
+        "notes": "Global Talan board searched with official country=ca parameter; all 29 Canadian postings reviewed."
+      },
+      {
+        "company_name": "Forvis Mazars Canada",
+        "count": 9,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Novisto",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": "NOAM BDR conservatively excluded: Canadian display location conflicts with Dubai office metadata. Employer detail URLs verified through their official exact-token embedded application pages."
+      },
+      {
+        "company_name": "Planned",
+        "count": 6,
+        "status": "New collection: complete requested scope",
+        "notes": "All 9 exact links on official careers page inspected using public Gem GraphQL. No broader unlinked Gem board endpoint was enumerated; careers-page scope is complete."
+      },
+      {
+        "company_name": "Botpress",
+        "count": 6,
+        "status": "New collection: complete requested scope",
+        "notes": "12 location-expanded board rows reduce to 10 distinct shortcodes; all 10 detail responses captured."
+      },
+      {
+        "company_name": "Explorance",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Xsolla",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": "Employer careers page contains older title text for some IDs; current official Lever detail payload used. Product Owner DevX d1cc3abc excluded because primary country=US, despite secondary Canada label."
+      },
+      {
+        "company_name": "MaintainX",
+        "count": 27,
+        "status": "New collection: complete requested scope",
+        "notes": "MaintainX joined Autodesk in August 2026 per current employer sources. Collection is the complete MaintainX board, not the wider Autodesk group; deduplicate Autodesk corporate identity."
+      },
+      {
+        "company_name": "BrainFinance",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": "Two current career cards; excluded DevOps card screened by title, not full description."
+      },
+      {
+        "company_name": "Transit",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Centiro",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": "All 8 advertised openings inspected. Student-interest/connect pages without an exact active advertised role are not counted as vacancies."
+      },
+      {
+        "company_name": "nesto",
+        "count": 12,
+        "status": "New collection: complete requested scope",
+        "notes": "37 location-expanded rows reduce to 30 distinct UUIDs. This is nesto board coverage, not all potentially separate CMLS/Nesto Group subsidiary boards; company-wide completeness beyond the linked board remains unverified."
+      },
+      {
+        "company_name": "GoMaterials",
+        "count": 8,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Germain Hotels",
+        "count": 16,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Broadsign",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "OneSpan",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "GURU Organic Energy",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "TINK",
+        "count": 5,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Poka",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Sollum Technologies",
+        "count": 1,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Equisoft",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Maya HTT",
+        "count": 15,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Solutions Metrix",
+        "count": 3,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "LANDR",
+        "count": 2,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Axya",
+        "count": 6,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Sia Partners",
+        "count": 14,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Eli Health",
+        "count": 4,
+        "status": "New collection: complete requested scope",
+        "notes": ""
+      },
+      {
+        "company_name": "Advanis",
+        "count": 5,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "AppDirect",
+        "count": 19,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Artefact",
+        "count": 3,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "CareSimple",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Cohere",
+        "count": 15,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Eucalyptus (Hims & Hers)",
+        "count": 3,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Flexspring",
+        "count": 7,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "FlightHub",
+        "count": 3,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Fuze Logistics Services",
+        "count": 1,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Google (including DeepMind and Mandiant)",
+        "count": 40,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "inBeat Agency (Fieldtrip)",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Index",
+        "count": 5,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Knak",
+        "count": 5,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Longbow Advantage",
+        "count": 4,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "MongoDB",
+        "count": 16,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Procurify",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Signifly",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "SII Canada",
+        "count": 10,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Tecsys",
+        "count": 11,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Tetrix",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Toboggan Labs",
+        "count": 7,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "TS Imagine",
+        "count": 10,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Vanier College",
+        "count": 8,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Webtmize",
+        "count": 2,
+        "status": "Audited saved October 1 snapshot: complete requested scope",
+        "notes": "Saved sources only; availability can change after capture."
+      },
+      {
+        "company_name": "Adviso",
+        "count": 0,
+        "status": "complete",
+        "notes": "Board explicitly reports 10 vacancies; all 10 unique exact-ID full descriptions archived and reviewed. All 10 excluded as French-only advertisements. No language-switch or pagination links on the Manatal board. Application page identifies Manatal. Employer retained as explicitly approved despite zero eligible jobs."
+      },
+      {
+        "company_name": "Data Sciences",
+        "count": 3,
+        "status": "complete",
+        "notes": "Primary current board recovered as complete HTML using www hostname (redirected to supplied canonical), with 3 exact job links and no pagination. Later complete extracted board at both slash variants confirms the same 3 jobs. All 3 full exact-posting advertisements were recovered and archived in correctly decoded text; direct HTTP detail requests remain 403. Initial truncated extraction/search snapshots showed additional Analytics Engineer and Research Analyst; complete detail text was recovered for both, but neither is linked by the consistently recovered current board, and Research Analyst is explicitly dated 2023. Those supplementary candidates are separately excluded and do not inflate the current-board denominator. No unresolved included-job description blocker. LinkedIn is an advertised application route for the 2 marketing roles, not a verified dedicated ATS. Source publication dates retained; central insertion date blank."
+      },
+      {
+        "company_name": "Potloc",
+        "count": 0,
+        "status": "complete",
+        "notes": "Official career page links directly to Lever Potloc. Complete unfiltered public Lever API returned 2 exact-ID advertisements, matching the 2 jobs in the archived board. Both are Open Application talent pools and excluded. All description fields are archived in the API JSON; no pagination or additional eligible jobs. Employer retained despite zero eligible vacancies."
+      },
+      {
+        "company_name": "StatsDrone",
+        "count": 1,
+        "status": "complete",
+        "notes": "Career archive lists exactly 3 advertisements on its sole numbered page (1). All 3 complete exact-posting descriptions archived. AI ML Engineer explicitly advertises Montreal, Quebec, Canada and qualifies. Head of Agents is remote with Montreal HQ only; Outreach & GTM Coordinator states no job location. Those 2 are excluded for unresolved Canada-only job geography, not silently treated as foreign. Applications direct applicants to LinkedIn messages; actual ATS is unknown and blank."
+      },
+      {
+        "company_name": "Compass Data and AI",
+        "count": 3,
+        "status": "complete",
+        "notes": "All 3 Current Openings cards enumerated and all full employer-preferred detail advertisements archived. All 3 qualify, including the specifically described 1–3-opening Full Stack / Data & AI Engineer Intern behind New Graduate / Internship Applications. No pagination on the career page. Application links go to an Airtable form; fetch returned generic Airtable shell rather than rendered fields, so actual ATS is unknown and blank. Publication dates and salaries are unstated."
+      },
+      {
+        "company_name": "Mizo",
+        "count": 3,
+        "status": "complete",
+        "notes": "Complete employer-hosted board: 4 unique linked advertisements, all fetched; 3 eligible English Montreal roles and 1 excluded spontaneous application. No pagination. Forms post to Web3Forms; it is a form backend rather than a verified applicant tracking system, so ATS blank. Publication dates absent."
+      },
+      {
+        "company_name": "Unito",
+        "count": 0,
+        "status": "complete",
+        "notes": "Official page has one linked vacancy; exact detail is closed. Actual Breezy board has no positions and public /json returns []. Thus zero current active postings, not an inaccessible-board assumption. Employer retained as explicitly approved."
+      },
+      {
+        "company_name": "Stay22",
+        "count": 12,
+        "status": "complete",
+        "notes": "All 14 active Greenhouse IDs enumerated; meta.total=14, matching unique IDs in the actual supplied board HTML. All exact detail pages fetched and full API content saved. Twelve specific English/substantively bilingual Canada-only Montreal roles retained. Excluded one general application and one Remote posting explicitly favoring NYC or London without Canada-only eligibility. No age or deadline exclusions among retained roles. Salary and employment type not stated; left blank. No dedicated employer-hosted detail URLs linked: Greenhouse detail URLs retained."
+      },
+      {
+        "company_name": "Osedea",
+        "count": 6,
+        "status": "complete",
+        "notes": "Official page links 13 IDs, including one closed 404 Full Stack link. Live unfiltered Lever board has 14 active IDs: two current Senior Software Developer variants were absent from static official list. All 14 full API descriptions archived. Seven ads are French-only with separate English variants; English Senior AI Developer is 277 days old and excluded. Six English Canada jobs retained, including English Senior Software Developer mislabeled Montréal (FR). Pagination exhaustion confirmed by skip=14 returning []. No eligible roles silently capped."
+      },
+      {
+        "company_name": "Spiria",
+        "count": 8,
+        "status": "complete",
+        "notes": "Official careers inline script fetches https://api.lever.co/v0/postings/spiria?mode=json, filters categories.commitment by EN/FR, and replaces static placeholder cards. Actual board has 16 active IDs; all 16 full API descriptions archived. Eight English Canada ads retained, eight French-only variants excluded. Stale HTML placeholder titles Accountant, Bilingual Business Analyst and UX/UI Designer are not live board records. Pagination exhaustion confirmed by skip=16 returning []. No explicit full-time evidence: EN commitment is language, not employment type."
+      },
+      {
+        "company_name": "Flare",
+        "count": 3,
+        "status": "complete",
+        "notes": "Complete BambooHR /careers/list: meta.totalCount=9, nine distinct IDs and no pagination/cap. Seven Canadian full descriptions captured and reviewed; two UK-only IDs excluded directly from country metadata. Included 137,151,157; excluded two old-but-open postings (29 datePosted 2022-07-27, 64 datePosted 2024-04-03), French variants 150/158 and UK-only 144/147. Corporate direct HTTP 403 recovered through web extraction; exact job full text and metadata recovered directly from public BambooHR detail JSON. No separate employer-hosted detail pages were exposed; careers links directly to BambooHR. Full ad text includes complete bilingual/company/legal description and all source header values. Country determined from exact Canadian detail location, never HQ."
+      },
+      {
+        "company_name": "Moov AI",
+        "count": 0,
+        "status": "complete",
+        "notes": "Official careers page points to Publicis Groupe Moov AI board. Its searchConfig enforces tags2=Moov AI. Public read-only /api/jobs returns totalCount=4 and four exact requisitions in both en-US and fr-FR queries; page 2 returns jobs=[] with totalCount=4. languageCounts is fr-fr=4; all four full descriptions/responsibilities/qualifications are French-only despite one bilingual title. Source list payload contains complete advertisement text for each exact requisition and individual private JSON copies are saved. Three French detail HTML shells and one working French detail page were also captured; en-US variant for 170235 returns 404, corroborating no English variant. Corporate direct HTTP is 403; recovered corporate extract is partial, but board/application identity and all vacancy descriptions are fully captured directly. Scope is Moov AI, not the entire Publicis group. No included jobs."
+      },
+      {
+        "company_name": "Keatext",
+        "count": 0,
+        "status": "complete",
+        "notes": "Both supplied French and linked English careers pages explicitly say there are no openings; all page links inspected, no separate board or job-detail links. ATS unknown: no application provider is exposed on the empty page. Business retained by explicit user approval."
+      },
+      {
+        "company_name": "Local Logic",
+        "count": 0,
+        "status": "complete",
+        "notes": "Supplied JazzHR root, /apply/, /apply, and official locallogic.co/careers redirect all show \"There are no open positions at this time.\" No vacancy links/pagination remain. Three stale search-index postings individually return HTTP 410 and closure messages. Official homepage links back to this same board. Job coverage complete; business legal-page office address has search-index-only provenance because direct legal/about HTTP returned 403; recovered about extract is partial. Business retained by explicit user approval."
+      },
+      {
+        "company_name": "Panorama",
+        "count": 1,
+        "status": "complete",
+        "notes": "English careers page contains exactly one vacancy card, explicitly linked to the employer-hosted English detail /en-us/full-stack-developer. Archived detail HTTP 200 contains the full substantive advertisement, including five duty bullets, sixteen professional qualification bullets, office attendance, stack, benefits, company material and inclusive application invitation; full main content is preserved. No other vacancy links, recruitment iframe or pagination. Email application; ATS unknown. Salary, actual posting date, deadline and explicit seniority remain unspecified. French locale is a separate variant and is not duplicated. Old short-card extraction and claim of no linked detail/lists are corrected by this audit."
+      },
+      {
+        "company_name": "Dialekta",
+        "count": 0,
+        "status": "complete",
+        "notes": "Fetched the exact supplied English career URL and its embedded https://api.collage.co/v1/positions/dialekta?4 endpoint, plus the full live Collage board. All 8 exact posting IDs reconcile between board and API; all 8 full hosted detail pages and API descriptions are archived. Six specific roles are French-only even where the shell says Full Time / Hybrid / Apply Now in English; the other two are spontaneous applications. The career frontend filters locale=en and therefore hides the six French-only vacancies; no extra English variant exists in the complete API. No pagination controls or pagination metadata in this board/API. Canadian office fields are scoped to Montréal; the careers page also lists a Paris office."
+      },
+      {
+        "company_name": "Rablab",
+        "count": 0,
+        "status": "complete",
+        "notes": "The supplied English corporate careers page lists stale SEM ID 45463 and spontaneous ID 42000. Followed the actual linked Collage board, which currently has 4 live IDs: 42000, 53378, 56104, 65346. The full API and all 4 hosted details were archived and reconciled. Three specific ads are entirely French, not English ads merely requiring French; the fourth is a spontaneous application. No separate English variant or pagination in complete board/API. The stale corporate ID is recorded separately and is not part of the 4-live-posting denominator."
+      },
+      {
+        "company_name": "My Little Big Web",
+        "count": 0,
+        "status": "complete",
+        "notes": "The English corporate careers page exposes only English spontaneous application ID 64523; its full English employer detail and Collage detail were captured. Followed the French alternate page and all 5 French employer details: spontaneous 55051 and four freelance collaborator pools 52752, 52961, 54045, 54358. The actual Collage board/API contains all 6 IDs and matches these application links exactly. All full descriptions archived. The four freelance ads are French-only and explicitly build a future collaborator pool even if no assignment is currently available; they are not omitted because they are freelance. The English locale is incorrectly fr for ID 64523, so actual text, not metadata, was reviewed. Other French detail pages’ EN selectors lead to the homepage, not translated ads. No pagination in full board/API. Verdun is the Montréal office borough, not a second independent office city."
+      },
+      {
+        "company_name": "Aviseo Conseil",
+        "count": 0,
+        "status": "complete",
+        "notes": "Fetched supplied French page, linked English careers page, and both exact employer-hosted full job details. French board has exactly 2 postings, both French-only; English board has no job cards, and the detail-page EN links lead to English homepage. Both deadlines are future as of 2026-10-27, so neither was excluded for age/deadline. Applications go by email to recrutement@aviseo.ca, not a verified ATS: ats_provider intentionally blank. No pagination or external board links. Business location fields describe Canadian offices; an additional Casablanca, Morocco office is expressly listed in the source and is not an advertised location for these two jobs."
+      },
+      {
+        "company_name": "Wavo",
+        "count": 1,
+        "status": "complete",
+        "notes": "Supplied BambooHR career page is a JavaScript shell, not an empty board. Recovered /careers/list JSON showing meta.totalCount=1 and exactly ID 56. Exact /careers/56/detail returns the complete open advertisement with Montreal, Quebec, addressCountry Canada, explicit Mid-level and Full-Time metadata, and source publication date 2026-10-22. Full bilingual description captured and read. No pagination is needed for the one-result board and no separate English variant exists. No excluded live postings. The corporate home links to this exact BambooHR tenant, and the corporate contact page verifies Montréal office. No inaccessible posting scope; only the numeric workplace code remains unnormalized."
+      },
+      {
+        "company_name": "Velixo",
+        "count": 2,
+        "status": "reviewed board snapshot",
+        "notes": "Four distinct exact IDs in archived official JazzHR board, each with archived detail; two included Canada-only remote English jobs, two excluded solely for mixed-country geography. Unknown age is retained in principle and citizenship is never screened against candidate qualifications. The undated overseas-inclusive software ad is excluded only for geographic scope; the similarly titled Montreal ad is separate. Broad scope retains engineering. Dates for included roles are exact source JSON-LD; no inferred publication date. The Montreal listing is remote across Canada with Quebec priority, with Montreal shown on its board/detail. Archived application forms were checked without submissions. Re-fetched four exact detail URLs successfully; no verification of an actual submission or employer authenticity beyond official-domain linkage. Capture 2026-10-27 America/Toronto. LinkedIn provides an employer-reported 51–200 range, not an exact headcount."
+      },
+      {
+        "company_name": "Finance Montréal",
+        "count": 1,
+        "status": "verified_employer_career_page",
+        "notes": "On 2026-10-27 the employer-owned English careers index lists one posting, and the French careers index lists one corresponding posting under /fr/carrieres-details/; the corporate English detail links to a recruiter-hosted Zoho listing explicitly naming Finance Montréal. One employer-board listing included, zero excluded. The recruiter board may contain unrelated clients and was not treated as Finance Montréal inventory. The unsolicited application form is not a vacancy. The applicant form rendered, but no application was submitted or end-to-end delivery tested. This is coverage of the observed employer career indexes, not proof that every vacancy is advertised there. Seniority, bilingualism and travel are not collection exclusions."
+      },
+      {
+        "company_name": "Code Marketing",
+        "count": 0,
+        "status": "reviewed board snapshot",
+        "notes": "Company eligibility verified independently: its own careers page recruits for Code employees, not agency client vacancies. Both live official language boards list one matching specific role, whose substantive job description is French-only despite its English title and board summary; therefore zero English-language job descriptions are included and one vacancy is excluded. Spontaneous application is not a separate vacancy. Official careers sitemap contains the same role in French and English and no additional job URLs; page sitemap also checked. Scope is the official boards and published sitemaps, not third-party listings or unpublished vacancies. A listed vacancy is not proof of a currently open hiring process; posting age unknown."
+      },
+      {
+        "company_name": "AssistIQ",
+        "count": 1,
+        "status": "reviewed board snapshot",
+        "notes": "Official careers page links to AssistIQ Workable. Count reports 5 distinct jobs; 12 widget location rows resolve to 5 shortcodes. One Canada-only Toronto-listed remote role is included; one Canada/US mixed-country role and three US-only roles are excluded. Quebec remote eligibility is not established. No applicant-fit gating; an unknown posting date alone would not cause exclusion. Company-scoped exact application form was verified without submission; original short-form application URL redirects to generic Workable search."
+      },
+      {
+        "company_name": "Precision Analytics",
+        "count": 0,
+        "status": "No openings on employer careers page at collection",
+        "notes": "The employer's own careers page states that there are no open positions at this time. No job records were created; the contact invitation is not a vacancy. The site does not identify an applicant tracking system."
+      },
+      {
+        "company_name": "Heylist",
+        "count": 3,
+        "status": "Reviewed career-page snapshot",
+        "notes": "Fifteen named vacancies observed. Three Montreal-located English advertisements are included; twelve other roles are labelled Flexible without an explicit Canada-only work location and are not included. An open application is not a specific vacancy. Employer posting dates are not specified; verify current status with the employer."
+      },
+      {
+        "company_name": "Inmind Technologies",
+        "count": 0,
+        "status": "Reviewed English career-page snapshot",
+        "notes": "The one English advertisement is for Mind in a Box, an Inmind spin-off. The webpage metadata indicates publication on 2026-04-01, more than 180 days before collection, but may not be the job posting date; the role was withheld conservatively under the age rule. Its text says French is an asset, while the careers landing page says French is mandatory."
+      },
+      {
+        "company_name": "Nixa",
+        "count": 0,
+        "status": "Career page reviewed",
+        "notes": "The supplied careers page invites resume submissions but did not display individual vacancies. A separate legacy jobs page was not linked from this supplied page and current availability could not be verified."
+      },
+      {
+        "company_name": "Walter Interactive",
+        "count": 0,
+        "status": "Career page reviewed",
+        "notes": "The supplied careers page has a general application form and did not display individual vacancies."
+      },
+      {
+        "company_name": "IVADO Labs",
+        "count": 0,
+        "status": "Career page reviewed, location and language selection",
+        "notes": "Three named roles were listed. Two English advertisements did not specify a job location, so Canada-only geography could not be established; the third advertisement was French-language. A spontaneous application is not a specific vacancy."
+      },
+      {
+        "company_name": "Clinia",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The linked Humi board listed only an older spontaneous application, not a specific vacancy."
+      },
+      {
+        "company_name": "MEDFAR Clinical Solutions",
+        "count": 19,
+        "status": "Reviewed careers snapshot",
+        "notes": "The linked SmartRecruiters board listed 31 advertisements: 19 eligible English Canadian advertisements, six French-language advertisements, one over 180 days old, and five outside Canada. Dates reflect the provider release date; distinct advertisement IDs are retained."
+      },
+      {
+        "company_name": "Plotly",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The linked Ashby board listed two bilingual roles in both Canada and the United States; neither meets the Canada-only selection."
+      },
+      {
+        "company_name": "Wrk",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The supplied career page states that no positions are currently open."
+      },
+      {
+        "company_name": "SuccessFinder",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The linked BambooHR board had no open positions at collection."
+      },
+      {
+        "company_name": "WorkJam",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "Directly retrieved official SuccessFactors search showed no open positions; stale indexed postings were not counted as current."
+      },
+      {
+        "company_name": "Busbud",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The supplied careers page showed no confirmed openings; indexed detail URLs returned 404 and independently located empty third-party boards could not be tied to the current page."
+      },
+      {
+        "company_name": "Bus.com",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "Direct access to the supplied career page was blocked; an extracted copy mentioned no openings, but its freshness is unconfirmed. A separate employer-branded board could not be verified as the current official careers integration."
+      },
+      {
+        "company_name": "OPAL-RT Technologies",
+        "count": 12,
+        "status": "Reviewed careers snapshot",
+        "notes": "The linked BambooHR board listed 22 jobs: 12 eligible Canadian bilingual advertisements, two Canadian advertisements older than 180 days, and eight postings outside Canada or without confirmed Canada-only geography."
+      },
+      {
+        "company_name": "Dakis",
+        "count": 0,
+        "status": "Reviewed careers snapshot",
+        "notes": "The supplied career URL returned HTTP 404 on direct retrieval while an extracted copy displayed a different job list; current openings and ATS could not be reliably established."
+      },
+      {
+        "company_name": "ByteGurus",
+        "count": 0,
+        "status": "No publication-ready records; scoped holds documented",
+        "notes": "Verified source snapshot 2026-10-30. Fresh official careers board fetched; prior 112 detail captures reviewed for Canadian geography. No explicit Canadian location established. Zero included does not mean no jobs or no possible Canadian applicants. Prior detail captures were reused, not freshly refetched."
+      },
+      {
+        "company_name": "Higglo",
+        "count": 0,
+        "status": "No publication-ready records; scoped holds documented",
+        "notes": "Verified source snapshot 2026-10-30. Fresh official careers board fetched; prior 48 detail captures reviewed for Canadian geography. Remote or hybrid wording alone is insufficient for Canada-only geography. Prior detail captures were reused, not freshly refetched."
+      },
+      {
+        "company_name": "IMAGEMOTION",
+        "count": 1,
+        "status": "Verified publication-ready records",
+        "notes": "Verified source snapshot 2026-10-30. Fresh careers archive and six 2026 detail pages checked. One English Montréal/remote advertisement retained; one Montréal/Miami advertisement excluded and four dated advertisements exceed the standing 180-day maximum. Older archive entries were not fully reverified; archive presence does not independently confirm an active vacancy. Shared Miami footer is not a job location."
+      },
+      {
+        "company_name": "Adastra Corporation",
+        "count": 14,
+        "status": "Verified publication-ready records",
+        "notes": "Verified source snapshot 2026-10-30. Fresh in-iframe current official iCIMS board has 21 links on one results page. All 20 previously selected individual English details were freshly refetched: 14 Canada-only retained, five mixed USA/Canada excluded, one HTTP 410 closed. Remaining board entries are a talent community and a pipeline hold. Exact complete role-body HTML including company/legal text preserved; no dates inferred from requisition year. city retains ATS office cities and expressly offered body cities, including metadata/body conflicts documented in evidence."
+      },
+      {
+        "company_name": "Pertinence Media",
+        "count": 3,
+        "status": "Verified publication-ready records",
+        "notes": "Verified source snapshot 2026-10-30. Fresh official board and three English details recovered with web_extract after direct HTTP 403/526. All three current board roles retained, including internship; substantive role sections and benefits captured without truncation markers. Montréal/hybrid supplied by board and details, remote choice explicitly supported by benefits. Application/CAPTCHA functionality was not tested."
+      },
+      {
+        "company_name": "JADX",
+        "count": 2,
+        "status": "Verified publication-ready records",
+        "notes": "Verified source snapshot 2026-10-30. Fresh official careers page and both linked English role pages checked. Both Montréal positions retained; French and English requirements preserved. Currency selector/US path does not establish US job location. Field sales is not relabeled in-office; application submission was not tested."
+      },
+      {
+        "company_name": "Agence Rinaldi",
+        "count": 0,
+        "status": "No publication-ready records; scoped holds documented",
+        "notes": "Verified source snapshot 2026-10-30. Fresh French and English employer pages plus both linked Grenier detail pages checked. English page has only brief cards, while complete linked ads are French-only and explicitly closed. Both held/excluded; no English full advertisement fabricated."
+      },
+      {
+        "company_name": "TurnBerry Acai",
+        "count": 0,
+        "status": "No publication-ready records; scoped holds documented",
+        "notes": "Verified source snapshot 2026-10-30. Fresh official careers page confirms one Montréal hybrid full-time role. Details discovered in client bundle, but rendered expanded full-post verification unresolved; browser tools timed out and subsequent executable extraction was denied. Role held; no invented URL or fragment."
+      },
+      {
+        "company_name": "Aura Social",
+        "count": 0,
+        "status": "no_named_vacancies",
+        "notes": "Verified source snapshot 2026-10-30. Only a spontaneous application is advertised; not counted as a vacancy."
+      },
+      {
+        "company_name": "Redbox Media",
+        "count": 0,
+        "status": "no_named_vacancies",
+        "notes": "Verified source snapshot 2026-10-30. Spontaneous applications only on reviewed official career page."
+      },
+      {
+        "company_name": "Agence FDM",
+        "count": 0,
+        "status": "excluded_language",
+        "notes": "Verified source snapshot 2026-10-30. Three named French-only advertisements; no substantive English advertisement variant verified."
+      },
+      {
+        "company_name": "Brand’s Media Group",
+        "count": 1,
+        "status": "verified_with_source_conflict",
+        "notes": "Verified source snapshot 2026-10-30. One internship; detail expressly states Montreal hybrid and Winter/Spring 2027. Index Fall/Winter 2026 label is stale/conflicting; detail terms preserved."
+      },
+      {
+        "company_name": "Markétika",
+        "count": 4,
+        "status": "verified_with_holds",
+        "notes": "Verified source snapshot 2026-10-30. Four full English descriptions verified. Senior Paid Media is linked in current raw board, and trailing-slash detail recovered HTTP 200; prior not-on-board hold resolved. Videographer is explicitly part-time, not full-time."
+      },
+      {
+        "company_name": "Archipel",
+        "count": 0,
+        "status": "explicit_no_open_roles",
+        "notes": "Verified source snapshot 2026-10-30. Official page explicitly says there are currently no available positions; spontaneous application is separate."
+      },
+      {
+        "company_name": "Terfuu",
+        "count": 0,
+        "status": "held_location",
+        "notes": "Verified source snapshot 2026-10-30. English Creative Strategist ad is live, but generic remote and Montreal agency headquarters do not establish Canada-only advertised workplace."
+      },
+      {
+        "company_name": "Agencilia",
+        "count": 0,
+        "status": "held_location",
+        "notes": "Verified source snapshot 2026-10-30. Four short role listings reviewed. Employer offices do not establish job locations; first explicitly lists Montreal and Miami."
+      },
+      {
+        "company_name": "Catalys Lubricants",
+        "count": 2,
+        "status": "verified_with_holds",
+        "notes": "Verified source snapshot 2026-10-30. Corporate controller detail now contains a complete English description, resolving prior title-only source. Two eligible finance roles retained; permanent does not by itself establish full-time."
+      },
+      {
+        "company_name": "Union Lighting & Décor",
+        "count": 6,
+        "status": "verified",
+        "notes": "Verified source snapshot 2026-10-30. All six full English ads captured on employer careers page. Shared canonical URL retained; stable IDs derive from URL plus exact title."
+      },
+      {
+        "company_name": "EMRN",
+        "count": 3,
+        "status": "verified",
+        "notes": "Verified source snapshot 2026-10-30. All three full English ads captured on shared employer page. Remote territory is expressly all Canadian provinces; city stays blank. Territory Sales Manager is account/territory management, not inferred people-management seniority."
+      },
+      {
+        "company_name": "The Kersheh Group",
+        "count": 0,
+        "status": "blocked_ats",
+        "notes": "Verified source snapshot 2026-10-30. Official page links ADP tenant 77beec31-416a-4e33-a035-275ab9fedacb. ADP HTML returns application shell; two attempted read-only recruitment endpoints returned 404. Current inventory and detail bodies could not be verified; third-party roles not imported."
+      },
+      {
+        "company_name": "OnClic",
+        "count": 3,
+        "status": "verified_with_holds",
+        "notes": "Verified source snapshot 2026-10-30. Canonical company_name is OnClic. Three complete English roles retained; South Shore is regional, not added as a city."
+      },
+      {
+        "company_name": "COURONS MTL",
+        "count": 0,
+        "status": "no_named_vacancies",
+        "notes": "Verified source snapshot 2026-10-30. Reviewed official Job Offers page shows career invitation/contact but no individual vacancies; not a claim about other sources."
+      },
+      {
+        "company_name": "Hoski",
+        "count": 1,
+        "status": "verified",
+        "notes": "Verified source snapshot 2026-10-30. Live raw official page reconfirms Director title and $52.50 CAD/hour; previous Manager rendition not used. English and French sections are one role, not two."
+      }
+    ],
+    "coverage_note": "October 1, 2026 saved-source snapshot: added exactly 24 audited employers and 184 postings (182 audited rows plus two approved Google additions). Preserved 109 existing businesses and 1,093 jobs without refreshing them. New employer collections cover the audited analytical/business-career scope: Canada-only, English or substantive bilingual advertisements, excluding known publication ages over 180 days. AppDirect geographic advertisements sharing a requisition are consolidated with original variant text retained. Availability and observed source-board changes were checked before release; this is a dated snapshot, not a continuously refreshed feed or a certification of applicant qualifications. The separate 100-employer expansion target is not completed by this release. First-insertion date schema migration: the 24 audited employers and 184 jobs added on October 1, 2026 have date_added_to_dataset 2026-10-01 (America/Toronto). The 109 older businesses and 1,093 older jobs have unknown dates, stored as blank. This migration is not a posting refresh; source capture timestamps and archived evidence are unchanged. Additional user-supplied batch: twenty businesses added with newly collected qualifying postings. All original 133 businesses and 1,277 job records remain unchanged; their historical capture timestamps and availability have not been refreshed. Employer-specific coverage entries document current collection limits and zero qualifying results.",
+    "filtered_at_utc": "2026-09-11T15:39:06.494379+00:00",
+    "selection_rules": {
+      "advertisement_language": "English or bilingual with substantive English description",
+      "max_known_age_days": 180,
+      "retain_unknown_age": true,
+      "retain_30_plus_age": true,
+      "deduplicate_same_language_locations": false,
+      "country_selection": "Country must be Canada only; exclude foreign-only and mixed-country advertisements; remote Canadian postings remain eligible.",
+      "excluded_companies": [
+        "CGI"
+      ]
+    },
+    "location_notes": "city and country list the advertised job locations, including additional locations, not company headquarters. Multiple values are separated by semicolons. city is blank when only a country or region is specified. See original postings for city-country pairings and regional remote-work restrictions.",
+    "job_url_policy": "Prefer stable, direct employer-hosted job-detail pages displaying the full posting. Use the recruitment-platform URL when the employer links directly there, has no separate job-detail page, or its page is inaccessible or outdated. Replace a URL only after verifying the exact same posting by stable identifier or an explicit source link, preserving advertisement language and location.",
+    "url_review_notes": "Two Ubisoft employer detail pages returned not-found responses; ATS links retained. Coveo direct pages were blocked and hosted Greenhouse links redirected to the employer; existing URLs retained with no accessible alternative verified. CGI bot protection limited direct detail verification. This review does not refresh descriptions, publication dates or availability. Coveo follow-up: recovered employer-page headers verified for all 36 retained exact-ID postings; responsibility/qualification sections checked against employer text and matching live ATS bodies where recovery omitted bullets; 3 linked generic careers pages removed. Direct HTTP may still return empty 202 responses; no empty/blocked page was treated as generic. Coveo generic-page recheck 2026-09-18: Staff Product Designer removed after fresh original-URL recovery showed Open Positions @ Coveo; 35 other exact-ID recovered detail pages corroborated by current ATS availability. Direct HTTP returned empty 202 for all 36 links; no blocked response or ATS status alone caused removal. Dialogue review 2026-09-18: all 30 original URLs freshly checked via HTTP; 28 detail pages and two verified generic-board redirects (Product Data Analyst and Career Counselor). Hopper review 2026-09-18: all 10 exact original URLs checked via fresh HTTP appData and browser; two accounting pages confirmed Job not found and removed.",
+    "url_reviewed_at_utc": "2026-09-11T17:41:37.697785+00:00",
+    "country_filtered_at_utc": "2026-09-17T11:40:44.105064+00:00",
+    "company_filtered_at_utc": "2026-09-17T11:56:15.605512+00:00",
+    "expansion_checked_at_utc": "2026-10-01T19:08:26.911310+00:00",
+    "baseline_collected_at": "2026-09-11 13:59",
+    "baseline_coverage_note": "Canada-only selection: 260 postings across 9 companies. CGI is excluded at the user's request. Foreign-only and mixed-country postings are excluded; remote Canadian postings remain included. This is a location filter, not a guarantee of individual work authorization. Prior English/bilingual advertisement and recorded-age selections remain unchanged. Company notes describe the original collection; separate posting URLs may refer to the same vacancy.",
+    "date_schema": {
+      "field": "date_added_to_dataset",
+      "timezone": "America/Toronto",
+      "migration_id": "date-columns-20261001",
+      "built_at_utc": "2026-10-01T20:23:56.197024+00:00"
+    },
+    "latest_append": {
+      "batch_id": "user-businesses-20261027",
+      "businesses_added": 20,
+      "jobs_added": 41,
+      "date_added_to_dataset": "2026-10-26",
+      "timezone": "America/Toronto"
+    }
+  },
+  "site_sha256": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Business-Listings/Business_Listings.csv": "d1742188bfcbf8ee13600d0fb739be2d8b0321c490e6c50ec78bd2e0d50325aa",
+    "Business-Listings/Business_Spreadsheet.csv": "d1742188bfcbf8ee13600d0fb739be2d8b0321c490e6c50ec78bd2e0d50325aa",
+    "Business-Listings/business.js": "db519cabaf31675e30274b9840d77ec323f217259453db1cfefb529edd2f6dc0",
+    "Business-Listings/index.html": "5b89f6061fc4a609c2800346100c2e99176d41454cbd7ef836d2c02dc81cbfbc",
+    "Business-Listings/table-controls.css": "552ee6a47562ff009f112aa7090ade7ba8c56f108af8c186315d5fb6e3847ab5",
+    "Business-Listings/table-controls.js": "66c26c22b3e35a648f032e637349d06a50d56103dd4bdcee41e794199a5f46c5",
+    "Job-Listings/Job_Filters.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/Job_Listings.csv": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+    "Job-Listings/advertisement-preview.css": "2379d1f1420e035d5df0a9ecf5d3f8e1816f48b3d43090ebc764de9f4b9ded26",
+    "Job-Listings/advertisement-preview.js": "d33c58349857e16f899f2e893360190323e1080f3f16f40d1ff4c396ed5891b8",
+    "Job-Listings/app.js": "14a4f023cca1a2189ed62f53dfae0815a6fb21e1a483aa441cfee924445dfabc",
+    "Job-Listings/coverage.json": "5dd633e65f69958f286f49a101236514fb782e1d2a8a90f8f0b6f11a5f0ac1fb",
+    "Job-Listings/filter.js": "1268e88204ef1511f8923424f4c524763e5aa7643e34cebaa757b72735bbfa50",
+    "Job-Listings/index.html": "c80a61d6806fe99e035bcb9c94b381969eb104497ad1e50cc3402a62c8a9061e",
+    "Job-Listings/jobs.json": "dd9d8774ebd771eb71efe4be97ab531cb0968c21396306ad1202ef315e1bb4b3",
+    "Job-Listings/top-scroll.js": "45a0f4dfba6748854324736bfa4e87663322ed33b407bdbb88dc48cfcf122801",
+    "shared/checkbox-filter.js": "a56ee60fcc95be3ec93a8ab8b94a302364086ec1f1ee4ee4af6919f71024c79f",
+    "shared/listings.css": "a9bd307c3887ba38eb3e2066ca88b132413e9b60d0b159fbf35618af649db6e7"
+  }
+}
