@@ -1,4 +1,24 @@
 {
   "schema_version": 1,
-  "batches": []
+  "batches": [
+    {
+      "batch_id": "user-business-directory-40-20261104",
+      "date_added_to_dataset": "2026-11-04",
+      "collect_jobs": false,
+      "business": {
+        "count": 296,
+        "csv_bytes": 90070,
+        "csv_sha256": "13e20e4c6d2adf3b431ddd49f33b736e3443f9f4d91dbff5bed7287f92e2ae66",
+        "rows_sha256": "12b87b91f51481b1a84ce1c5002488d890ddde6af050c0ea0bc7aeb2f1e2f2dd"
+      },
+      "job": {
+        "count": 1396,
+        "csv_bytes": 13390355,
+        "csv_sha256": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+        "rows_sha256": "4ffe228ec873c5dec26588b9f6d8d2becb08cbe9c02ebfa1dd069f2dd85951cd"
+      },
+      "coverage_updates": [],
+      "coverage_note_append": ""
+    }
+  ]
 }
