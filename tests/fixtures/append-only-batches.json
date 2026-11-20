@@ -19,6 +19,25 @@
       },
       "coverage_updates": [],
       "coverage_note_append": ""
+    },
+    {
+      "batch_id": "user-business-directory-40-20261119",
+      "date_added_to_dataset": "2026-11-19",
+      "collect_jobs": false,
+      "business": {
+        "count": 336,
+        "csv_bytes": 99735,
+        "csv_sha256": "a556355d97b8b3ca3808b1968a8bdf9533ba8391ba8a9aeac7d13b68e5916b23",
+        "rows_sha256": "f42933f0b33295645ae4b2adcd150e934123cc36fde27961d5f37c980fbd257e"
+      },
+      "job": {
+        "count": 1396,
+        "csv_bytes": 13390355,
+        "csv_sha256": "87305b41a55ecad87ba46397a18d692d3144579c2a45d2eb1d245f5b71daed49",
+        "rows_sha256": "4ffe228ec873c5dec26588b9f6d8d2becb08cbe9c02ebfa1dd069f2dd85951cd"
+      },
+      "coverage_updates": [],
+      "coverage_note_append": ""
     }
   ]
 }
